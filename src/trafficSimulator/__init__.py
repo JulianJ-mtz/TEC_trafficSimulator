@@ -12,26 +12,43 @@ sim = Simulation()
 # # Add multiple roads
 
 ## ---- ESTACIONAMIENTO ARENA BORREGOS ----
+INICIO = ((0,0),(21.7461,-26.9761))
+ENTRADA_BORREGOS = ((21.7461,-26.9761),(31.8606,-26.9761))
+INTERSECCION_1L = ((31.8606,-26.9761),(31.8606,-17.9761))
+INTERSECCION_2L = ((31.8606,-17.9761),(31.8606,-2.842))
+INTERSECCION_3L = ((31.8606,-2.842),(31.8606,15.1221))
+INTERSECCION_4L = ((31.8606,15.1221),(31.8606,29.6307))
+INTERSECCION_1C = ((31.8606,-17.9761),(71.7077,-17.9761))
+INTERSECCION_2C = ((31.8606,-2.842),(71.7077,-2.842))
+INTERSECCION_3C = ((31.8606,15.1221),(71.7077,15.1221))
+INTERSECCION_4C = ((31.8606,29.6307),(71.7077,29.6307))
+INTERSECCION_1R = ((71.7077,29.6307),(71.7077,15.1221))
+INTERSECCION_2R = ((71.7077,15.1221),(71.7077,-2.842))
+INTERSECCION_3R = ((71.7077,-2.842),(71.7077,-17.9761))
+INTERSECCION_4R = ((71.7077,-17.9761),(71.7077,-26.9761))
+INTERSECCION_0C = ((71.7077,-26.9761),(36.78,-26.9761))
+SALIDA_BORREGOS_1 = ((36.78,-26.9761),(25.9072,-35.8534))
+SALIDA_BORREGOS_2 = ((25.9072,-35.8534),(7.8019,-30.3946))
+SALIDA = ((7.8019,-30.3946),(-12.2373,-16.9461))
 sim.create_roads([
-    ((0,0),(20,-20)), #Entrada                                                 0
-    ((20,-20),(40,-20)), #Inicio de estacionamiento staff                      1
-    ((40,-20),(40,0)), #Lineas de la izquierda ((40,-20),(40,80))              2
-    ((40,0),(40,20)), #Inter 1                                                 3
-    ((40,20),(40,40)), #Inter 2                                                4
-    ((40,40),(40,60)), #Inter 3                                                5
-    ((40,60),(40,80)), #Inter 4                                                6
-    ((40,20),(120,20)), #Espacio est 1                                         7
-    ((40,40),(120,40)), #                                                      8
-    ((40,60),(120,60)), #                                                      9                 
-    ((40,80),(120,80)), #linea de abajo                                        10
-    ((120,80),(120,60)), #Lineas de la derecha                                 11
-    ((120,60),(120,40)), #Inters derecha                                       12
-    ((120,40),(120,20)), #                                                     13
-    ((120,20),(120,0)), #                                                      14
-    ((120,0),(120,-20)), #                                                     15
-    ((120,-20),(40,-24)), #                                                    16
-    ((40,-24),(20,-24)), #Final es                                             17
-    ((20,-24),(0,-10)) #Salida                                                 18
+    INICIO, #0
+    ENTRADA_BORREGOS, #1
+    INTERSECCION_1L, #2
+    INTERSECCION_2L, #3
+    INTERSECCION_3L, #4
+    INTERSECCION_4L, #5
+    INTERSECCION_1C, #6
+    INTERSECCION_2C, #7
+    INTERSECCION_3C, #8
+    INTERSECCION_4C, #9
+    INTERSECCION_1R, #10
+    INTERSECCION_2R, #11
+    INTERSECCION_3R, #12
+    INTERSECCION_4R, #13
+    INTERSECCION_0C, #14
+    SALIDA_BORREGOS_1, #15
+    SALIDA_BORREGOS_2, #16
+    SALIDA #17
 ])
 
 ## ---- ESTACIONAMIENTO MEDIO ----
@@ -52,10 +69,8 @@ sim.create_roads([
 sim.create_gen({
     'vehicle_rate': 60,
     'vehicles': [
-        [1, {"path": [0,1,2,3,4,5,6,10,11,12,13,14,15,16,17,18]}],
-        [0, {"path": [0,1,2,3,7,14,15,16,17,18]}],
-        [0, {"path": [0,1,2,3,4,8,13,14,15,16,17,18]}],
-        [0, {"path": [0,1,2,3,4,5,9,12,13,14,15,16,17,18]}],
+        [1, {"path": [0,1,2,3,4,5,9,10,11,12,13,14,15,16]}],
+        [1, {"path": [0,1,2,6,13,14,15,16]}]
     ]
 })
 
