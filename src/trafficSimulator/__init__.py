@@ -1,4 +1,3 @@
-
 from curve import *
 from vehicle import *
 from road import *
@@ -57,9 +56,14 @@ sim.create_roads([
 # ])
 
 ## ---- ESTACIONAMIENTO NUEVO ----
-# sim.create_roads([
+NUEVO_VERTICAL_1 =((-22, -189),(-29, -197))
+NUEVO_HORIZONTAL_1 = ((-28, -197), (-89, -191))
 
-# ])
+
+sim.create_roads([
+    NUEVO_VERTICAL_1,
+    NUEVO_HORIZONTAL_1
+])
 
 ## ---- ESTACIONAMIENTO TERRACERIA ----
 # sim.create_roads([
@@ -69,11 +73,11 @@ sim.create_roads([
 sim.create_gen({
     'vehicle_rate': 30,
     'vehicles': [
-        [1, {"path": [0,1,2,3,4,5,9,10,11,12,13,14,15,16,17]}],
-        [1, {"path": [0,1,2,6,13,14,15,16,17]}],
-        [1, {"path": [0,1,2,3,7,12,13,14,15,16,17]}],
-        [1, {"path": [0,1,2,3,4,8,11,12,13,14,15,16,17]}],
-        [1, {"path": [0,1,2,3,4,5,9,10,11,12,13,14,15,16,17]}],
+        [1, {"path": [0, 1, 2, 3, 4, 5, 9, 10, 11, 12, 13, 14, 15, 16, 17]}],
+        [1, {"path": [0, 1, 2, 6, 13, 14, 15, 16, 17]}],
+        [1, {"path": [0, 1, 2, 3, 7, 12, 13, 14, 15, 16, 17]}],
+        [1, {"path": [0, 1, 2, 3, 4, 8, 11, 12, 13, 14, 15, 16, 17]}],
+        [1, {"path": [0, 1, 2, 3, 4, 5, 9, 10, 11, 12, 13, 14, 15, 16, 17]}],
     ]
 })
 
