@@ -10,6 +10,8 @@ from traffic_signal import *
 sim = Simulation()
 
 # # Add multiple roads
+
+## ---- ESTACIONAMIENTO ARENA BORREGOS ----
 sim.create_roads([
     ((0,0),(20,-20)), #Entrada                                                 0
     ((20,-20),(40,-20)), #Inicio de estacionamiento staff                      1
@@ -32,6 +34,21 @@ sim.create_roads([
     ((20,-24),(0,-10)) #Salida                                                 18
 ])
 
+## ---- ESTACIONAMIENTO MEDIO ----
+# sim.create_roads([
+
+# ])
+
+## ---- ESTACIONAMIENTO NUEVO ----
+# sim.create_roads([
+
+# ])
+
+## ---- ESTACIONAMIENTO TERRACERIA ----
+# sim.create_roads([
+
+# ])
+
 sim.create_gen({
     'vehicle_rate': 60,
     'vehicles': [
@@ -44,6 +61,5 @@ sim.create_gen({
 
 # Start simulation
 win = Window(sim)
-win.offset = (-150, -110)
+win.zoom = 10
 win.run(steps_per_update=5)
-
