@@ -2,10 +2,10 @@ from scipy.spatial import distance
 from collections import deque
 
 class Road:
-    def __init__(self, start, end):
+    def __init__(self, start, end, type=0):
         self.start = start
         self.end = end
-
+        self.type=type
         self.vehicles = deque()
 
         self.init_properties()
@@ -34,11 +34,13 @@ class Road:
 
         if n > 0:
             # Update first vehicle
-            self.vehicles[0].update(None, dt)
+            if(self.type==0 or (self.type==1 and self.vehicles[0].x<self.length-5)):
+                print("posX: "+str( self.vehicles[0].x)+" 1 "+str(self.length))
+                self.vehicles[0].update(None, dt)
             # Update other vehicles
-            for i in range(1, n):
-                lead = self.vehicles[i-1]
-                self.vehicles[i].update(lead, dt)
+                for i in range(1, n):
+                    lead = self.vehicles[i-1]
+                    self.vehicles[i].update(lead, dt)
 
              # Check for traffic signal
             if self.traffic_signal_state:
