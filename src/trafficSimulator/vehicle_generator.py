@@ -28,12 +28,17 @@ class VehicleGenerator:
 
     def generate_vehicle(self):
         """Returns a random vehicle from self.vehicles with random proportions"""
-        total = sum(pair[0] for pair in self.vehicles)
+        """total = sum(pair[0] for pair in self.vehicles)
         r = randint(1, total+1)
         for (weight, config) in self.vehicles:
             r -= weight
             if r <= 0:
-                return Vehicle(config)
+                return Vehicle(config)"""
+        total = len(self.vehicles)
+        if total:
+            outputVehicle = self.vehicles.pop(0)
+            return Vehicle(outputVehicle[1])
+        return Vehicle({})
 
     def update(self):
         """Add vehicles"""
@@ -44,6 +49,8 @@ class VehicleGenerator:
         if self.sim.t - self.last_added_time >= 60 / self.vehicle_rate:
             # If time elasped after last added vehicle is
             # greater than vehicle_period; generate a vehicle
+            if not len(self.vehicles):
+                return
             road = self.sim.roads[self.upcoming_vehicle.path[0]]      
             if len(road.vehicles) == 0\
                or road.vehicles[-1].x > self.upcoming_vehicle.s0 + self.upcoming_vehicle.l:
