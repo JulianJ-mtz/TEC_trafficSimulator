@@ -432,4 +432,3 @@ sim.create_gen({
 win = Window(sim)
 win.zoom = 10
 win.run(steps_per_update=5)
-
