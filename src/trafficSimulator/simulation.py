@@ -20,8 +20,8 @@ class Simulation:
         self.generators = []
         self.traffic_signals = []
 
-    def create_road(self, start, end):
-        road = Road(start, end)
+    def create_road(self, start, end,type=0):
+        road = Road(start, end,type)
         self.roads.append(road)
         return road
 
@@ -55,9 +55,12 @@ class Simulation:
         # Check roads for out of bounds vehicle
         for road in self.roads:
             # If road has no vehicles, continue
-            if len(road.vehicles) == 0: continue
+            if len(road.vehicles) == 0: continue            
             # If not
             vehicle = road.vehicles[0]
+
+
+
             # If first vehicle is out of road bounds
             if vehicle.x >= road.length:
                 # If vehicle has a next road
