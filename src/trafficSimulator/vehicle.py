@@ -22,6 +22,8 @@ class Vehicle:
 
         self.path = []
         self.current_road_index = 0
+        self.cajon_index=-1
+        self.estado=0
 
         self.x = 0
         self.v = self.v_max

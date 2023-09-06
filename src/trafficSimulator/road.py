@@ -6,6 +6,7 @@ class Road:
         self.start = start
         self.end = end
         self.type=type
+        self.pT=0 #parking Time
         self.vehicles = deque()
 
         self.init_properties()
@@ -34,10 +35,20 @@ class Road:
 
         if n > 0:
             # Update first vehicle
-            if(self.type==0 or (self.type==1 and self.vehicles[0].x<self.length-5)):
-                print("posX: "+str( self.vehicles[0].x)+" 1 "+str(self.length))
+            if(self.type==0):
                 self.vehicles[0].update(None, dt)
             # Update other vehicles
+            if(self.type==1 and self.vehicles[0].x<self.length-2 and self.length):
+                self.vehicles[0].update(None, dt)
+
+            elif(self.type==1 and self.vehicles[0].estado==0):
+                self.vehicles[0].stop
+                self.pT=dt
+                self.vehicles[0].estado=1
+            
+            if(self.type==1 and self.vehicles[0].estado==1 and self.pT<(dt*1000)):
+                self.pT +=dt
+                print("pT"+str( ))
                 for i in range(1, n):
                     lead = self.vehicles[i-1]
                     self.vehicles[i].update(lead, dt)

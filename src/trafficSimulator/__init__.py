@@ -75,7 +75,52 @@ EST_MEDIO_R7 = ((7.59559, -155.39970), (9.3492, -153.5104))
 EST_MEDIO_L7 = ((-82.8175, -168.5878), (-81.5118, -150.2121))
 EST_MEDIO_R8 = ((9.3492, -153.5104), (-8.7637, -173.0237))
 EST_MEDIO_T = ((-8.7637, -173.0237), (-82.8175, -168.5878))
+# ---- CAJONES:ESTACIONAMIENTO MEDIO ----
+coordX1=0
+coordX2=0
+coordY1=0
+coordY2=0
+indexCajon=0
+cajon_EST_MEDIO=[]
+for x in range(354):
+    if (x<=11):
+        if(x==0):
+            coordX1=-12.3963
+            coordX2=-12.5427
+            coordY1=-39.9349
+            coordY2=-33.7938
+        cajon_EST_MEDIO.append(((coordX1,coordY1),(coordX2,coordY2),1))
+        coordX1=coordX1+2.7967
+        coordX2=coordX2+2.7967
+        coordY1=coordY1-0.1564
+        coordY2=coordY2-0.1564
+    if( x>=12 and x<=22):
+        if(x==12):
+            coordY1= -33.7938 - 6.1411
+            coordY2= -39.9349 - 6.1411
+            coordX1= -12.3963
+            coordX2= -12.5427
+        coordX1=coordX1+2.7967
+        coordX2=coordX2+2.7967
+        coordY1=coordY1-0.1564
+        coordY2=coordY2-0.1564
+        cajon_EST_MEDIO.append(((coordX1,coordY1),(coordX2,coordY2),1))
+    if( x>=23 and x<=35):
+        if(x==23):
+            coordY1= -33.7938 - 6.1411
+            coordY2= -39.9349 - 6.1411
+            coordX1= -12.3963
+            coordX2= -12.5427
+        coordX1=coordX1+2.7967
+        coordX2=coordX2+2.7967
+        coordY1=coordY1-0.1564
+        coordY2=coordY2-0.1564
+        cajon_EST_MEDIO.append(((coordX1,coordY1),(coordX2,coordY2),1))
 
+    
+EST_MEDIO_CAJONES=tuple(cajon_EST_MEDIO)
+print(EST_MEDIO_CAJONES[12])
+print(EST_MEDIO_CAJONES[13])
 sim.create_roads([
     ENTRADA_EST_MEDIO,  # 18
     EST_MEDIO_B,  # 19
@@ -101,7 +146,30 @@ sim.create_roads([
     EST_MEDIO_L7,  # 39
     EST_MEDIO_R8,  # 40
     EST_MEDIO_T,  # 41
-
+    EST_MEDIO_CAJONES[0], #42
+    EST_MEDIO_CAJONES[1], #43
+    EST_MEDIO_CAJONES[2], #44
+    EST_MEDIO_CAJONES[3], #45
+    EST_MEDIO_CAJONES[4], #46
+    EST_MEDIO_CAJONES[5], #47
+    EST_MEDIO_CAJONES[6], #48
+    EST_MEDIO_CAJONES[7], #49
+    EST_MEDIO_CAJONES[8], #50
+    EST_MEDIO_CAJONES[9], #51
+    EST_MEDIO_CAJONES[10], #52
+    EST_MEDIO_CAJONES[11], #53
+    EST_MEDIO_CAJONES[12], #54
+    EST_MEDIO_CAJONES[13], #55
+    EST_MEDIO_CAJONES[14], #56
+    EST_MEDIO_CAJONES[15], #57
+    EST_MEDIO_CAJONES[16], #58
+    EST_MEDIO_CAJONES[17], #59
+    EST_MEDIO_CAJONES[18], #60
+    EST_MEDIO_CAJONES[19], #61
+    EST_MEDIO_CAJONES[20], #63
+    EST_MEDIO_CAJONES[21], #64
+    EST_MEDIO_CAJONES[22], #65
+    EST_MEDIO_CAJONES[23], #66>
 ])
 
 # ---- ESTACIONAMIENTO NUEVO ----
@@ -350,26 +418,13 @@ sim.create_gen({
         [1, {"path": [0, 1, 2, 3, 7, 12, 13, 14, 15, 16, 17]}],
         [1, {"path": [0, 1, 2, 3, 4, 8, 11, 12, 13, 14, 15, 16, 17]}],
         [1, {"path": [0, 1, 2, 3, 4, 5, 9, 10, 11, 12, 13, 14, 15, 16, 17]}],
-        [1, {"path": [0, 1, 18, 21, 24, 27, 30, 33, 36, 38, 40, 41, 39, 35, 32, 29, 26, 23, 20, 19]}],
-        [1, {"path": [0, 1, 18, 21, 22, 20, 19]}],
-        [1, {"path": [0, 1, 18, 21, 24, 25, 23, 20, 19]}],
-        [1, {"path": [0, 1, 18, 21, 24, 27, 28, 26, 23, 20, 19]}],
-        [1, {"path": [0, 1, 18, 21, 24, 27, 30, 31, 29, 26, 23, 20, 19]}],
-        [1, {"path": [0, 1, 18, 21, 24, 27, 30, 33, 34, 32, 31, 29, 26, 23, 20, 19]}],
-        [1, {"path": [0, 1, 18, 21, 24, 27, 30, 33, 36, 37, 35, 32, 31, 29, 26, 23, 20, 19]}],
-
-        [1, {"path": [0,1,2,3,4,5,9,10,11,12,13,14,15,16,17]}],
-        [1, {"path": [0,1,2,6,13,14,15,16,17]}],
-        [1, {"path": [0,1,2,3,7,12,13,14,15,16,17]}],
-        [1, {"path": [0,1,2,3,4,8,11,12,13,14,15,16,17]}],
-        [1, {"path": [0,1,2,3,4,5,9,10,11,12,13,14,15,16,17]}],
-        [1, {"path": [0,1,18,21,24,27,30,33,36,38,40,41,39,35,32,29,26,23,20,19]}],
-        [1, {"path": [0,1,18,21,22,20,19]}],
-        [1, {"path": [0,1,18,21,24,25,23,20,19]}],
-        [1, {"path": [0,1,18,21,24,27,28,26,23,20,19]}],
-        [1, {"path": [0,1,18,21,24,27,30,31,29,26,23,20,19]}],
-        [1, {"path": [0,1,18,21,24,27,30,33,34,32,31,29,26,23,20,19]}],
-        [1, {"path": [0,1,18,21,24,27,30,33,36,37,35,32,31,29,26,23,20,19]}],
+        [1, {"path": [0, 1, 18, 21, 24, 27, 30, 33, 36, 38, 40, 41, 39, 35, 32, 29, 26, 23, 20, 19, 52]}],
+        [1, {"path": [0, 1, 18, 21, 22, 20, 19, 42]}],
+        [1, {"path": [0, 1, 18, 21, 24, 25, 23, 20, 19, 43]}],
+        [1, {"path": [0, 1, 18, 21, 24, 27, 28, 26, 23, 20, 19, 44]}],
+        [1, {"path": [0, 1, 18, 21, 24, 27, 30, 31, 29, 26, 23, 20, 19, 45]}],
+        [1, {"path": [0, 1, 18, 21, 24, 27, 30, 33, 34, 32, 31, 29, 26, 23, 20, 19, 46]}],
+        [1, {"path": [0, 1, 18, 21, 24, 27, 30, 33, 36, 37, 35, 32, 31, 29, 26, 23, 20, 19, 47]}],
     ]
 })
 
