@@ -118,7 +118,7 @@ for x in range(354):
         cajon_EST_MEDIO.append(((coordX1,coordY1),(coordX2,coordY2),1))
 
     
-EST_MEDIO_CAJONES=tuple(cajon_EST_MEDIO)
+# EST_MEDIO_CAJONES=tuple(cajon_EST_MEDIO)
 sim.create_roads([
     ENTRADA_EST_MEDIO,  # 18
     EST_MEDIO_B,  # 19
@@ -186,13 +186,13 @@ v15_2 = (-82.8175, -168.5878)
 h1_1 = (-28.96, -196.92)
 h1_2 = (-93.25, -191.87)
 res1 = 93.25 - 28.96
-divX = res1 / 19
+divX = res1 / 10
 res2 = 196.92 - 191.87
-divY = res2 / 19
+divY = res2 / 10
 HORIZONTAL_SECCIONADA_1 = []
-for inter1 in range(19):
-    if (inter1 == 0 and inter1 <= 19):
-        xi = -31.96
+for inter1 in range(10):
+    if (inter1 == 0 and inter1 <= 10):
+        xi = -28.96
         yi = -195.92
         xf = xi + divX
         yf = yi - divY
@@ -211,16 +211,16 @@ h3_2 = (-114.25, -208.69)
 h4_1 = (-55.18, -221.65)
 h4_2 = (-113.92, -218.92)
 resX4 = 113.92 - 55.18
-divX4 = resX4 / 20
+divX4 = resX4 / 10
 resY4 = 221.65 - 218.92
-divY4 = resY4 / 20
+divY4 = resY4 / 10
 HORIZONTAL_SECCIONADA_4 = []
-for inter4 in range(20):
-    if (inter4 == 0 and inter4 <= 20):
-        xi = -58.18
+for inter4 in range(10):
+    if (inter4 == 0 and inter4 <= 10):
+        xi = -55.18
         yi = -221.65
-        xf = xi + divX4
-        yf = yi - divY4
+        xf = xi - divX4
+        yf = yi + divY4
     HORIZONTAL_SECCIONADA_4.append(((xi, yi),(xf, yf), 1))
     xi -= divX4
     xf -= divX4
@@ -237,10 +237,10 @@ divY5 = resY5 / 25
 HORIZONTAL_SECCIONADA_5 = []
 for inter5 in range(25):
     if (inter5 == 0 and inter5 <= 25):
-        xi = -69.29
+        xi = -67.29
         yi = -250.20
-        xf = xi + divX5
-        yf = yi - divY5
+        xf = xi - divX5
+        yf = yi + divY5
     HORIZONTAL_SECCIONADA_5.append(((xi, yi),(xf, yf), 1))
     xi -= divX5
     xf -= divX5
@@ -257,10 +257,10 @@ divY6 = resY6 / 28
 HORIZONTAL_SECCIONADA_6 = []
 for inter6 in range(28):
     if (inter6 == 0 and inter6 <= 28):
-        xi = -70.99
+        xi = -67.99
         yi = -268.79
-        xf = xi + divX6
-        yf = yi - divY6
+        xf = xi - divX6
+        yf = yi + divY6
     HORIZONTAL_SECCIONADA_5.append(((xi, yi),(xf, yf), 1))
     xi -= divX6
     xf -= divX6
@@ -277,10 +277,10 @@ divY7 = resY7 / 28
 HORIZONTAL_SECCIONADA_7 = []
 for inter6 in range(28):
     if (inter6 == 0 and inter6 <= 28):
-        xi = -72.69
+        xi = -68.69
         yi = -285.74
-        xf = xi + divX7
-        yf = yi - divY7
+        xf = xi - divX7
+        yf = yi + divY7
     HORIZONTAL_SECCIONADA_7.append(((xi, yi),(xf, yf), 1))
     xi -= divX7
     xf -= divX7
@@ -578,8 +578,8 @@ sim.create_roads([
 #Javier
 
 #Julian
-for i in range (0, len(EST_NUEVO_CAJONES)):
-    sim.create_roads([EST_NUEVO_CAJONES[i]])
+# for i in range (0, len(EST_NUEVO_CAJONES)):
+#     sim.create_roads([EST_NUEVO_CAJONES[i]])
 #Gustavo
 
 # ]) 
@@ -587,7 +587,7 @@ for i in range (0, len(EST_NUEVO_CAJONES)):
 # Paths
 path = [
 [1, {"path": [0, 1, 2, 3, 4, 5, 9, 10, 11, 12, 13, 14, 15, 16, 17]}],#1
-[1, {"path": [0, 1, 2, 6, 13, 14, 15, 16, 17]}],#2
+[1, {"path": [i for i in range (62, 90)]}],#2
 [1, {"path": [0, 1, 2, 3, 7, 12, 13, 14, 15, 16, 17]}],#3
 [1, {"path": [0, 1, 2, 3, 4, 8, 11, 12, 13, 14, 15, 16, 17]}],#4
 [1, {"path": [0, 1, 2, 3, 4, 5, 9, 10, 11, 12, 13, 14, 15, 16, 17]}],#5
