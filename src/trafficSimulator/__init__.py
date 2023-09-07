@@ -11,6 +11,8 @@ sim = Simulation()
 # Add multiple roads
 
 # ---- ESTACIONAMIENTO ARENA BORREGOS ----
+EstArenaBorregos = []
+
 INICIO = ((0, 0), (21.7461, -26.9761))
 ENTRADA_BORREGOS = ((21.7461, -26.9761), (31.8606, -26.9761))
 INTERSECCION_1L = ((31.8606, -26.9761), (31.8606, -17.9761))
@@ -29,7 +31,7 @@ INTERSECCION_0C = ((71.7077, -26.9761), (36.78, -26.9761))
 SALIDA_BORREGOS_1 = ((36.78, -26.9761), (25.9072, -35.8534))
 SALIDA_BORREGOS_2 = ((25.9072, -35.8534), (7.8019, -30.3946))
 SALIDA = ((7.8019, -30.3946), (-12.2373, -16.9461))
-sim.create_roads([
+EstArenaBorregos = [
     INICIO,  # 0
     ENTRADA_BORREGOS,  # 1
     INTERSECCION_1L,  # 2
@@ -48,7 +50,113 @@ sim.create_roads([
     SALIDA_BORREGOS_1,  # 15
     SALIDA_BORREGOS_2,  # 16
     SALIDA  # 17
-])
+]
+
+
+
+
+# ---- ESTACIONAMIENTO ARENA BORREGOS ----
+#cajones de al lado
+x1 = INTERSECCION_4C[0][0]-1
+y1 = INTERSECCION_4C[0][1] - 5.5434
+x2 = x1 - 3.2294
+y2 = 0
+for i in range(11):
+    y2 = y1 + 3.9333
+    EstArenaBorregos.append(((x1,y1),(x2,y2)))
+    y1 -= 4.5262
+
+#cajones interseccion 4 discapacitados
+x1 = INTERSECCION_4C[1][0] - 6.1286 - 2.2776
+y1 = INTERSECCION_4C[1][1] + 1
+x2 = 0
+y2 = y1 + 3.5840
+for i in range(4):
+    x2 = x1 + 3.5255
+    EstArenaBorregos.append(((x1,y1),(x2,y2)))
+    x1 -= 6
+
+#cajones interseccion 4 arriba
+x1 = INTERSECCION_4C[1][0] - 6.1286 - 2.2776
+y1 = INTERSECCION_4C[1][1] - 1
+x2 = 0
+y2 = y1 - 3.5840
+for i in range(6):
+    x2 = x1 + 3.5255
+    EstArenaBorregos.append(((x1,y1),(x2,y2)))
+    x1 -= 3.5255
+
+#cajones interseccion 3 abajo
+x1 = INTERSECCION_3C[1][0] - 5.6570
+y1 = INTERSECCION_3C[1][1] + 1
+x2 = 0
+y2 = y1 + 3.5840
+for i in range(6):
+    x2 = x1 - 3.5255
+    EstArenaBorregos.append(((x1,y1),(x2,y2)))
+    x1 -= 3.5255
+
+#cajones interseccion 3 arriba
+x1 = INTERSECCION_3C[1][0] - 6.1297
+y1 = INTERSECCION_3C[1][1] - 1
+x2 = 0
+y2 = y1 - 3.8068
+for i in range(7):
+    x2 = x1 - 3.7830
+    EstArenaBorregos.append(((x1,y1),(x2,y2)))
+    x1 -= 4.5019
+
+#cajones interseccion 2 abajo
+x1 = INTERSECCION_2C[1][0] - 8.8239
+y1 = INTERSECCION_2C[1][1] + 1
+x2 = 0
+y2 = y1 + 3.8020
+for i in range(7):
+    x2 = x1 + 3.0133
+    EstArenaBorregos.append(((x1,y1),(x2,y2)))
+    x1 -= 4.1806
+
+#cajones interseccion 2 arriba
+x1 = INTERSECCION_2C[1][0] - 6.1297
+y1 = INTERSECCION_2C[1][1] - 1
+x2 = 0
+y2 = y1 - 3.8020
+for i in range(8):
+    x2 = x1 + 3.0133
+    EstArenaBorregos.append(((x1,y1),(x2,y2)))
+    x1 -= 4.1806
+
+#cajones interseccion 1 abajo
+x1 = INTERSECCION_1C[1][0] - 6.1297
+y1 = INTERSECCION_1C[1][1] + 1
+x2 = 0
+y2 = y1 + 3.8020
+for i in range(7):
+    x2 = x1 - 3.0133
+    EstArenaBorregos.append(((x1,y1),(x2,y2)))
+    x1 -= 4.1806
+
+#cajones interseccion 1 arriba
+x1 = INTERSECCION_1C[1][0] - 6.1297
+y1 = INTERSECCION_1C[1][1] - 1
+x2 = 0
+y2 = y1 - 3.8020
+for i in range(7):
+    x2 = x1 - 3.0133
+    EstArenaBorregos.append(((x1,y1),(x2,y2)))
+    x1 -= 4.1806
+
+#cajones interseccion 0 arriba
+x1 = INTERSECCION_0C[0][0] - 2.6964
+y1 = INTERSECCION_0C[0][1] - 1
+x2 = 0
+y2 = y1 - 3.8020
+for i in range(8):
+    x2 = x1 - 3.6964
+    EstArenaBorregos.append(((x1,y1),(x2,y2)))
+    x1 -= 4
+
+sim.create_roads(EstArenaBorregos)
 
 # ---- ESTACIONAMIENTO MEDIO ----
 ENTRADA_EST_MEDIO = ((31.8606, -26.9761), (25.7451, -42.7844))
