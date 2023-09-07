@@ -119,8 +119,6 @@ for x in range(354):
 
     
 EST_MEDIO_CAJONES=tuple(cajon_EST_MEDIO)
-print(EST_MEDIO_CAJONES[12])
-print(EST_MEDIO_CAJONES[13])
 sim.create_roads([
     ENTRADA_EST_MEDIO,  # 18
     EST_MEDIO_B,  # 19
