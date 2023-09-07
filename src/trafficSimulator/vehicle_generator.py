@@ -42,6 +42,10 @@ class VehicleGenerator:
 
     def update(self):
         """Add vehicles"""
+        roadF=self.sim.roads[self.upcoming_vehicle.cajon_index]
+        if(roadF.type==1 and len(roadF.vehicles)>0):
+            return
+        
         if self.sim.t - self.last_added_time >= 60 / self.vehicle_rate:
             # If time elasped after last added vehicle is
             # greater than vehicle_period; generate a vehicle
