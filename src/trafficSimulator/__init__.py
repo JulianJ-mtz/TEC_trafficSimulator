@@ -194,13 +194,14 @@ for inter1 in range(10):
     if (inter1 == 0 and inter1 <= 10):
         xi = -28.96
         yi = -195.92
-        xf = xi + divX
-        yf = yi - divY
-    HORIZONTAL_SECCIONADA_1.append(((xi, yi),(xf, yf), 1))
+        xf = xi - divX
+        yf = yi + divY
+    HORIZONTAL_SECCIONADA_1.append(((xi, yi),(xf, yf)))
     xi -= divX
     xf -= divX
     yi += divY
     yf += divY 
+    
 NUEVO_HORIZONTAL_1 = tuple(HORIZONTAL_SECCIONADA_1)
     
 h2_1 = (-40.82, -208.18)
@@ -221,7 +222,7 @@ for inter4 in range(10):
         yi = -221.65
         xf = xi - divX4
         yf = yi + divY4
-    HORIZONTAL_SECCIONADA_4.append(((xi, yi),(xf, yf), 1))
+    HORIZONTAL_SECCIONADA_4.append(((xi, yi),(xf, yf)))
     xi -= divX4
     xf -= divX4
     yi += divY4
@@ -241,7 +242,7 @@ for inter5 in range(25):
         yi = -250.20
         xf = xi - divX5
         yf = yi + divY5
-    HORIZONTAL_SECCIONADA_5.append(((xi, yi),(xf, yf), 1))
+    HORIZONTAL_SECCIONADA_5.append(((xi, yi),(xf, yf)))
     xi -= divX5
     xf -= divX5
     yi += divY5
@@ -261,7 +262,7 @@ for inter6 in range(28):
         yi = -268.79
         xf = xi - divX6
         yf = yi + divY6
-    HORIZONTAL_SECCIONADA_5.append(((xi, yi),(xf, yf), 1))
+    HORIZONTAL_SECCIONADA_5.append(((xi, yi),(xf, yf)))
     xi -= divX6
     xf -= divX6
     yi += divY6
@@ -281,7 +282,7 @@ for inter6 in range(28):
         yi = -285.74
         xf = xi - divX7
         yf = yi + divY7
-    HORIZONTAL_SECCIONADA_7.append(((xi, yi),(xf, yf), 1))
+    HORIZONTAL_SECCIONADA_7.append(((xi, yi),(xf, yf)))
     xi -= divX7
     xf -= divX7
     yi += divY7
@@ -587,7 +588,7 @@ sim.create_roads([
 # Paths
 path = [
 [1, {"path": [0, 1, 2, 3, 4, 5, 9, 10, 11, 12, 13, 14, 15, 16, 17]}],#1
-[1, {"path": [i for i in range (62, 90)]}],#2
+[1, {"path": [i for i in range (62, 200)]}],#2
 [1, {"path": [0, 1, 2, 3, 7, 12, 13, 14, 15, 16, 17]}],#3
 [1, {"path": [0, 1, 2, 3, 4, 8, 11, 12, 13, 14, 15, 16, 17]}],#4
 [1, {"path": [0, 1, 2, 3, 4, 5, 9, 10, 11, 12, 13, 14, 15, 16, 17]}],#5
