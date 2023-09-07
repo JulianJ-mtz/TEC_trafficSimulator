@@ -48,7 +48,6 @@ class Road:
             
             if(self.type==1 and self.vehicles[0].estado==1 and self.pT<(dt*1000)):
                 self.pT +=dt
-                print("pT"+str( ))
                 for i in range(1, n):
                     lead = self.vehicles[i-1]
                     self.vehicles[i].update(lead, dt)
