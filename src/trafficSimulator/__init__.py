@@ -144,30 +144,7 @@ sim.create_roads([
     EST_MEDIO_L7,  # 39
     EST_MEDIO_R8,  # 40
     EST_MEDIO_T,  # 41
-    EST_MEDIO_CAJONES[0], #42
-    EST_MEDIO_CAJONES[1], #43
-    EST_MEDIO_CAJONES[2], #44
-    EST_MEDIO_CAJONES[3], #45
-    EST_MEDIO_CAJONES[4], #46
-    EST_MEDIO_CAJONES[5], #47
-    EST_MEDIO_CAJONES[6], #48
-    EST_MEDIO_CAJONES[7], #49
-    EST_MEDIO_CAJONES[8], #50
-    EST_MEDIO_CAJONES[9], #51
-    EST_MEDIO_CAJONES[10], #52
-    EST_MEDIO_CAJONES[11], #53
-    EST_MEDIO_CAJONES[12], #54
-    EST_MEDIO_CAJONES[13], #55
-    EST_MEDIO_CAJONES[14], #56
-    EST_MEDIO_CAJONES[15], #57
-    EST_MEDIO_CAJONES[16], #58
-    EST_MEDIO_CAJONES[17], #59
-    EST_MEDIO_CAJONES[18], #60
-    EST_MEDIO_CAJONES[19], #61
-    EST_MEDIO_CAJONES[20], #63
-    EST_MEDIO_CAJONES[21], #64
-    EST_MEDIO_CAJONES[22], #65
-    EST_MEDIO_CAJONES[23], #66>
+   
 ])
 
 # ---- ESTACIONAMIENTO NUEVO ----
@@ -267,60 +244,36 @@ NUEVO_ENTRADA_2 = (e2_1, e2_2)
 NUEVO_ENTRADA_3 = (e3_1, e3_2)
 
 sim.create_roads([
-    NUEVO_VERTICAL_1,
-    NUEVO_VERTICAL_2,
-    NUEVO_VERTICAL_3,
-    NUEVO_VERTICAL_4,
-    NUEVO_VERTICAL_5,
-    NUEVO_VERTICAL_6,
-    NUEVO_VERTICAL_7,
-    NUEVO_VERTICAL_8,
-    NUEVO_VERTICAL_9,
-    NUEVO_VERTICAL_10,
-    NUEVO_VERTICAL_11,
-    NUEVO_VERTICAL_12,
-    NUEVO_VERTICAL_13,
-    NUEVO_VERTICAL_14,
-    NUEVO_VERTICAL_15,
-    NUEVO_HORIZONTAL_1,
-    NUEVO_HORIZONTAL_2,
-    NUEVO_HORIZONTAL_3,
-    NUEVO_HORIZONTAL_4,
-    NUEVO_HORIZONTAL_5,
-    NUEVO_HORIZONTAL_6,
-    NUEVO_HORIZONTAL_7,
-    NUEVO_SALIDAS_1,
-    NUEVO_SALIDAS_2,
-    NUEVO_ENTRADA_1,
-    NUEVO_ENTRADA_2,
-    NUEVO_ENTRADA_3
+    NUEVO_VERTICAL_1, #42
+    NUEVO_VERTICAL_2, #43
+    NUEVO_VERTICAL_3, #44
+    NUEVO_VERTICAL_4, #45
+    NUEVO_VERTICAL_5, #46
+    NUEVO_VERTICAL_6, #47
+    NUEVO_VERTICAL_7, #48
+    NUEVO_VERTICAL_8, #49
+    NUEVO_VERTICAL_9, #50
+    NUEVO_VERTICAL_10,#51
+    NUEVO_VERTICAL_11,#52
+    NUEVO_VERTICAL_12,#53
+    NUEVO_VERTICAL_13,#54
+    NUEVO_VERTICAL_14,#55
+    NUEVO_VERTICAL_15,#56
+    NUEVO_HORIZONTAL_1,#57
+    NUEVO_HORIZONTAL_2,#58
+    NUEVO_HORIZONTAL_3,#59
+    NUEVO_HORIZONTAL_4,#60
+    NUEVO_HORIZONTAL_5,#61
+    NUEVO_HORIZONTAL_6,#62
+    NUEVO_HORIZONTAL_7,#63
+    NUEVO_SALIDAS_1,#64
+    NUEVO_SALIDAS_2,#65
+    NUEVO_ENTRADA_1,#66
+    NUEVO_ENTRADA_2,#67
+    NUEVO_ENTRADA_3#68
 ])
 
-# ---- ESTACIONAMIENTO TERRACERIA ----
 
-g0 = (-49.6102, -249.6164)  # 0
-g1 = (-35.1760, -249.6164)  # 1
-g2 = (-56.5573, -299.9513)  # 2
-g3 = (-62.4260, -313.7672)  # 3
-g4 = (-70.5566, -329.3894)  # 4
-g5 = (-76.4545, -344.1823)  # 5
-g6 = (-83.3353, -358.5668)  # 6
-g7 = (-89.1963, -373.6187)  # 7
-g8 = (-195.9880, -368.1862)  # 8
-g9 = (-188.5682, -353.0461)  # 9
-g10 = (-178.1299, -339.3147)  # 10
-g11 = (-166.1706, -323.7149)  # 11
-g12 = (-153.1128, -307.1783)  # 12
-g13 = (-65.7410, -296.0271)  # 13
-g14 = (-150.8308, -293.1035)  # 14
-g15 = (-167.4109, -288.0571)  # 15
-g16 = (-191.0185, -287.0861)  # 16
-g17 = (-172.8859, -262.5026)  # 17
-g18 = (-128.9339, -209.0373)  # 18
-g19 = (-114.2530, -209.0373)  # 19
-g20 = (-139.4951, -188.8469)  # 20
-g14_15 = (-156.8524, -288.5490)  # 14-15
-g8_9 = (-194.6809, -361.2315)  # 8-9
 
 ## ---- ESTACIONAMIENTO TERRACERIA ----
 
@@ -378,65 +331,92 @@ r18_19 = (g18, g19)
 r19_20 = (g19, g20)
 
 sim.create_roads([
-    r0_1,
-    r1_2,
-    r2_3,
-    r2_13,
-    r3_4,
-    r3_12,
-    r4_5,
-    r4_11,
-    r5_6,
-    r5_10,
-    r6_7,
-    r6_9,
-    r7_8,
-    r8_9_1,
-    r8_9_2,
-    r9_10,
-    r10_11,
-    r11_12,
-    r12_14,
-    r13_14,
-    r14_15_1,
-    r14_15_2,
-    r15_16,
-    r15_17,
-    r16_17,
-    r17_18,
-    r18_19,
-    r19_20
+    r0_1, #69
+    r1_2, #70
+    r2_3, #71
+    r2_13, #72
+    r3_4, #73
+    r3_12, #74
+    r4_5, #75
+    r4_11, #76
+    r5_6, #77
+    r5_10, #78
+    r6_7, #79
+    r6_9, #80
+    r7_8, #81
+    r8_9_1, #82
+    r8_9_2, #83
+    r9_10, #84
+    r10_11, #85
+    r11_12, #86
+    r12_14, #87
+    r13_14, #88
+    r14_15_1, #89
+    r14_15_2, #90
+    r15_16, #91
+    r15_17, #92
+    r16_17, #93
+    r17_18, #94
+    r18_19, #95
+    r19_20 #96
 ])
-# Paths
-path1=[1, {"path": [0, 1, 2, 3, 4, 5, 9, 10, 11, 12, 13, 14, 15, 16, 17]}]#1
-path2=[1, {"path": [0, 1, 2, 6, 13, 14, 15, 16, 17]}]#2
-path3=[1, {"path": [0, 1, 2, 3, 7, 12, 13, 14, 15, 16, 17]}]#3
-path4=[1, {"path": [0, 1, 2, 3, 4, 8, 11, 12, 13, 14, 15, 16, 17]}]#4
-path5=[1, {"path": [0, 1, 2, 3, 4, 5, 9, 10, 11, 12, 13, 14, 15, 16, 17]}]#5
-path6=[1, {"path": [0, 1, 18, 21, 24, 27, 30, 33, 36, 38, 40, 41, 39, 35, 32, 29, 26, 23, 20, 19, 52]}]#6
-path7=[1, {"path": [0, 1, 18, 21, 22, 20, 19, 42]}]#7
-path8=[1, {"path": [0, 1, 18, 21, 24, 25, 23, 20, 19, 43]}]#8
-path9=[1, {"path": [0, 1, 18, 21, 24, 27, 28, 26, 23, 20, 19, 44]}]#9
-path10=[1, {"path": [0, 1, 18, 21, 24, 27, 30, 31, 29, 26, 23, 20, 19, 45]}]#10
-path11=[1, {"path": [0, 1, 18, 21, 24, 27, 30, 33, 34, 32, 31, 29, 26, 23, 20, 19, 46]}]#11
-path12=[1, {"path": [0, 1, 18, 21, 24, 27, 30, 33, 36, 37, 35, 32, 31, 29, 26, 23, 20, 19, 47]}]#12
 
+sim.create_roads([
+
+    #Cajones Javier
+
+    EST_MEDIO_CAJONES[0], #97
+    EST_MEDIO_CAJONES[1], #98
+    EST_MEDIO_CAJONES[2], #99
+    EST_MEDIO_CAJONES[3], #100
+    EST_MEDIO_CAJONES[4], #101
+    EST_MEDIO_CAJONES[5], #102
+    EST_MEDIO_CAJONES[6], #103
+    EST_MEDIO_CAJONES[7], #104
+    EST_MEDIO_CAJONES[8], #105
+    EST_MEDIO_CAJONES[9], #106
+    EST_MEDIO_CAJONES[10], #107
+    EST_MEDIO_CAJONES[11], #108
+    EST_MEDIO_CAJONES[12], #109
+    EST_MEDIO_CAJONES[13], #110
+    EST_MEDIO_CAJONES[14], #111
+    EST_MEDIO_CAJONES[15], #112
+    EST_MEDIO_CAJONES[16], #113
+    EST_MEDIO_CAJONES[17], #114
+    EST_MEDIO_CAJONES[18], #115
+    EST_MEDIO_CAJONES[19], #116
+    EST_MEDIO_CAJONES[20], #117
+    EST_MEDIO_CAJONES[21], #118
+    EST_MEDIO_CAJONES[22], #119
+    EST_MEDIO_CAJONES[23], #120
+
+    #Julian
+
+    #Santiago
+
+    #Gustavo
+])
+
+
+
+# Paths
+path = [
+[1, {"path": [0, 1, 2, 3, 4, 5, 9, 10, 11, 12, 13, 14, 15, 16, 17]}],#1
+[1, {"path": [0, 1, 2, 6, 13, 14, 15, 16, 17]}],#2
+[1, {"path": [0, 1, 2, 3, 7, 12, 13, 14, 15, 16, 17]}],#3
+[1, {"path": [0, 1, 2, 3, 4, 8, 11, 12, 13, 14, 15, 16, 17]}],#4
+[1, {"path": [0, 1, 2, 3, 4, 5, 9, 10, 11, 12, 13, 14, 15, 16, 17]}],#5
+[1, {"path": [0, 1, 18, 21, 24, 27, 30, 33, 36, 38, 40, 41, 39, 35, 32, 29, 26, 23, 20, 19, 52]}],#6
+[1, {"path": [0, 1, 18, 21, 22, 20, 19, 42]}],#7
+[1, {"path": [0, 1, 18, 21, 24, 25, 23, 20, 19, 43]}],#8
+[1, {"path": [0, 1, 18, 21, 24, 27, 28, 26, 23, 20, 19, 44]}],#9
+[1, {"path": [0, 1, 18, 21, 24, 27, 30, 31, 29, 26, 23, 20, 19, 45]}],#10
+[1, {"path": [0, 1, 18, 21, 24, 27, 30, 33, 34, 32, 31, 29, 26, 23, 20, 19, 46]}],#11
+[1, {"path": [0, 1, 18, 21, 24, 27, 30, 33, 36, 37, 35, 32, 31, 29, 26, 23, 20, 19, 47]}],#12
+]
 sim.create_gen({
     'vehicle_rate': 10,
-    'vehicles': [
-        path1,
-        path2,
-        path3,
-        path4,
-        path5,
-        path6,
-        path7,
-        path8,
-        path9,
-        path10,
-        path11,
-        path12,
-    ]
+    'vehicles': path
 })
 
 # Start simulation
