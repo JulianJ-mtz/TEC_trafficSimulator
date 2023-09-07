@@ -579,8 +579,8 @@ sim.create_roads([
 #Javier
 
 #Julian
-# for i in range (0, len(EST_NUEVO_CAJONES)):
-#     sim.create_roads([EST_NUEVO_CAJONES[i]])
+for i in range (0, len(EST_NUEVO_CAJONES)):
+    sim.create_roads([EST_NUEVO_CAJONES[i]])
 #Gustavo
 
 # ]) 
