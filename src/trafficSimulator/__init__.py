@@ -34,22 +34,14 @@ SALIDA = ((7.8019, -30.3946), (-12.2373, -16.9461))
 EstArenaBorregos = [
     INICIO,  # 0
     ENTRADA_BORREGOS,  # 1
-    # INTERSECCION_1L,  # 2
-    # INTERSECCION_2L,  # 3
-    # INTERSECCION_3L,  # 4
-    # INTERSECCION_4L,  # 5
-    #INTERSECCION_1C,  # 6
-    #INTERSECCION_2C,  # 7
-    #INTERSECCION_3C,  # 8
-    #INTERSECCION_4C,  # 9
-    INTERSECCION_1R,  # 10
-    INTERSECCION_2R,  # 11
-    INTERSECCION_3R,  # 12
-    INTERSECCION_4R,  # 13
-    INTERSECCION_0C,  # 14
-    SALIDA_BORREGOS_1,  # 15
-    SALIDA_BORREGOS_2,  # 16
-    SALIDA  # 17
+    INTERSECCION_1R,  # 2
+    INTERSECCION_2R,  # 3
+    INTERSECCION_3R,  # 4
+    INTERSECCION_4R,  # 5
+    INTERSECCION_0C,  # 6
+    SALIDA_BORREGOS_1,  # 7
+    SALIDA_BORREGOS_2,  # 8
+    SALIDA  # 9
 ]
 
 
@@ -63,14 +55,14 @@ x1 = INTERSECCION_4C[0][0]-1
 y1 = INTERSECCION_4C[0][1] - 5.5434
 x2 = x1 - 3.2294
 y2 = 0
-for i in range(11):
+for i in range(11): #CAJONES LATERALES ARENA BOREGOS 10 - 20
     y2 = y1 + 3.9333
     EstArenaBorregos.append(((x1,y1),(x2,y2)))
     InterseccionesLY.append(y1)
     y1 -= 4.5262
 #Añade todas las intersecciones que van a otros caminos
 InterseccionesLY.sort()
-for i in range(len(InterseccionesLY) - 1):
+for i in range(len(InterseccionesLY) - 1): #INTERSECCIONES DE LA ENTRADA AL ESTACIONAMIENTO 21 - 35
     #Utiliza los puntos del arreglo del inicio para crear caminos partidos por el mismo eje x
     EstArenaBorregos.append(((INTERSECCION_4C[0][0],InterseccionesLY[i]),(INTERSECCION_4C[0][0],InterseccionesLY[i+1])))
 
@@ -80,7 +72,7 @@ x1 = INTERSECCION_4C[1][0] - 6.1286 - 2.2776
 y1 = INTERSECCION_4C[1][1] + 1
 x2 = 0
 y2 = y1 + 3.5840
-for i in range(4):
+for i in range(4): #CAJONES INTERSECCION 4 ABAJO DISCAPACITADOS ARENA BORREGOS 36-39
     x2 = x1 + 3.5255
     EstArenaBorregos.append(((x1,y1),(x2,y2)))
     Intersecciones4CX.append(x1)
@@ -91,20 +83,23 @@ x1 = INTERSECCION_4C[1][0] - 6.1286 - 2.2776
 y1 = INTERSECCION_4C[1][1] - 1
 x2 = 0
 y2 = y1 - 3.5840
-for i in range(6):
+for i in range(6): #CAJONES INTERSECCION 4 ARRIBA ARENA BORREGOS 40-45
     x2 = x1 + 3.5255
     EstArenaBorregos.append(((x1,y1),(x2,y2)))
     Intersecciones4CX.append(x1)
     x1 -= 3.5255
 
-#interseccion 4
+
+#INTERSECCIONES 4C ARENA BORREGOS 46-55
 Intersecciones4CX = list(set(Intersecciones4CX))#Remueve los duplicados
 Intersecciones4CX.sort()
 for i in range(len(Intersecciones4CX) - 1):
     #Utiliza los puntos del arreglo del inicio para crear caminos partidos por el mismo eje x
     EstArenaBorregos.append(((Intersecciones4CX[i],INTERSECCION_4C[0][1]),(Intersecciones4CX[i+1],INTERSECCION_4C[0][1])))
 
-#cajones interseccion 3 abajo
+
+
+#CAJONES INTERSECCION 3 ABAJO 56-61
 Intersecciones3CX = [INTERSECCION_3C[0][0],INTERSECCION_3C[1][0]]
 x1 = INTERSECCION_3C[1][0] - 5.6570
 y1 = INTERSECCION_3C[1][1] + 1
@@ -116,7 +111,8 @@ for i in range(6):
     Intersecciones3CX.append(x1)
     x1 -= 3.5255
 
-#cajones interseccion 3 arriba
+
+#CAJONES INTERSECCION 3 ARRIBA 62-68
 x1 = INTERSECCION_3C[1][0] - 6.1297
 y1 = INTERSECCION_3C[1][1] - 1
 x2 = 0
@@ -127,14 +123,14 @@ for i in range(7):
     Intersecciones3CX.append(x1)
     x1 -= 4.5019
 
-#interseccion 3
+#INTERSECCIONES 3C 69 - 82
 Intersecciones3CX = list(set(Intersecciones3CX))#Remueve los duplicados
 Intersecciones3CX.sort(reverse=True)
 for i in range(len(Intersecciones3CX) - 1):
     #Utiliza los puntos del arreglo del inicio para crear caminos partidos por el mismo eje x
     EstArenaBorregos.append(((Intersecciones3CX[i],INTERSECCION_3C[0][1]),(Intersecciones3CX[i+1],INTERSECCION_3C[0][1])))
 
-#cajones interseccion 2 abajo
+#CAJONES INTERSECCION 2 ABAJO 83 - 89
 Intersecciones2CX = [INTERSECCION_2C[0][0],INTERSECCION_2C[1][0]]
 x1 = INTERSECCION_2C[1][0] - 8.8239
 y1 = INTERSECCION_2C[1][1] + 1
@@ -146,7 +142,7 @@ for i in range(7):
     Intersecciones2CX.append(x1)
     x1 -= 4.1806
 
-#cajones interseccion 2 arriba
+#CAJONES INTERSECCION 2 ARRIBA 90 - 97
 x1 = INTERSECCION_2C[1][0] - 6.1297
 y1 = INTERSECCION_2C[1][1] - 1
 x2 = 0
@@ -157,14 +153,14 @@ for i in range(8):
     Intersecciones2CX.append(x1)
     x1 -= 4.1806
 
-#interseccion 2
+#INTERSECCION 2 98 - 113
 Intersecciones2CX = list(set(Intersecciones2CX))#Remueve los duplicados
 Intersecciones2CX.sort()
 for i in range(len(Intersecciones2CX) - 1):
     #Utiliza los puntos del arreglo del inicio para crear caminos partidos por el mismo eje x
     EstArenaBorregos.append(((Intersecciones2CX[i],INTERSECCION_2C[0][1]),(Intersecciones2CX[i+1],INTERSECCION_2C[0][1])))
 
-#cajones interseccion 1 abajo
+#CAJONES INTERSECCION 1 ABAJO 114-120
 Intersecciones1CX = [INTERSECCION_1C[0][0],INTERSECCION_1C[1][0]]
 x1 = INTERSECCION_1C[1][0] - 6.1297
 y1 = INTERSECCION_1C[1][1] + 1
@@ -176,7 +172,7 @@ for i in range(7):
     Intersecciones1CX.append(x1)
     x1 -= 4.1806
 
-#cajones interseccion 1 arriba
+#CAJONES INTERSECCION 1 ARRIBA 121-127
 x1 = INTERSECCION_1C[1][0] - 6.1297
 y1 = INTERSECCION_1C[1][1] - 1
 x2 = 0
@@ -187,15 +183,14 @@ for i in range(7):
     Intersecciones1CX.append(x1)
     x1 -= 4.1806
 
-#interseccion 1
+#INTERSECCIONES 1 128 - 135
 Intersecciones1CX = list(set(Intersecciones1CX))#Remueve los duplicados
 Intersecciones1CX.sort(reverse=True)
 for i in range(len(Intersecciones1CX) - 1):
     #Utiliza los puntos del arreglo del inicio para crear caminos partidos por el mismo eje x
     EstArenaBorregos.append(((Intersecciones1CX[i],INTERSECCION_1C[0][1]),(Intersecciones1CX[i+1],INTERSECCION_1C[0][1])))
 
-
-#cajones interseccion 0 arriba
+#CAJONES INTERSECCION 0 ARRIBA 136 - 143
 Intersecciones0CX = [INTERSECCION_0C[0][0]]
 x1 = INTERSECCION_0C[0][0] - 2.6964
 y1 = INTERSECCION_0C[0][1] - 1
@@ -208,7 +203,7 @@ for i in range(8):
     x1 -= 4
 Intersecciones0CX.append(INTERSECCION_0C[1][0])
 
-#interseccion 1
+#INTERSECCION 0 144 - 152
 for i in range(len(Intersecciones0CX) - 1):
     #Utiliza los puntos del arreglo del inicio para crear caminos partidos por el mismo eje x
     EstArenaBorregos.append(((Intersecciones0CX[i],INTERSECCION_0C[0][1]),(Intersecciones0CX[i+1],INTERSECCION_0C[0][1])))
@@ -573,34 +568,13 @@ sim.create_roads([
     r19_20
 ])
 # Paths
-path1=[1, {"path": [0, 1, 2, 3, 4, 5, 9, 10, 11, 12, 13, 14, 15, 16, 17]}]#1
-path2=[1, {"path": [0, 1, 2, 6, 13, 14, 15, 16, 17]}]#2
-path3=[1, {"path": [0, 1, 2, 3, 7, 12, 13, 14, 15, 16, 17]}]#3
-path4=[1, {"path": [0, 1, 2, 3, 4, 8, 11, 12, 13, 14, 15, 16, 17]}]#4
-path5=[1, {"path": [0, 1, 2, 3, 4, 5, 9, 10, 11, 12, 13, 14, 15, 16, 17]}]#5
-path6=[1, {"path": [0, 1, 18, 21, 24, 27, 30, 33, 36, 38, 40, 41, 39, 35, 32, 29, 26, 23, 20, 19, 52]}]#6
-path7=[1, {"path": [0, 1, 18, 21, 22, 20, 19, 42]}]#7
-path8=[1, {"path": [0, 1, 18, 21, 24, 25, 23, 20, 19, 43]}]#8
-path9=[1, {"path": [0, 1, 18, 21, 24, 27, 28, 26, 23, 20, 19, 44]}]#9
-path10=[1, {"path": [0, 1, 18, 21, 24, 27, 30, 31, 29, 26, 23, 20, 19, 45]}]#10
-path11=[1, {"path": [0, 1, 18, 21, 24, 27, 30, 33, 34, 32, 31, 29, 26, 23, 20, 19, 46]}]#11
-path12=[1, {"path": [0, 1, 18, 21, 24, 27, 30, 33, 36, 37, 35, 32, 31, 29, 26, 23, 20, 19, 47]}]#12
+path1=[1, {"path": [i for i in range(153)]}]#1
 
 sim.create_gen({
     'vehicle_rate': 10,
     'vehicles': [
         path1,
-        path2,
-        path3,
-        path4,
-        path5,
-        path6,
-        path7,
-        path8,
-        path9,
-        path10,
-        path11,
-        path12,
+        path1
     ]
 })
 
