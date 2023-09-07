@@ -18,7 +18,7 @@ class Window:
         """Set default configuration"""
         self.width = 1400
         self.height = 900
-        self.bg_color = (250, 250, 250)
+        self.bg_color = (0, 0, 0)
 
         self.fps = 60
         self.zoom = 5
@@ -237,7 +237,7 @@ class Window:
             # Draw road background
             self.rotated_box(
                 road.start,
-                (road.length, 3.7),
+                (road.length, 2.5),
                 cos=road.angle_cos,
                 sin=road.angle_sin,
                 color=(180, 180, 220),

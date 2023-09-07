@@ -212,6 +212,118 @@ e2_2 = (-104.71, -203.76)
 e3_1 = (-111.90, -193.64)
 e3_2 = (-93.25, -191.87)
 
+# CAJONES
+xi = 0
+yi = 0
+xf = 0 
+yf = 0
+indexCajonNuevos = 0
+cajon_EST_NUEVO = []
+for x in range(194):
+    if (x <= 13):
+        if (x == 0):
+            xi = -84.96
+            yi = -191.84
+            xf = -85.48
+            yf = -201.12
+        cajon_EST_NUEVO.append(((xi, yi),(xf, yf), 1))
+        xi += 2.8
+        xf += 2.8
+        yf -= 0.2
+        yi -= 0.2
+    if (x >= 14 and x <= 31):
+        if(x == 14):
+            xi = -81.50
+            yi = -192.16
+            xf = -81.07
+            yf = -185.07
+        cajon_EST_NUEVO.append(((xi, yi),(xf, yf), 1))
+        xi += 2.8
+        xf += 2.8
+        yf -= 0.2
+        yi -= 0.2
+    if (x >= 32 and x <= 49):
+        if (x == 32):
+            xi = -110.26
+            yi = -218.33
+            xf = -110.72
+            yf = -226.97
+        cajon_EST_NUEVO.append(((xi, yi),(xf, yf), 1))
+        xi += 2.8
+        xf += 2.8
+        yf -= 0.11
+        yi -= 0.11
+    if (x >= 50 and x <= 67):
+        if (x == 50):
+            xi = -104.54
+            yi = -218.83
+            xf = -104.15
+            yf = -212.57
+        cajon_EST_NUEVO.append(((xi, yi),(xf, yf), 1))
+        xi += 2.8
+        xf += 2.8
+        yf -= 0.11
+        yi -= 0.11
+    if (x >= 68 and x <= 91):
+        if (x == 68):
+            xi = -134.83
+            yi = -247.72
+            xf = -135.30
+            yf = -255.35
+        cajon_EST_NUEVO.append(((xi, yi),(xf, yf), 1))
+        xi += 2.8
+        xf += 2.8
+        yf -= 0.11
+        yi -= 0.11
+    if (x >= 92 and x <= 112):
+        if (x == 92):
+            xi = -126.73
+            yi = -248.10
+            xf = -126.44
+            yf = -239.81
+        cajon_EST_NUEVO.append(((xi, yi),(xf, yf), 1))
+        xi += 2.8
+        xf += 2.8
+        yf -= 0.11
+        yi -= 0.11
+    if (x >= 113 and x < 141):
+        if (x == 113):
+            xi = -148.38
+            yi = -265.84
+            xf = -148.83
+            yf = -272.20
+        cajon_EST_NUEVO.append(((xi, yi),(xf, yf), 1))
+        xi += 2.8
+        xf += 2.8
+        yf -= 0.11
+        yi -= 0.11
+    if (x >= 142 and x < 166):
+        if (x == 142):
+            xi = -138.44
+            yi = -266.28
+            xf = -138.02
+            yf = -258.51
+        cajon_EST_NUEVO.append(((xi, yi),(xf, yf), 1))
+        xi += 2.8
+        xf += 2.8
+        yf -= 0.11
+        yi -= 0.11
+    if (x >= 167 and x <= 194):
+        if (x == 167):
+            xi = -147.18
+            yi = -283.33
+            xf = -146.78
+            yf = -276.06
+        cajon_EST_NUEVO.append(((xi, yi),(xf, yf), 1))
+        xi += 2.8
+        xf += 2.8
+        yf -= 0.11
+        yi -= 0.11
+    
+    
+    
+EST_NUEVO_CAJONES = tuple(cajon_EST_NUEVO)
+
 NUEVO_VERTICAL_1 = (v1_1, v1_2)
 NUEVO_VERTICAL_2 = (v2_1, v2_2)
 NUEVO_VERTICAL_3 = (v3_1, v3_2)
@@ -361,43 +473,98 @@ sim.create_roads([
     r19_20 #96
 ])
 
-sim.create_roads([
+# sim.create_roads([
 
-    #Cajones Javier
+#     #Cajones Javier
 
-    EST_MEDIO_CAJONES[0], #97
-    EST_MEDIO_CAJONES[1], #98
-    EST_MEDIO_CAJONES[2], #99
-    EST_MEDIO_CAJONES[3], #100
-    EST_MEDIO_CAJONES[4], #101
-    EST_MEDIO_CAJONES[5], #102
-    EST_MEDIO_CAJONES[6], #103
-    EST_MEDIO_CAJONES[7], #104
-    EST_MEDIO_CAJONES[8], #105
-    EST_MEDIO_CAJONES[9], #106
-    EST_MEDIO_CAJONES[10], #107
-    EST_MEDIO_CAJONES[11], #108
-    EST_MEDIO_CAJONES[12], #109
-    EST_MEDIO_CAJONES[13], #110
-    EST_MEDIO_CAJONES[14], #111
-    EST_MEDIO_CAJONES[15], #112
-    EST_MEDIO_CAJONES[16], #113
-    EST_MEDIO_CAJONES[17], #114
-    EST_MEDIO_CAJONES[18], #115
-    EST_MEDIO_CAJONES[19], #116
-    EST_MEDIO_CAJONES[20], #117
-    EST_MEDIO_CAJONES[21], #118
-    EST_MEDIO_CAJONES[22], #119
-    EST_MEDIO_CAJONES[23], #120
+#     EST_MEDIO_CAJONES[0], #97
+#     EST_MEDIO_CAJONES[1], #98
+#     EST_MEDIO_CAJONES[2], #99
+#     EST_MEDIO_CAJONES[3], #100
+#     EST_MEDIO_CAJONES[4], #101
+#     EST_MEDIO_CAJONES[5], #102
+#     EST_MEDIO_CAJONES[6], #103
+#     EST_MEDIO_CAJONES[7], #104
+#     EST_MEDIO_CAJONES[8], #105
+#     EST_MEDIO_CAJONES[9], #106
+#     EST_MEDIO_CAJONES[10], #107
+#     EST_MEDIO_CAJONES[11], #108
+#     EST_MEDIO_CAJONES[12], #109
+#     EST_MEDIO_CAJONES[13], #110
+#     EST_MEDIO_CAJONES[14], #111
+#     EST_MEDIO_CAJONES[15], #112
+#     EST_MEDIO_CAJONES[16], #113
+#     EST_MEDIO_CAJONES[17], #114
+#     EST_MEDIO_CAJONES[18], #115
+#     EST_MEDIO_CAJONES[19], #116
+#     EST_MEDIO_CAJONES[20], #117
+#     EST_MEDIO_CAJONES[21], #118
+#     EST_MEDIO_CAJONES[22], #119
+#     EST_MEDIO_CAJONES[23], #120
 
-    #Julian
+#     #Julian
+#     EST_NUEVO_CAJONES[1],
+#     EST_NUEVO_CAJONES[2],
+#     EST_NUEVO_CAJONES[3],
+#     EST_NUEVO_CAJONES[4],
+#     EST_NUEVO_CAJONES[5],
+#     EST_NUEVO_CAJONES[6],
+#     EST_NUEVO_CAJONES[7],
+#     EST_NUEVO_CAJONES[8],
+#     EST_NUEVO_CAJONES[9],
+#     EST_NUEVO_CAJONES[10],
+#     EST_NUEVO_CAJONES[11],
+#     EST_NUEVO_CAJONES[12],
+#     EST_NUEVO_CAJONES[13],
+#     EST_NUEVO_CAJONES[14],
+#     EST_NUEVO_CAJONES[15],
+#     EST_NUEVO_CAJONES[16],
+#     EST_NUEVO_CAJONES[17],
+#     EST_NUEVO_CAJONES[18],
+#     EST_NUEVO_CAJONES[19],
+#     EST_NUEVO_CAJONES[20],
+#     EST_NUEVO_CAJONES[21],
+#     EST_NUEVO_CAJONES[22],
+#     EST_NUEVO_CAJONES[23],
+#     EST_NUEVO_CAJONES[24],
+#     EST_NUEVO_CAJONES[25],
+#     EST_NUEVO_CAJONES[26],
+#     EST_NUEVO_CAJONES[27],
+#     EST_NUEVO_CAJONES[28],
+#     EST_NUEVO_CAJONES[29],
+#     EST_NUEVO_CAJONES[30],
+#     EST_NUEVO_CAJONES[31], 
+#     EST_NUEVO_CAJONES[32],
+#     EST_NUEVO_CAJONES[33],
+#     EST_NUEVO_CAJONES[34],      
+#     EST_NUEVO_CAJONES[35],
+#     EST_NUEVO_CAJONES[36],
+#     EST_NUEVO_CAJONES[37],
+#     EST_NUEVO_CAJONES[38],
+#     EST_NUEVO_CAJONES[39],
+#     EST_NUEVO_CAJONES[40],
+#     EST_NUEVO_CAJONES[41],
+#     EST_NUEVO_CAJONES[42],
+#     EST_NUEVO_CAJONES[43],
+#     EST_NUEVO_CAJONES[44],
+#     EST_NUEVO_CAJONES[45],
+#     EST_NUEVO_CAJONES[46],
+#     EST_NUEVO_CAJONES[47],
+#     EST_NUEVO_CAJONES[48],
+#     EST_NUEVO_CAJONES[49],
+#     EST_NUEVO_CAJONES[50],
+#     EST_NUEVO_CAJONES[51],     
+#     EST_NUEVO_CAJONES[52],
 
     #Santiago
 
     #Gustavo
-])
+# ]) 
 
+for i in range (0, len(EST_NUEVO_CAJONES)):
+    sim.create_roads([EST_NUEVO_CAJONES[i]])
 
+# for cajon in 
 
 # Paths
 path = [
