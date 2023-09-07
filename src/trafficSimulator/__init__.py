@@ -185,18 +185,108 @@ v15_2 = (-82.8175, -168.5878)
 # HORIZONTALES
 h1_1 = (-28.96, -196.92)
 h1_2 = (-93.25, -191.87)
+res1 = 93.25 - 28.96
+divX = res1 / 19
+res2 = 196.92 - 191.87
+divY = res2 / 19
+HORIZONTAL_SECCIONADA_1 = []
+for inter1 in range(19):
+    if (inter1 == 0 and inter1 <= 19):
+        xi = -31.96
+        yi = -195.92
+        xf = xi + divX
+        yf = yi - divY
+    HORIZONTAL_SECCIONADA_1.append(((xi, yi),(xf, yf), 1))
+    xi -= divX
+    xf -= divX
+    yi += divY
+    yf += divY 
+NUEVO_HORIZONTAL_1 = tuple(HORIZONTAL_SECCIONADA_1)
+    
 h2_1 = (-40.82, -208.18)
 h2_2 = (-104.71, -203.76)
 h3_1 = (-46.08, -212.96)
-h3_2 = (-114.2530, -208.69)
+h3_2 = (-114.25, -208.69)
+
 h4_1 = (-55.18, -221.65)
 h4_2 = (-113.92, -218.92)
+resX4 = 113.92 - 55.18
+divX4 = resX4 / 20
+resY4 = 221.65 - 218.92
+divY4 = resY4 / 20
+HORIZONTAL_SECCIONADA_4 = []
+for inter4 in range(20):
+    if (inter4 == 0 and inter4 <= 20):
+        xi = -58.18
+        yi = -221.65
+        xf = xi + divX4
+        yf = yi - divY4
+    HORIZONTAL_SECCIONADA_4.append(((xi, yi),(xf, yf), 1))
+    xi -= divX4
+    xf -= divX4
+    yi += divY4
+    yf += divY4
+NUEVO_HORIZONTAL_4 = tuple(HORIZONTAL_SECCIONADA_4)
+
 h5_1 = (-67.29, -250.20)
 h5_2 = (-136.68, -246.70)
+resX5 = 136.68 - 67.29
+divX5 = resX5 / 25
+resY5 = 250.20 - 246.70
+divY5 = resY5 / 25
+HORIZONTAL_SECCIONADA_5 = []
+for inter5 in range(25):
+    if (inter5 == 0 and inter5 <= 25):
+        xi = -69.29
+        yi = -250.20
+        xf = xi + divX5
+        yf = yi - divY5
+    HORIZONTAL_SECCIONADA_5.append(((xi, yi),(xf, yf), 1))
+    xi -= divX5
+    xf -= divX5
+    yi += divY5
+    yf += divY5
+NUEVO_HORIZONTAL_5 = tuple(HORIZONTAL_SECCIONADA_5)
+
 h6_1 = (-67.99, -268.79)
 h6_2 = (-152.39, -265.03)
+resX6 = 152.39 - 67.99
+divX6 = resX6 / 28
+resY6 = 268.79 - 265.03
+divY6 = resY6 / 28
+HORIZONTAL_SECCIONADA_6 = []
+for inter6 in range(28):
+    if (inter6 == 0 and inter6 <= 28):
+        xi = -70.99
+        yi = -268.79
+        xf = xi + divX6
+        yf = yi - divY6
+    HORIZONTAL_SECCIONADA_5.append(((xi, yi),(xf, yf), 1))
+    xi -= divX6
+    xf -= divX6
+    yi += divY6
+    yf += divY6
+NUEVO_HORIZONTAL_6 = tuple(HORIZONTAL_SECCIONADA_5)
+
 h7_1 = (-68.69, -285.74)
 h7_2 = (-151.02, -282.50)
+resX7 = 151.02 - 68.69
+divX7 = resX7 / 28
+resY7 = 285.74 - 282.50
+divY7 = resY7 / 28
+HORIZONTAL_SECCIONADA_7 = []
+for inter6 in range(28):
+    if (inter6 == 0 and inter6 <= 28):
+        xi = -72.69
+        yi = -285.74
+        xf = xi + divX7
+        yf = yi - divY7
+    HORIZONTAL_SECCIONADA_7.append(((xi, yi),(xf, yf), 1))
+    xi -= divX7
+    xf -= divX7
+    yi += divY7
+    yf += divY7
+NUEVO_HORIZONTAL_7 = tuple(HORIZONTAL_SECCIONADA_7)
 
 # SALIDA
 s1_1 = (-113.92, -218.92)
@@ -320,8 +410,6 @@ for x in range(194):
         yf -= 0.11
         yi -= 0.11
     
-    
-    
 EST_NUEVO_CAJONES = tuple(cajon_EST_NUEVO)
 
 NUEVO_VERTICAL_1 = (v1_1, v1_2)
@@ -341,13 +429,8 @@ NUEVO_VERTICAL_13 = (v13_1, v13_2)
 NUEVO_VERTICAL_14 = (v14_1, v14_2)
 NUEVO_VERTICAL_15 = (v15_1, v15_2)
 
-NUEVO_HORIZONTAL_1 = (h1_1, h1_2)
-NUEVO_HORIZONTAL_2 = (h2_1, h2_2)
+NUEVO_HORIZONTAL_2 = (h2_1, h2_2) 
 NUEVO_HORIZONTAL_3 = (h3_1, h3_2)
-NUEVO_HORIZONTAL_4 = (h4_1, h4_2)
-NUEVO_HORIZONTAL_5 = (h5_1, h5_2)
-NUEVO_HORIZONTAL_6 = (h6_1, h6_2)
-NUEVO_HORIZONTAL_7 = (h7_1, h7_2)
 
 NUEVO_SALIDAS_1 = (s1_1, s1_2)
 NUEVO_SALIDAS_2 = (s2_1, s2_2)
@@ -371,47 +454,63 @@ sim.create_roads([
     NUEVO_VERTICAL_13,#54
     NUEVO_VERTICAL_14,#55
     NUEVO_VERTICAL_15,#56
-    NUEVO_HORIZONTAL_1,#57
-    NUEVO_HORIZONTAL_2,#58
-    NUEVO_HORIZONTAL_3,#59
-    NUEVO_HORIZONTAL_4,#60
-    NUEVO_HORIZONTAL_5,#61
-    NUEVO_HORIZONTAL_6,#62
-    NUEVO_HORIZONTAL_7,#63
-    NUEVO_SALIDAS_1,#64
-    NUEVO_SALIDAS_2,#65
-    NUEVO_ENTRADA_1,#66
-    NUEVO_ENTRADA_2,#67
-    NUEVO_ENTRADA_3#68
+    NUEVO_SALIDAS_1,#57
+    NUEVO_SALIDAS_2,#58
+    NUEVO_ENTRADA_1,#59
+    NUEVO_ENTRADA_2,#60
+    NUEVO_ENTRADA_3#61
 ])
 
+# intersec: 20 index 62 a 82
+for i in range(0, len(NUEVO_HORIZONTAL_1)):
+    sim.create_roads([NUEVO_HORIZONTAL_1[i]])
+    
+sim.create_roads([
+    NUEVO_HORIZONTAL_2, # 83
+    NUEVO_HORIZONTAL_3  # 84
+])
 
+# intersec: 21 index 83 a 104
+for i in range(0, len(NUEVO_HORIZONTAL_4)):
+    sim.create_roads([NUEVO_HORIZONTAL_4[i]])
+    
+# intersec: 26 index 105 a 131
+for i in range(0, len(NUEVO_HORIZONTAL_5)):
+    sim.create_roads([NUEVO_HORIZONTAL_5[i]])
 
+# intersec: 29 index 132 a 161
+for i in range(0, len(NUEVO_HORIZONTAL_6)):
+    sim.create_roads([NUEVO_HORIZONTAL_6[i]])
+
+# intersec: 29 index 162 a 190
+for i in range(0, len(NUEVO_HORIZONTAL_7)):
+    sim.create_roads([NUEVO_HORIZONTAL_7[i]])
+    
 ## ---- ESTACIONAMIENTO TERRACERIA ----
 
-g0 = (-49.6102, -249.6164) #0
-g1 = (-35.1760, -249.6164) #1
-g2 = (-56.5573, -299.9513) #2
-g3 = (-62.4260, -313.7672) #3
-g4 = (-70.5566, -329.3894) #4
-g5 = (-76.4545, -344.1823) #5
-g6 = (-83.3353, -358.5668) #6
-g7 = (-89.1963, -373.6187) #7
-g8 = (-195.9880, -368.1862) #8
-g9 = (-188.5682, -353.0461) #9
-g10 = (-178.1299, -339.3147) #10
-g11 = (-166.1706, -323.7149) #11
-g12 = (-153.1128, -307.1783) #12
-g13 = (-65.7410, -296.0271) #13
-g14 = (-150.8308, -293.1035) #14
-g15 = (-167.4109, -288.0571) #15
-g16 = (-191.0185, -287.0861) #16
-g17 = (-172.8859, -262.5026) #17
-g18 = (-128.9339, -209.0373) #18
-g19 = (-114.2530, -209.0373) #19
-g20 = (-139.4951, -188.8469) #20
-g14_15 = (-156.8524, -288.5490) # 14-15
-g8_9 = (-194.6809, -361.2315) #8-9
+g0 = (-49.6102, -249.6164) 
+g1 = (-35.1760, -249.6164) 
+g2 = (-56.5573, -299.9513) 
+g3 = (-62.4260, -313.7672) 
+g4 = (-70.5566, -329.3894) 
+g5 = (-76.4545, -344.1823) 
+g6 = (-83.3353, -358.5668) 
+g7 = (-89.1963, -373.6187) 
+g8 = (-195.9880, -368.1862) 
+g9 = (-188.5682, -353.0461) 
+g10 = (-178.1299, -339.3147) 
+g11 = (-166.1706, -323.7149) 
+g12 = (-153.1128, -307.1783) 
+g13 = (-65.7410, -296.0271) 
+g14 = (-150.8308, -293.1035) 
+g15 = (-167.4109, -288.0571) 
+g16 = (-191.0185, -287.0861) 
+g17 = (-172.8859, -262.5026) 
+g18 = (-128.9339, -209.0373) 
+g19 = (-114.2530, -209.0373) 
+g20 = (-139.4951, -188.8469) 
+g14_15 = (-156.8524, -288.5490) 
+g8_9 = (-194.6809, -361.2315) 
 
 r0_1 = (g0, g1)
 r1_2 = (g1, g2)
@@ -443,128 +542,47 @@ r18_19 = (g18, g19)
 r19_20 = (g19, g20)
 
 sim.create_roads([
-    r0_1, #69
-    r1_2, #70
-    r2_3, #71
-    r2_13, #72
-    r3_4, #73
-    r3_12, #74
-    r4_5, #75
-    r4_11, #76
-    r5_6, #77
-    r5_10, #78
-    r6_7, #79
-    r6_9, #80
-    r7_8, #81
-    r8_9_1, #82
-    r8_9_2, #83
-    r9_10, #84
-    r10_11, #85
-    r11_12, #86
-    r12_14, #87
-    r13_14, #88
-    r14_15_1, #89
-    r14_15_2, #90
-    r15_16, #91
-    r15_17, #92
-    r16_17, #93
-    r17_18, #94
-    r18_19, #95
-    r19_20 #96
+    r0_1,       #191
+    r1_2,       #192
+    r2_3,       #193
+    r2_13,      #194
+    r3_4,       #195
+    r3_12,      #196
+    r4_5,       #197
+    r4_11,      #198
+    r5_6,       #199
+    r5_10,      #200
+    r6_7,       #201
+    r6_9,       #202
+    r7_8,       #203
+    r8_9_1,     #204
+    r8_9_2,     #205
+    r9_10,      #206
+    r10_11,     #207
+    r11_12,     #208
+    r12_14,     #209
+    r13_14,     #210
+    r14_15_1,   #211
+    r14_15_2,   #212
+    r15_16,     #213
+    r15_17,     #214
+    r16_17,     #215
+    r17_18,     #216
+    r18_19,     #217
+    r19_20      #218
 ])
 
 # sim.create_roads([
+#Santiago
 
-#     #Cajones Javier
+#Javier
 
-#     EST_MEDIO_CAJONES[0], #97
-#     EST_MEDIO_CAJONES[1], #98
-#     EST_MEDIO_CAJONES[2], #99
-#     EST_MEDIO_CAJONES[3], #100
-#     EST_MEDIO_CAJONES[4], #101
-#     EST_MEDIO_CAJONES[5], #102
-#     EST_MEDIO_CAJONES[6], #103
-#     EST_MEDIO_CAJONES[7], #104
-#     EST_MEDIO_CAJONES[8], #105
-#     EST_MEDIO_CAJONES[9], #106
-#     EST_MEDIO_CAJONES[10], #107
-#     EST_MEDIO_CAJONES[11], #108
-#     EST_MEDIO_CAJONES[12], #109
-#     EST_MEDIO_CAJONES[13], #110
-#     EST_MEDIO_CAJONES[14], #111
-#     EST_MEDIO_CAJONES[15], #112
-#     EST_MEDIO_CAJONES[16], #113
-#     EST_MEDIO_CAJONES[17], #114
-#     EST_MEDIO_CAJONES[18], #115
-#     EST_MEDIO_CAJONES[19], #116
-#     EST_MEDIO_CAJONES[20], #117
-#     EST_MEDIO_CAJONES[21], #118
-#     EST_MEDIO_CAJONES[22], #119
-#     EST_MEDIO_CAJONES[23], #120
-
-#     #Julian
-#     EST_NUEVO_CAJONES[1],
-#     EST_NUEVO_CAJONES[2],
-#     EST_NUEVO_CAJONES[3],
-#     EST_NUEVO_CAJONES[4],
-#     EST_NUEVO_CAJONES[5],
-#     EST_NUEVO_CAJONES[6],
-#     EST_NUEVO_CAJONES[7],
-#     EST_NUEVO_CAJONES[8],
-#     EST_NUEVO_CAJONES[9],
-#     EST_NUEVO_CAJONES[10],
-#     EST_NUEVO_CAJONES[11],
-#     EST_NUEVO_CAJONES[12],
-#     EST_NUEVO_CAJONES[13],
-#     EST_NUEVO_CAJONES[14],
-#     EST_NUEVO_CAJONES[15],
-#     EST_NUEVO_CAJONES[16],
-#     EST_NUEVO_CAJONES[17],
-#     EST_NUEVO_CAJONES[18],
-#     EST_NUEVO_CAJONES[19],
-#     EST_NUEVO_CAJONES[20],
-#     EST_NUEVO_CAJONES[21],
-#     EST_NUEVO_CAJONES[22],
-#     EST_NUEVO_CAJONES[23],
-#     EST_NUEVO_CAJONES[24],
-#     EST_NUEVO_CAJONES[25],
-#     EST_NUEVO_CAJONES[26],
-#     EST_NUEVO_CAJONES[27],
-#     EST_NUEVO_CAJONES[28],
-#     EST_NUEVO_CAJONES[29],
-#     EST_NUEVO_CAJONES[30],
-#     EST_NUEVO_CAJONES[31], 
-#     EST_NUEVO_CAJONES[32],
-#     EST_NUEVO_CAJONES[33],
-#     EST_NUEVO_CAJONES[34],      
-#     EST_NUEVO_CAJONES[35],
-#     EST_NUEVO_CAJONES[36],
-#     EST_NUEVO_CAJONES[37],
-#     EST_NUEVO_CAJONES[38],
-#     EST_NUEVO_CAJONES[39],
-#     EST_NUEVO_CAJONES[40],
-#     EST_NUEVO_CAJONES[41],
-#     EST_NUEVO_CAJONES[42],
-#     EST_NUEVO_CAJONES[43],
-#     EST_NUEVO_CAJONES[44],
-#     EST_NUEVO_CAJONES[45],
-#     EST_NUEVO_CAJONES[46],
-#     EST_NUEVO_CAJONES[47],
-#     EST_NUEVO_CAJONES[48],
-#     EST_NUEVO_CAJONES[49],
-#     EST_NUEVO_CAJONES[50],
-#     EST_NUEVO_CAJONES[51],     
-#     EST_NUEVO_CAJONES[52],
-
-    #Santiago
-
-    #Gustavo
-# ]) 
-
+#Julian
 for i in range (0, len(EST_NUEVO_CAJONES)):
     sim.create_roads([EST_NUEVO_CAJONES[i]])
+#Gustavo
 
-# for cajon in 
+# ]) 
 
 # Paths
 path = [
