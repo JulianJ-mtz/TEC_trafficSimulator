@@ -333,10 +333,12 @@ sim.create_roads([
     EST_MEDIO_T1,  # 48
     EST_MEDIO_T2,  # 49
 ])
-
 for i in range(0, len(EST_MEDIO_CAMINO)):
-    sim.create_roads([EST_MEDIO_CAMINO[i]])#50-235
+    sim.create_roads([EST_MEDIO_CAMINO[i]])#(50-61):EST_MEDIO_B_ABAJO/(62-77):EST_MEDIO_B_ARRIBA/(-235):EST_MEDIO_T_ARRIBA
 
+
+for i in range(0, len(EST_MEDIO_CAJONES)):
+    sim.create_roads([EST_MEDIO_CAJONES[i]])#(236-247):EST_MEDIO_B_CAJONES_ABAJO/(248-263):EST_MEDIO_B_CAJONES_ARRIBA
 # ---- ESTACIONAMIENTO NUEVO ----
 # VERTICALES DERECHA
 v1_1 = (-8.7637, -173.0237)
@@ -552,8 +554,7 @@ sim.create_roads([
 ])
 
 #Cajones Javier
-for i in range(0, len(EST_MEDIO_CAJONES)):
-    sim.create_roads([EST_MEDIO_CAJONES[i]])#
+
 
 #Julian
 #Santiago
@@ -568,8 +569,8 @@ path = [
 [1, {"path": [0, 1, 2, 3, 4, 8, 11, 12, 13, 14, 15, 16, 17]}],#4
 [1, {"path": [0, 1, 2, 3, 4, 5, 9, 10, 11, 12, 13, 14, 15, 16, 17]}],#5
 [1, {"path": [0, 1, 18, 21, 24, 27, 30, 33, 36, 38, 40, 41, 39, 35, 32, 29, 26, 23, 20, 19, 52]}],#6
-[1, {"path": [0, 1, 18, 21, 22, 20, 19, 42]}],#7
-[1, {"path": [0, 1, 18, 21, 24, 25, 23, 20, 19, 43]}],#8
+[1, {"path": [0, 1, 18, 22, 23, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 21, 19, 236]}],#7
+[1, {"path": [0, 1, 18, 21, 23, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 22, 19, 50, 237]}],#8
 [1, {"path": [0, 1, 18, 21, 24, 27, 28, 26, 23, 20, 19, 44]}],#9
 [1, {"path": [0, 1, 18, 21, 24, 27, 30, 31, 29, 26, 23, 20, 19, 45]}],#10
 [1, {"path": [0, 1, 18, 21, 24, 27, 30, 33, 34, 32, 31, 29, 26, 23, 20, 19, 46]}],#11
