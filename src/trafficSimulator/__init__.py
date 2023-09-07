@@ -129,7 +129,7 @@ for i in range(7):
 
 #interseccion 3
 Intersecciones3CX = list(set(Intersecciones3CX))#Remueve los duplicados
-Intersecciones3CX.sort()
+Intersecciones3CX.sort(reverse=True)
 for i in range(len(Intersecciones3CX) - 1):
     #Utiliza los puntos del arreglo del inicio para crear caminos partidos por el mismo eje x
     EstArenaBorregos.append(((Intersecciones3CX[i],INTERSECCION_3C[0][1]),(Intersecciones3CX[i+1],INTERSECCION_3C[0][1])))
@@ -189,7 +189,7 @@ for i in range(7):
 
 #interseccion 1
 Intersecciones1CX = list(set(Intersecciones1CX))#Remueve los duplicados
-Intersecciones1CX.sort()
+Intersecciones1CX.sort(reverse=True)
 for i in range(len(Intersecciones1CX) - 1):
     #Utiliza los puntos del arreglo del inicio para crear caminos partidos por el mismo eje x
     EstArenaBorregos.append(((Intersecciones1CX[i],INTERSECCION_1C[0][1]),(Intersecciones1CX[i+1],INTERSECCION_1C[0][1])))
