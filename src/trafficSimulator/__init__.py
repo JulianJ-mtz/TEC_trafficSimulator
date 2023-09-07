@@ -52,36 +52,45 @@ sim.create_roads([
 
 # ---- ESTACIONAMIENTO MEDIO ----
 ENTRADA_EST_MEDIO = ((31.8606, -26.9761), (25.7451, -42.7844))
-EST_MEDIO_B = ((-19.9238, -39.1975), (25.7451, -42.7844))
+EST_MEDIO_B1 = ((-19.9238, -39.1975), (-12.3963, -39.9349))
+EST_MEDIO_B2 = ((21.1641, -41.8117), (25.7451, -41.8117))
 EST_MEDIO_L1 = ((-31.9968, -57.6005), (-17.9238, -39.1975))
 EST_MEDIO_R1 = ((25.7451, -42.7844), (18.7474, -60.7765))
-EST_MEDIO_INTERSECCION1 = ((18.7474, -60.7765), (-31.9968, -57.6005))
+EST_MEDIO_INTERSECCION1_1 = ((18.7474, -59.7765), (12.7740, -59.6201))
+EST_MEDIO_INTERSECCION1_2 = ((-29.1765, -57.1177), (-31.9968, -56.7765))
 EST_MEDIO_L2 = ((-46.1621, -76.3309), (-31.9968, -57.6005))
 EST_MEDIO_R2 = ((18.7474, -60.7765), (14.8199, -79.5145))
-EST_MEDIO_INTERSECCION2 = ((14.8199, -79.5145), (-46.1621, -76.3309))
+EST_MEDIO_INTERSECCION2_1 = ((14.8199, -79.5145), (15.5707, -79.5145))
+EST_MEDIO_INTERSECCION2_2 = ((-43.1600, -76.2301), (-46.1621, -76.3309))
 EST_MEDIO_L3 = ((-59.7169, -94.2937), (-46.1621, -76.3309))
 EST_MEDIO_R3 = ((14.8199, -79.5145), (13.4589, -98.2519))
-EST_MEDIO_INTERSECCION3 = ((13.4589, -98.2519), (-59.7169, -94.2937))
+EST_MEDIO_INTERSECCION3_1 = ((13.4589, -98.2519), (11.7707, -98.2519))
+EST_MEDIO_INTERSECCION3_2 = ((-58.1468, -94.3419), (-59.7169, -94.2937))
 EST_MEDIO_L4 = ((-73.6444, -112.51092), (-59.7169, -94.2937))
 EST_MEDIO_R4 = ((13.4589, -98.2519), (12.0715, -117.39122))
-EST_MEDIO_INTERSECCION4 = ((12.0715, -117.39122), (-73.6444, -112.51092))
+EST_MEDIO_INTERSECCION4_1 = ((12.0715, -117.39122), (10.5707, -117.39122))
+EST_MEDIO_INTERSECCION4_2 = ((-67.7369, -113.01202), (-73.6444, -112.51092))
 EST_MEDIO_L5 = ((-80.1746, -131.3942), (-73.6444, -112.51092))
 EST_MEDIO_R5 = ((12.0715, -117.39122), (10.6169, -135.9693))
-EST_MEDIO_INTERSECCION5 = ((10.6169, -135.9693), (-80.1746, -131.3942))
+EST_MEDIO_INTERSECCION5_1 = ((10.6169, -135.9693), (8.8466, -135.9693))
+EST_MEDIO_INTERSECCION5_2 = ((-77.8511, -131.1209), (-80.1746, -131.3942))
 EST_MEDIO_L6 = ((-81.5118, -150.2121), (-80.1746, -131.3942))
 EST_MEDIO_R6 = ((10.6169, -135.9693), (7.59559, -155.39970))
-EST_MEDIO_INTERSECCION6 = ((7.59559, -155.39970), (-81.5118, -150.2121))
+EST_MEDIO_INTERSECCION6_1 = ((7.59559, -155.39970), (5.3963, -155.3997))
+EST_MEDIO_INTERSECCION6_2 = ((-67.3179, -151.3333), (-81.5118, -150.2121))
 EST_MEDIO_R7 = ((7.59559, -155.39970), (9.3492, -153.5104))
 EST_MEDIO_L7 = ((-82.8175, -168.5878), (-81.5118, -150.2121))
 EST_MEDIO_R8 = ((9.3492, -153.5104), (-8.7637, -173.0237))
-EST_MEDIO_T = ((-8.7637, -173.0237), (-82.8175, -168.5878))
+EST_MEDIO_T1 = ((-8.7637, -173.0237), (-9.7637, -173.0237))
+EST_MEDIO_T2 = ((-81.47790000000002, -168.95730000000023), (-82.8175, -168.5878))
+
 # ---- CAJONES:ESTACIONAMIENTO MEDIO ----
 coordX1=0
 coordX2=0
 coordY1=0
 coordY2=0
-indexCajon=0
 cajon_EST_MEDIO=[]
+estacion_MEDIO_CAMINO_B=[]
 for x in range(354):
     if (x<=11):
         if(x==0):
@@ -90,10 +99,13 @@ for x in range(354):
             coordY1=-39.9349
             coordY2=-33.7938
         cajon_EST_MEDIO.append(((coordX1,coordY1),(coordX2,coordY2),1))
+        oldCoordX1=coordX1
         coordX1=coordX1+2.7967
         coordX2=coordX2+2.7967
+        oldCoordY1=coordY1
         coordY1=coordY1-0.1564
         coordY2=coordY2-0.1564
+        estacion_MEDIO_CAMINO_B.append(((oldCoordX1,oldCoordY1),(coordX1,coordY1)))#11
     if( x>=12 and x<=22):
         if(x==12):
             coordY1= -33.7938 - 6.1411
@@ -102,51 +114,231 @@ for x in range(354):
             coordX2= -12.5427
         coordX1=coordX1+2.7967
         coordX2=coordX2+2.7967
+        
         coordY1=coordY1-0.1564
         coordY2=coordY2-0.1564
         cajon_EST_MEDIO.append(((coordX1,coordY1),(coordX2,coordY2),1))
     if( x>=23 and x<=35):
         if(x==23):
-            coordY1= -33.7938 - 6.1411
-            coordY2= -39.9349 - 6.1411
-            coordX1= -12.3963
-            coordX2= -12.5427
-        coordX1=coordX1+2.7967
-        coordX2=coordX2+2.7967
-        coordY1=coordY1-0.1564
-        coordY2=coordY2-0.1564
+            coordY1= -59.6201
+            coordY2= -46.076 - 6.1411
+            coordX1= 15.5707
+            coordX2= 15.4243
+        coordX1=coordX1-2.7967
+        coordX2=coordX2-2.7967
+        coordY1=coordY1+0.1564
+        coordY2=coordY2+0.1564
         cajon_EST_MEDIO.append(((coordX1,coordY1),(coordX2,coordY2),1))
+    if( x>=36 and x<=51 ):
+        if(x==36):
+            coordY1= -59.6201
+            coordY2= -59.6201 - 6.1411 
+            coordX1= 15.5707
+            coordX2= 15.4243
+        oldCoordX1=coordX1
+        coordX1=coordX1-2.7967
+        coordX2=coordX2-2.7967
+        oldCoordY1=coordY1
+        coordY1=coordY1+0.1564
+        coordY2=coordY2+0.1564
+        cajon_EST_MEDIO.append(((coordX1,coordY1),(coordX2,coordY2),1))
+        estacion_MEDIO_CAMINO_B.append(((oldCoordX1,oldCoordY1),(coordX1,coordY1)))#27
+    if( x>=52 and x<=67):
+        if(x==52):
+            coordY1= -79.5145 
+            coordY2= -73.3734
+            coordX1= 15.5707
+            coordX2= 15.4243
+        coordX1=coordX1-2.7967
+        coordX2=coordX2-2.7967
+        coordY1=coordY1+0.1564
+        coordY2=coordY2+0.1564
+        cajon_EST_MEDIO.append(((coordX1,coordY1),(coordX2,coordY2),1))
+    if( x>=68 and x<=88):
+        if(x==68):
+            coordY1= -79.5145 
+            coordY2= -85.6556
+            coordX1= 15.5707
+            coordX2= 15.4243
+        oldCoordX1=coordX1
+        coordX1=coordX1-2.7967
+        coordX2=coordX2-2.7967
+        oldCoordY1=coordY1
+        coordY1=coordY1+0.1564
+        coordY2=coordY2+0.1564
+        cajon_EST_MEDIO.append(((coordX1,coordY1),(coordX2,coordY2),1))
+        estacion_MEDIO_CAMINO_B.append(((oldCoordX1,oldCoordY1),(coordX1,coordY1))) #48
+    if( x>=89 and x<=109):
+        if(x==89):
+            coordY1= -98.2519
+            coordY2= -92.1108
+            coordX1= 11.5707
+            coordX2= 11.4243
+        coordX1=coordX1-2.7967
+        coordX2=coordX2-2.7967
+        coordY1=coordY1+0.1564
+        coordY2=coordY2+0.1564
+        cajon_EST_MEDIO.append(((coordX1,coordY1),(coordX2,coordY2),1))
+    if( x>=110 and x<=134):
+        if(x==110):
+            coordY1= -98.2519
+            coordY2= -104.393
+            coordX1= 11.7707
+            coordX2= 11.6243
+        oldCoordX1=coordX1
+        coordX1=coordX1-2.7967
+        coordX2=coordX2-2.7967
+        oldCoordY1=coordY1
+        coordY1=coordY1+0.1564
+        coordY2=coordY2+0.1564
+        cajon_EST_MEDIO.append(((coordX1,coordY1),(coordX2,coordY2),1))
+        estacion_MEDIO_CAMINO_B.append(((oldCoordX1,oldCoordY1),(coordX1,coordY1)))#73
+    if( x>=135 and x<=159):
+        if(x==135):
+            coordY1= -117.39122
+            coordY2= -111.25012
+            coordX1= 10.5707
+            coordX2= 10.4243
+        coordX1=coordX1-2.7967
+        coordX2=coordX2-2.7967
+        coordY1=coordY1+0.1564
+        coordY2=coordY2+0.1564
+        cajon_EST_MEDIO.append(((coordX1,coordY1),(coordX2,coordY2),1))
+    if( x>=160 and x<=188):
+        if(x==160):
+            coordY1= -117.39122
+            coordY2= -123.53232
+            coordX1= 10.5707
+            coordX2= 10.4243
+        oldCoordX1=coordX1
+        coordX1=coordX1-2.7967
+        coordX2=coordX2-2.7967
+        oldCoordY1=coordY1
+        coordY1=coordY1+0.1564
+        coordY2=coordY2+0.1564
+        cajon_EST_MEDIO.append(((coordX1,coordY1),(coordX2,coordY2),1))
+        estacion_MEDIO_CAMINO_B.append(((oldCoordX1,oldCoordY1),(coordX1,coordY1)))#102
+    if( x>=189 and x<=217):
+        if(x==189):
+            coordY1= -135.9693
+            coordY2= -129.8282
+            coordX1= 8.8466
+            coordX2= 8.7002
+        coordX1=coordX1-2.7967
+        coordX2=coordX2-2.7967
+        coordY1=coordY1+0.1564
+        coordY2=coordY2+0.1564
+        cajon_EST_MEDIO.append(((coordX1,coordY1),(coordX2,coordY2),1))
+    if( x>=218 and x<=248):
+        if(x==218):
+            coordY1= -135.9693
+            coordY2= -142.1104
+            coordX1= 8.8466
+            coordX2= 8.7002
+        oldCoordX1=coordX1
+        coordX1=coordX1-2.7967
+        coordX2=coordX2-2.7967
+        oldCoordY1=coordY1
+        coordY1=coordY1+0.1564
+        coordY2=coordY2+0.1564
+        cajon_EST_MEDIO.append(((coordX1,coordY1),(coordX2,coordY2),1))
+        estacion_MEDIO_CAMINO_B.append(((oldCoordX1,oldCoordY1),(coordX1,coordY1)))#133
+    if( x>=249 and x<=279):
+        if(x==249):
+            coordY1= -155.39970
+            coordY2= -149.2586
+            coordX1= 5.3963
+            coordX2= 5.2499
+        coordX1=coordX1-2.7967
+        coordX2=coordX2-2.7967
+        coordY1=coordY1+0.1564
+        coordY2=coordY2+0.1564
+        cajon_EST_MEDIO.append(((coordX1,coordY1),(coordX2,coordY2),1))
+    if( x>=280 and x<=305):
+        if(x==280):
+            coordY1= -155.39970
+            coordY2= -161.5408
+            coordX1= 5.3963
+            coordX2= 5.2499
+        oldCoordX1=coordX1
+        coordX1=coordX1-2.7967
+        coordX2=coordX2-2.7967
+        oldCoordY1=coordY1
+        coordY1=coordY1+0.1564
+        coordY2=coordY2+0.1564
+        cajon_EST_MEDIO.append(((coordX1,coordY1),(coordX2,coordY2),1))
+        estacion_MEDIO_CAMINO_B.append(((oldCoordX1,oldCoordY1),(coordX1,coordY1)))#159
+    if( x>=306 and x<=331):
+        if(x==306):
+            coordY1= -173.0237
+            coordY2= -166.8826
+            coordX1= -8.7637
+            coordX2= -8.9101
+        oldCoordX1=coordX1
+        coordX1=coordX1-2.7967
+        coordX2=coordX2-2.7967
+        oldCoordY1=coordY1
+        coordY1=coordY1+0.1564
+        coordY2=coordY2+0.1564
+        cajon_EST_MEDIO.append(((coordX1,coordY1),(coordX2,coordY2),1))
+        estacion_MEDIO_CAMINO_B.append(((oldCoordX1,oldCoordY1),(coordX1,coordY1)))#185
+    if( x>=332 and x<=354):
+        if(x==332):
+            coordY1= -173.0237
+            coordY2= -179.1648
+            coordX1= -18.9381
+            coordX2= -19.0845
+        coordX1=coordX1-2.7967
+        coordX2=coordX2-2.7967
+        coordY1=coordY1+0.1564
+        coordY2=coordY2+0.1564
+        cajon_EST_MEDIO.append(((coordX1,coordY1),(coordX2,coordY2),1))
+
 
     
 EST_MEDIO_CAJONES=tuple(cajon_EST_MEDIO)
+EST_MEDIO_CAMINO=tuple(estacion_MEDIO_CAMINO_B)
+print(EST_MEDIO_CAMINO[160])
 sim.create_roads([
     ENTRADA_EST_MEDIO,  # 18
-    EST_MEDIO_B,  # 19
-    EST_MEDIO_L1,  # 20
-    EST_MEDIO_R1,  # 21
-    EST_MEDIO_INTERSECCION1,  # 22
-    EST_MEDIO_L2,  # 23
-    EST_MEDIO_R2,  # 24
-    EST_MEDIO_INTERSECCION2,  # 25
-    EST_MEDIO_L3,  # 26
-    EST_MEDIO_R3,  # 27
-    EST_MEDIO_INTERSECCION3,  # 28
-    EST_MEDIO_L4,  # 29
-    EST_MEDIO_R4,  # 30
-    EST_MEDIO_INTERSECCION4,  # 31
-    EST_MEDIO_L5,  # 32
-    EST_MEDIO_R5,  # 33
-    EST_MEDIO_INTERSECCION5,  # 34
-    EST_MEDIO_L6,  # 35
-    EST_MEDIO_R6,  # 36
-    EST_MEDIO_INTERSECCION6,  # 37
-    EST_MEDIO_R7,  # 38
-    EST_MEDIO_L7,  # 39
-    EST_MEDIO_R8,  # 40
-    EST_MEDIO_T,  # 41
-   
+    EST_MEDIO_B1,  # 19
+    EST_MEDIO_B2, #20
+    EST_MEDIO_L1,  # 21
+    EST_MEDIO_R1,  # 22
+    EST_MEDIO_INTERSECCION1_1,  # 23
+    EST_MEDIO_INTERSECCION1_2,#24
+    EST_MEDIO_L2,  # 25
+    EST_MEDIO_R2,  # 26
+    EST_MEDIO_INTERSECCION2_1,  # 27
+    EST_MEDIO_INTERSECCION2_2,  # 28
+    EST_MEDIO_L3,  # 29
+    EST_MEDIO_R3,  # 30
+    EST_MEDIO_INTERSECCION3_1,  # 31
+    EST_MEDIO_INTERSECCION3_2,  # 32
+    EST_MEDIO_L4,  # 33
+    EST_MEDIO_R4,  # 34
+    EST_MEDIO_INTERSECCION4_1,  # 35
+    EST_MEDIO_INTERSECCION4_2,  # 36
+    EST_MEDIO_L5,  # 37
+    EST_MEDIO_R5,  # 38
+    EST_MEDIO_INTERSECCION5_1,  # 39
+    EST_MEDIO_INTERSECCION5_2,  # 40
+    EST_MEDIO_L6,  # 41
+    EST_MEDIO_R6,  # 42
+    EST_MEDIO_INTERSECCION6_1,  # 43
+    EST_MEDIO_INTERSECCION6_2,  # 44
+    EST_MEDIO_R7,  # 45
+    EST_MEDIO_L7,  # 46
+    EST_MEDIO_R8,  # 47
+    EST_MEDIO_T1,  # 48
+    EST_MEDIO_T2,  # 49
 ])
+for i in range(0, len(EST_MEDIO_CAMINO)):
+    sim.create_roads([EST_MEDIO_CAMINO[i]])#(50-61):EST_MEDIO_B_ABAJO/(62-77):EST_MEDIO_B_ARRIBA/(-235):EST_MEDIO_T_ARRIBA
 
+
+for i in range(0, len(EST_MEDIO_CAJONES)):
+    sim.create_roads([EST_MEDIO_CAJONES[i]])#(236-247):EST_MEDIO_B_CAJONES_ABAJO/(248-263):EST_MEDIO_B_CAJONES_ARRIBA
 # ---- ESTACIONAMIENTO NUEVO ----
 # VERTICALES DERECHA
 v1_1 = (-8.7637, -173.0237)
@@ -361,42 +553,12 @@ sim.create_roads([
     r19_20 #96
 ])
 
-sim.create_roads([
+#Cajones Javier
 
-    #Cajones Javier
 
-    EST_MEDIO_CAJONES[0], #97
-    EST_MEDIO_CAJONES[1], #98
-    EST_MEDIO_CAJONES[2], #99
-    EST_MEDIO_CAJONES[3], #100
-    EST_MEDIO_CAJONES[4], #101
-    EST_MEDIO_CAJONES[5], #102
-    EST_MEDIO_CAJONES[6], #103
-    EST_MEDIO_CAJONES[7], #104
-    EST_MEDIO_CAJONES[8], #105
-    EST_MEDIO_CAJONES[9], #106
-    EST_MEDIO_CAJONES[10], #107
-    EST_MEDIO_CAJONES[11], #108
-    EST_MEDIO_CAJONES[12], #109
-    EST_MEDIO_CAJONES[13], #110
-    EST_MEDIO_CAJONES[14], #111
-    EST_MEDIO_CAJONES[15], #112
-    EST_MEDIO_CAJONES[16], #113
-    EST_MEDIO_CAJONES[17], #114
-    EST_MEDIO_CAJONES[18], #115
-    EST_MEDIO_CAJONES[19], #116
-    EST_MEDIO_CAJONES[20], #117
-    EST_MEDIO_CAJONES[21], #118
-    EST_MEDIO_CAJONES[22], #119
-    EST_MEDIO_CAJONES[23], #120
-
-    #Julian
-
-    #Santiago
-
-    #Gustavo
-])
-
+#Julian
+#Santiago
+#Gustavo
 
 
 # Paths
@@ -407,8 +569,8 @@ path = [
 [1, {"path": [0, 1, 2, 3, 4, 8, 11, 12, 13, 14, 15, 16, 17]}],#4
 [1, {"path": [0, 1, 2, 3, 4, 5, 9, 10, 11, 12, 13, 14, 15, 16, 17]}],#5
 [1, {"path": [0, 1, 18, 21, 24, 27, 30, 33, 36, 38, 40, 41, 39, 35, 32, 29, 26, 23, 20, 19, 52]}],#6
-[1, {"path": [0, 1, 18, 21, 22, 20, 19, 42]}],#7
-[1, {"path": [0, 1, 18, 21, 24, 25, 23, 20, 19, 43]}],#8
+[1, {"path": [0, 1, 18, 22, 23, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 21, 19, 236]}],#7
+[1, {"path": [0, 1, 18, 21, 23, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 22, 19, 50, 237]}],#8
 [1, {"path": [0, 1, 18, 21, 24, 27, 28, 26, 23, 20, 19, 44]}],#9
 [1, {"path": [0, 1, 18, 21, 24, 27, 30, 31, 29, 26, 23, 20, 19, 45]}],#10
 [1, {"path": [0, 1, 18, 21, 24, 27, 30, 33, 34, 32, 31, 29, 26, 23, 20, 19, 46]}],#11
