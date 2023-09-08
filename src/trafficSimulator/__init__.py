@@ -1187,6 +1187,7 @@ for i in range(0, len(NUEVO_HORIZONTAL_7)):
     sim.create_roads([NUEVO_HORIZONTAL_7[i]])
     # print(i)
 
+# CAJONES
 # index 849 a 1040
 for i in range (0, len(EST_NUEVO_CAJONES)):
     sim.create_roads([EST_NUEVO_CAJONES[i]])
@@ -1222,6 +1223,10 @@ sim.create_roads([
 
 # for i in range(152):
 #     test.append(i)
+
+# -------------------------------------------------------
+#       total de cajones 625 + 191 + 353 + 71 = 1240
+# -------------------------------------------------------
 
 # Paths
 path = [
