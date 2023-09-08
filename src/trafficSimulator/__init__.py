@@ -1374,6 +1374,15 @@ for i in range(144,153):
 for i in range(7,10):
     pathArena8.append(i)
 #Path arena 9
+pathArena9 = [0,1,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,46,47,45]
+for i in range(48,56):
+    pathArena9.append(i)
+for i in range(2,6):
+    pathArena9.append(i)
+for i in range(144,153):
+    pathArena9.append(i)
+for i in range(7,10):
+    pathArena9.append(i)
 
 # -------------------------------------------------------
 #       total de cajones 625 + 191 + 353 + 71 = 1240
@@ -1381,15 +1390,16 @@ for i in range(7,10):
 
 # Paths
 path = [
-#[1, {"path": pathArena0, "cajon_index": 20}],
-#[1, {"path": pathArena1, "cajon_index": 19}],
-#[1, {"path": pathArena2, "cajon_index": 17}],
-#[1, {"path": pathArena3, "cajon_index": 97}],
-#[1, {"path": pathArena4, "cajon_index": 128}],
-#[1, {"path": pathArena5, "cajon_index": 15}],
-#[1, {"path": pathArena6, "cajon_index": 13}],
-#[1, {"path": pathArena7, "cajon_index": 12}],
-[1, {"path": pathArena8, "cajon_index": 12}],
+[1, {"path": pathArena0, "cajon_index": 20}],
+[1, {"path": pathArena1, "cajon_index": 19}],
+[1, {"path": pathArena2, "cajon_index": 17}],
+[1, {"path": pathArena3, "cajon_index": 97}],
+[1, {"path": pathArena4, "cajon_index": 128}],
+[1, {"path": pathArena5, "cajon_index": 15}],
+[1, {"path": pathArena6, "cajon_index": 13}],
+[1, {"path": pathArena7, "cajon_index": 12}],
+[1, {"path": pathArena8, "cajon_index": 39}],
+[1, {"path": pathArena9, "cajon_index": 45}],
 [1, {"path": extra, "cajon_index": 0}],
 ]
 sim.create_gen({
