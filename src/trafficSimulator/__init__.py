@@ -1276,6 +1276,18 @@ for i in range(144,153):
     pathArena0.append(i)
 for i in range(7,10):
     pathArena0.append(i)
+#Path arena 1
+pathArena1 = [0,1,21,22,23,19]
+for i in range(24,26):
+    pathArena1.append(i)
+for i in range(98,114):
+    pathArena1.append(i)
+pathArena1.append(4)
+pathArena1.append(5)
+for i in range(144,153):
+    pathArena1.append(i)
+for i in range(7,10):
+    pathArena1.append(i)
 
 # -------------------------------------------------------
 #       total de cajones 625 + 191 + 353 + 71 = 1240
@@ -1284,7 +1296,8 @@ for i in range(7,10):
 # Paths
 path = [
 [1, {"path": pathArena0, "cajon_index": 20}],
-[1, {"path": extra}],
+[1, {"path": pathArena1, "cajon_index": 20}],
+[1, {"path": extra, "cajon_index": 19}],
 ]
 sim.create_gen({
     'vehicle_rate': 10,
