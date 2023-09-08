@@ -208,34 +208,34 @@ for i in range(len(Intersecciones0CX) - 1):
 
 # ---- ESTACIONAMIENTO MEDIO ----
 ENTRADA_EST_MEDIO = ((31.8606, -26.9761), (25.7451, -42.7844))
-EST_MEDIO_B1 = ((-19.9238, -39.1975), (-12.3963, -39.9349))
-EST_MEDIO_B2 = ((21.1641, -41.8117), (25.7451, -41.8117))
-EST_MEDIO_L1 = ((-31.9968, -57.6005), (-17.9238, -39.1975))
+EST_MEDIO_B1 = ((-12.3963, -39.9349),(-19.9238, -39.1975))
+EST_MEDIO_B2 = ((25.7451, -41.8117),(21.1641, -41.8117))
+EST_MEDIO_L1 = ((-17.9238, -39.1975),(-31.9968, -57.6005))
 EST_MEDIO_R1 = ((25.7451, -42.7844), (18.7474, -60.7765))
 EST_MEDIO_INTERSECCION1_1 = ((18.7474, -59.7765), (12.7740, -59.6201))
 EST_MEDIO_INTERSECCION1_2 = ((-29.1765, -57.1177), (-31.9968, -56.7765))
-EST_MEDIO_L2 = ((-46.1621, -76.3309), (-31.9968, -57.6005))
+EST_MEDIO_L2 = ((-31.9968, -57.6005),(-46.1621, -76.3309))
 EST_MEDIO_R2 = ((18.7474, -60.7765), (14.8199, -79.5145))
 EST_MEDIO_INTERSECCION2_1 = ((14.8199, -79.5145), (15.5707, -79.5145))
 EST_MEDIO_INTERSECCION2_2 = ((-43.1600, -76.2301), (-46.1621, -76.3309))
-EST_MEDIO_L3 = ((-59.7169, -94.2937), (-46.1621, -76.3309))
+EST_MEDIO_L3 = ((-46.1621, -76.3309),(-59.7169, -94.2937))
 EST_MEDIO_R3 = ((14.8199, -79.5145), (13.4589, -98.2519))
 EST_MEDIO_INTERSECCION3_1 = ((13.4589, -98.2519), (11.7707, -98.2519))
 EST_MEDIO_INTERSECCION3_2 = ((-58.1468, -94.3419), (-59.7169, -94.2937))
-EST_MEDIO_L4 = ((-73.6444, -112.51092), (-59.7169, -94.2937))
+EST_MEDIO_L4 = ((-59.7169, -94.2937),(-73.6444, -112.51092))
 EST_MEDIO_R4 = ((13.4589, -98.2519), (12.0715, -117.39122))
 EST_MEDIO_INTERSECCION4_1 = ((12.0715, -117.39122), (10.5707, -117.39122))
 EST_MEDIO_INTERSECCION4_2 = ((-67.7369, -113.01202), (-73.6444, -112.51092))
-EST_MEDIO_L5 = ((-80.1746, -131.3942), (-73.6444, -112.51092))
+EST_MEDIO_L5 = ((-73.6444, -112.51092),(-80.1746, -131.3942))
 EST_MEDIO_R5 = ((12.0715, -117.39122), (10.6169, -135.9693))
 EST_MEDIO_INTERSECCION5_1 = ((10.6169, -135.9693), (8.8466, -135.9693))
 EST_MEDIO_INTERSECCION5_2 = ((-77.8511, -131.1209), (-80.1746, -131.3942))
-EST_MEDIO_L6 = ((-81.5118, -150.2121), (-80.1746, -131.3942))
+EST_MEDIO_L6 = ((-80.1746, -131.3942),(-81.5118, -150.2121))
 EST_MEDIO_R6 = ((10.6169, -135.9693), (7.59559, -155.39970))
 EST_MEDIO_INTERSECCION6_1 = ((7.59559, -155.39970), (5.3963, -155.3997))
 EST_MEDIO_INTERSECCION6_2 = ((-67.3179, -151.3333), (-81.5118, -150.2121))
 EST_MEDIO_R7 = ((7.59559, -155.39970), (9.3492, -153.5104))
-EST_MEDIO_L7 = ((-82.8175, -168.5878), (-81.5118, -150.2121))
+EST_MEDIO_L7 = ((-81.5118, -150.2121),(-82.8175, -168.5878))
 EST_MEDIO_R8 = ((9.3492, -153.5104), (-8.7637, -173.0237))
 EST_MEDIO_T1 = ((-8.7637, -173.0237), (-9.7637, -173.0237))
 EST_MEDIO_T2 = ((-81.47790000000002, -168.95730000000023), (-82.8175, -168.5878))
@@ -250,17 +250,17 @@ estacion_MEDIO_CAMINO_B=[]
 for x in range(354):
     if (x<=11):
         if(x==0):
-            coordX1=-12.3963
-            coordX2=-12.5427
-            coordY1=-39.9349
-            coordY2=-33.7938
+            coordX1=21.1641
+            coordX2=21.0177
+            coordY1=-41.8117
+            coordY2=-35.6706
         cajon_EST_MEDIO.append(((coordX1,coordY1),(coordX2,coordY2),1))
         oldCoordX1=coordX1
-        coordX1=coordX1+2.7967
-        coordX2=coordX2+2.7967
+        coordX1=coordX1-2.7967
+        coordX2=coordX2-2.7967
         oldCoordY1=coordY1
-        coordY1=coordY1-0.1564
-        coordY2=coordY2-0.1564
+        coordY1=coordY1+0.1564
+        coordY2=coordY2+0.1564
         estacion_MEDIO_CAMINO_B.append(((oldCoordX1,oldCoordY1),(coordX1,coordY1)))#11
     if( x>=12 and x<=22):
         if(x==12):
@@ -1175,6 +1175,8 @@ for i in range(0, len(EST_MEDIO_CAJONES)):
     sim.create_roads([EST_MEDIO_CAJONES[i]])
     # print(i)
 
+
+
 # Verticales y estrada est nuevo 726 - 745
 sim.create_roads([
     NUEVO_VERTICAL_1,   # 726
@@ -1253,11 +1255,54 @@ for spot in estacionamientos:
         sim.create_roads([spot[i]])
         # print(i)
 
+
+#------------------------------------------------
+#CAMINOS ARRIBA
+for camino in caminos:
+     for i in range(0, len(camino)):
+        sim.create_roads([camino[i]])
+
+#---------------------------------------------------
+#CAJONES ARRIBA
+
+for spot in estacionamientos:
+     for i in range(0, len(spot)):
+        sim.create_roads([spot[i]])
+
+
+
+
+
+
 sim.create_roads([
-    r12_14,     # 2165
-    r15_17,     # 2166
-    r18_19,     # 2167
-    r19_20      # 2168
+    #r0_1,       # 726
+    #r1_2,       # 727
+          # 728
+    #r1_13,      # 729
+    #r3_4,       # 730
+    #r3_12,      # 731
+    #r4_5,       # 732
+    #r4_11,      # 733
+    #r5_6,       # 734
+    #r5_10,      # 735
+    #r6_7,       # 736
+    #r6_9,       # 737
+    #r7_8,       # 738
+    #r8_9_1,     # 739
+    #r8_9_2,     # 740
+    #r9_10,      # 741
+    #r10_11,     # 742
+    #r11_12,     # 743
+    r12_14,     # 744
+    #r13_14,     # 745
+    #r14_15_1,   # 746
+    #r14_15_2,   # 747
+    #r15_16,     # 748
+    r15_17,     # 749
+    #r16_17,     # 750
+    #r17_18,     # 751
+    r18_19,     # 752
+    r19_20      # 753
 ])
 
 test = []
