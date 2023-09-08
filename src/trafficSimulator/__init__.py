@@ -806,6 +806,160 @@ r17_18 = (g17, g18)
 r18_19 = (g18, g19)
 r19_20 = (g19, g20)
 
+#dir 0 up
+#dir 1 down
+#dir 2 left
+#dir 3 right
+
+def extension(inicio, final, divider, dir):
+    xi = inicio[0]
+    yi = inicio[1]
+    xf = final[0]
+    yf = final[1]
+    division = []
+    stepx = (xf-xi)/divider
+    stepy = (yf-yi)/divider
+    for i in range(divider):
+        xp = xi
+        yp = yi
+        #up
+        if dir == 0:
+            xi += stepx
+            yi += stepy
+        #down
+        elif dir == 1:
+            xi += stepx
+            yi -= stepy
+        #left
+        elif dir == 2:
+            xi += stepx
+            yi += stepy
+        #right
+        else:
+            xi += stepx
+            yi += stepy
+        division.append(((xp, yp),(xi, yi))) 
+    return division
+
+
+
+#VERTICALES
+
+#2-3 26r 18l
+p2_3 = extension(g2,g3,26,0)
+
+
+#3-4 6r
+p3_4 = extension(g3,g4,6,0)
+
+
+#4-5 6r
+p4_5 = extension(g4,g5,6,0)
+
+#5-6 6r
+p5_6 = extension(g5,g6,6,0)
+
+#6-7 5r
+p6_7 = extension(g6,g7,5,0)
+
+#1-13 17r 16l
+p1_13 = extension(g1,g13,17,0)
+
+#8-9 7l
+p8_9 = extension(g8,g9,7,0)
+
+#9-10 5l
+p9_10 = extension(g9,g10,5,0)
+
+#10-11 7l
+p10_11 = extension(g10,g11,7,0)
+
+#11-12 8l
+p11_12 = extension(g11,g12,8,0)
+
+#15-17 3r ??
+
+#16-17 12l
+p16_17 = extension(g16,g17,12,0)
+
+#17-18 25l 13r
+p17_18 = extension(g17,g18,25,0)
+
+
+#HORIZONTALES 
+
+#0-1 5d
+p0_1 = extension(g0,g1,5,0)
+
+#1-2 5d
+p1_2 = extension(g1,g2,5,0)
+
+#13-14 36u 12d(para)
+p13_14 = extension(g13,g14,36,0)
+
+#3-12 36d 35u
+p3_12 = extension(g3,g12,36,0)
+
+#4-11 36d 36u
+p4_11 = extension(g4,g11,36,0)
+
+#5-10 38d 38u
+p5_10 = extension(g5,g10,38,0)
+
+#6-9 39d 41u
+p6_9 = extension(g6,g9,39,0)
+
+#7-8 42d 41u
+p7_8 = extension(g7,g8,42,0)
+
+#14-15 4u
+p14_15 = extension(g14,g15,4,0)
+
+#15-16 8u
+p15_16 = extension(g15,g16,8,0)
+
+
+#----------------------
+#ESTACIONAMIENTOS
+
+
+def cajonear(ruta, n, dir, skip):
+    i = 0
+    extra = skip
+    cajones = []
+    while i < n + extra:
+        xi = ruta[i][0][0] 
+        yi = ruta[i][0][1]
+        xf = ruta[i][1][0]
+        yf = ruta[i][1][1]
+        dx = xf - xi
+        dy = yf - yi
+        ndx = dy
+        ndy = -dx
+        if dir == 0:
+            xn = xf + dx
+            xf += 1.5
+            yn = yf - dy
+        elif dir == 1:
+            xn = xf - dx
+            xf -= 1.5
+            yn = yf + dy
+        #cajones.append(((xf,yf),(xn,yn)))
+        if skip <= 0:
+             cajones.append(((xf,yf),(xn,yn)))
+
+        i += 1
+        skip -= 1
+         
+
+        
+    print(cajones)
+    return cajones
+
+
+c15_16_0 =cajonear(p17_18, 13, 0, 10)
+c15_16_1 =cajonear(p17_18, 25, 1,0)
+
 # Arena borregos index 0 - 152
 sim.create_roads(EstArenaBorregos)
 
@@ -904,33 +1058,113 @@ for i in range(0, len(NUEVO_HORIZONTAL_7)):
 for i in range (0, len(EST_NUEVO_CAJONES)):
     sim.create_roads([EST_NUEVO_CAJONES[i]])
 
+for i in range(0, len(p2_3)):
+        sim.create_roads([p2_3[i]])
+
+for i in range(0, len(p3_4)):
+        sim.create_roads([p3_4[i]])
+
+for i in range(0, len(p4_5)):
+        sim.create_roads([p4_5[i]])
+
+for i in range(0, len(p5_6)):
+        sim.create_roads([p5_6[i]])
+
+for i in range(0, len(p6_7)):
+        sim.create_roads([p6_7[i]])
+
+for i in range(0, len(p1_13)):
+        sim.create_roads([p1_13[i]])
+
+for i in range(0, len(p8_9)):
+        sim.create_roads([p8_9[i]])
+
+for i in range(0, len(p9_10)):
+        sim.create_roads([p9_10[i]])
+
+for i in range(0, len(p10_11)):
+        sim.create_roads([p10_11[i]])
+
+for i in range(0, len(p11_12)):
+        sim.create_roads([p11_12[i]])
+
+for i in range(0, len(p16_17)):
+        sim.create_roads([p16_17[i]])
+
+for i in range(0, len(p17_18)):
+        sim.create_roads([p17_18[i]])
+
+#hori
+
+for i in range(0, len(p0_1)):
+        sim.create_roads([p0_1[i]])
+
+for i in range(0, len(p1_2)):
+        sim.create_roads([p1_2[i]])
+
+for i in range(0, len(p13_14)):
+        sim.create_roads([p13_14[i]])
+
+for i in range(0, len(p3_12)):
+        sim.create_roads([p3_12[i]])
+
+for i in range(0, len(p4_11)):
+        sim.create_roads([p4_11[i]])
+
+for i in range(0, len(p5_10)):
+        sim.create_roads([p5_10[i]])
+
+for i in range(0, len(p1_2)):
+        sim.create_roads([p5_10[i]])
+
+for i in range(0, len(p6_9)):
+        sim.create_roads([p6_9[i]])
+
+for i in range(0, len(p7_8)):
+        sim.create_roads([p7_8[i]])
+
+for i in range(0, len(p14_15)):
+        sim.create_roads([p14_15[i]])
+
+for i in range(0, len(p15_16)):
+        sim.create_roads([p15_16[i]])
+
+for i in range(0, len(c15_16_0)):
+        sim.create_roads([c15_16_0[i]])
+
+for i in range(0, len(c15_16_1)):
+        sim.create_roads([c15_16_1[i]])
+
+
+
+
 sim.create_roads([
-    r0_1,       # 726
-    r1_2,       # 727
-    r2_3,       # 728
-    r1_13,      # 729
-    r3_4,       # 730
-    r3_12,      # 731
-    r4_5,       # 732
-    r4_11,      # 733
-    r5_6,       # 734
-    r5_10,      # 735
-    r6_7,       # 736
-    r6_9,       # 737
-    r7_8,       # 738
-    r8_9_1,     # 739
-    r8_9_2,     # 740
-    r9_10,      # 741
-    r10_11,     # 742
-    r11_12,     # 743
+    #r0_1,       # 726
+    #r1_2,       # 727
+          # 728
+    #r1_13,      # 729
+    #r3_4,       # 730
+    #r3_12,      # 731
+    #r4_5,       # 732
+    #r4_11,      # 733
+    #r5_6,       # 734
+    #r5_10,      # 735
+    #r6_7,       # 736
+    #r6_9,       # 737
+    #r7_8,       # 738
+    #r8_9_1,     # 739
+    #r8_9_2,     # 740
+    #r9_10,      # 741
+    #r10_11,     # 742
+    #r11_12,     # 743
     r12_14,     # 744
-    r13_14,     # 745
-    r14_15_1,   # 746
-    r14_15_2,   # 747
-    r15_16,     # 748
+    #r13_14,     # 745
+    #r14_15_1,   # 746
+    #r14_15_2,   # 747
+    #r15_16,     # 748
     r15_17,     # 749
-    r16_17,     # 750
-    r17_18,     # 751
+    #r16_17,     # 750
+    #r17_18,     # 751
     r18_19,     # 752
     r19_20      # 753
 ])
@@ -938,8 +1172,8 @@ sim.create_roads([
 
 # Paths
 path = [
-[1, {"path": [0, 1, 2, 3, 4, 5, 9, 10, 11, 12, 13, 14, 15, 16, 17]}],#1
-[1, {"path": [i for i in range (62, 200)]}],#2
+#[1, {"path": [0, 1, 2, 3, 4, 5, 9, 10, 11, 12, 13, 14, 15, 16, 17]}],#1
+[1, {"path": [1]}],#2
 [1, {"path": [0, 1, 2, 3, 7, 12, 13, 14, 15, 16, 17]}],#3
 [1, {"path": [0, 1, 2, 3, 4, 8, 11, 12, 13, 14, 15, 16, 17]}],#4
 [1, {"path": [0, 1, 2, 3, 4, 5, 9, 10, 11, 12, 13, 14, 15, 16, 17]}],#5
