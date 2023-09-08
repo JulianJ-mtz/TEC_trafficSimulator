@@ -719,8 +719,13 @@ for x in range(194):
         xf += 2.8
         yf -= 0.11
         yi -= 0.11
-    
+
+#194 paths
 EST_NUEVO_CAJONES = tuple(cajon_EST_NUEVO)
+
+#Nuevo paths
+
+neo_paths = []
 
 NUEVO_VERTICAL_1 = (v1_1, v1_2)
 NUEVO_VERTICAL_2 = (v2_1, v2_2)
@@ -747,6 +752,31 @@ NUEVO_SALIDAS_2 = (s2_1, s2_2)
 NUEVO_ENTRADA_1 = (e1_1, e1_2)
 NUEVO_ENTRADA_2 = (e2_1, e2_2)
 NUEVO_ENTRADA_3 = (e3_1, e3_2)
+
+#22 roads
+neo_paths.append(NUEVO_VERTICAL_1)
+neo_paths.append(NUEVO_VERTICAL_2)
+neo_paths.append(NUEVO_VERTICAL_3)
+neo_paths.append(NUEVO_VERTICAL_4)
+neo_paths.append(NUEVO_VERTICAL_5)
+neo_paths.append(NUEVO_VERTICAL_6)
+neo_paths.append(NUEVO_VERTICAL_7)
+neo_paths.append(NUEVO_VERTICAL_8)
+neo_paths.append(NUEVO_VERTICAL_9)
+neo_paths.append(NUEVO_VERTICAL_10)
+neo_paths.append(NUEVO_VERTICAL_11)
+neo_paths.append(NUEVO_VERTICAL_12)
+neo_paths.append(NUEVO_VERTICAL_13)
+neo_paths.append(NUEVO_VERTICAL_14)
+neo_paths.append(NUEVO_VERTICAL_15)
+neo_paths.append(NUEVO_HORIZONTAL_2)
+neo_paths.append(NUEVO_HORIZONTAL_3)
+neo_paths.append(NUEVO_SALIDAS_1)
+neo_paths.append(NUEVO_SALIDAS_2)
+neo_paths.append(NUEVO_ENTRADA_1)
+neo_paths.append(NUEVO_ENTRADA_2)
+neo_paths.append(NUEVO_ENTRADA_3)
+
 
 
 
@@ -1087,7 +1117,7 @@ estacionamientos.append(cs1_2)
 estacionamientos.append(cs2_3)
 
 
-
+#----------------------------------------------------
 
 # Arena borregos index 0 - 152
 sim.create_roads(EstArenaBorregos)
@@ -1134,6 +1164,8 @@ for i in range(0, len(EST_MEDIO_CAMINO)):
 
 for i in range(0, len(EST_MEDIO_CAJONES)):
     sim.create_roads([EST_MEDIO_CAJONES[i]])#(371-382):EST_MEDIO_B_CAJONES_ABAJO/(383-398):EST_MEDIO_B_CAJONES_ARRIBA
+
+
 
 sim.create_roads([
     NUEVO_VERTICAL_1,   # 399
@@ -1237,21 +1269,36 @@ sim.create_roads([
     r19_20      # 753
 ])
 
+test = []
+
+for i in range(152):
+    test.append(i)
 
 # Paths
 path = [
 #[1, {"path": [0, 1, 2, 3, 4, 5, 9, 10, 11, 12, 13, 14, 15, 16, 17]}],#1
-[1, {"path": [2000]}],#2
-[1, {"path": [0, 1, 2, 3, 7, 12, 13, 14, 15, 16, 17]}],#3
-[1, {"path": [0, 1, 2, 3, 4, 8, 11, 12, 13, 14, 15, 16, 17]}],#4
-[1, {"path": [0, 1, 2, 3, 4, 5, 9, 10, 11, 12, 13, 14, 15, 16, 17]}],#5
-[1, {"path": [0, 1, 18, 21, 24, 27, 30, 33, 36, 38, 40, 41, 39, 35, 32, 29, 26, 23, 20, 19, 52]}],#6
-[1, {"path": [0, 1, 18, 22, 23, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 21, 19, 236]}],#7
-[1, {"path": [0, 1, 18, 21, 23, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 22, 19, 50, 237]}],#8
-[1, {"path": [0, 1, 18, 21, 24, 27, 28, 26, 23, 20, 19, 44]}],#9
-[1, {"path": [0, 1, 18, 21, 24, 27, 30, 31, 29, 26, 23, 20, 19, 45]}],#10
-[1, {"path": [0, 1, 18, 21, 24, 27, 30, 33, 34, 32, 31, 29, 26, 23, 20, 19, 46]}],#11
-[1, {"path": [0, 1, 18, 21, 24, 27, 30, 33, 36, 37, 35, 32, 31, 29, 26, 23, 20, 19, 47]}],#12
+[1, {"path": test}],#2
+[1, {"path": test}],#2
+[1, {"path": test}],#2
+[1, {"path": test}],#2
+[1, {"path": test}],#2
+[1, {"path": test}],#2
+[1, {"path": test}],#2
+[1, {"path": test}],#2
+[1, {"path": test}],#2
+[1, {"path": test}],#2
+[1, {"path": test}],#2
+[1, {"path": test}],#2
+#[1, {"path": [0, 1, 2, 3, 7, 12, 13, 14, 15, 16, 17]}],#3
+#[1, {"path": [0, 1, 2, 3, 4, 8, 11, 12, 13, 14, 15, 16, 17]}],#4
+#[1, {"path": [0, 1, 2, 3, 4, 5, 9, 10, 11, 12, 13, 14, 15, 16, 17]}],#5
+#[1, {"path": [0, 1, 18, 21, 24, 27, 30, 33, 36, 38, 40, 41, 39, 35, 32, 29, 26, 23, 20, 19, 52]}],#6
+#[1, {"path": [0, 1, 18, 22, 23, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 21, 19, 236]}],#7
+#[1, {"path": [0, 1, 18, 21, 23, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 22, 19, 50, 237]}],#8
+#[1, {"path": [0, 1, 18, 21, 24, 27, 28, 26, 23, 20, 19, 44]}],#9
+#[1, {"path": [0, 1, 18, 21, 24, 27, 30, 31, 29, 26, 23, 20, 19, 45]}],#10
+#[1, {"path": [0, 1, 18, 21, 24, 27, 30, 33, 34, 32, 31, 29, 26, 23, 20, 19, 46]}],#11
+#[1, {"path": [0, 1, 18, 21, 24, 27, 30, 33, 36, 37, 35, 32, 31, 29, 26, 23, 20, 19, 47]}],#12
 ]
 sim.create_gen({
     'vehicle_rate': 10,
