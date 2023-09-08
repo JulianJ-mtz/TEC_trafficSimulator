@@ -983,21 +983,26 @@ def cajonear(ruta, n, dir, skip):
         yf = ruta[i][1][1]
         dx = xf - xi
         dy = yf - yi
-        ndx = dy
-        ndy = dx
+        ndx = dy*2
+        ndy = dx*2
+        nidx = dy/3
+        nidy = dx/3
         if dir == 0:
             xn = xf + ndx
+            xni = xf + nidx
             #xf += 1.5
             yn = yf - ndy
+            yni = yf - nidy
           
         elif dir == 1:
             xn = xf - ndx
+            xni = xf - nidx
             #xf -= 1.5
             yn = yf + ndy
-            
+            yni = yf + nidy
         #cajones.append(((xf,yf),(xn,yn)))
         if skip <= 0:
-             cajones.append(((xf,yf),(xn,yn)))
+             cajones.append(((xni,yni),(xn,yn)))
 
         i += 1
         skip -= 1
@@ -1049,10 +1054,10 @@ estacionamientos.append(c17_18_l)
 
 #hori
 
-c0_1 = cajonear(p0_1, 5,0,0)
+c0_1 = cajonear(p0_1, 5,1,0)
 estacionamientos.append(c0_1)
 
-c1_2 = cajonear(p1_2, 5,0,0)
+c1_2 = cajonear(p1_2, 5,1,0)
 estacionamientos.append(c1_2)
 
 c13_14_d = cajonear(p13_14, 12,0,0)
