@@ -1430,17 +1430,17 @@ path = [
     [8, {"path": pathArena7, "cajon_index": 12}],
     [9, {"path": pathArena8, "cajon_index": 39}],
     [10, {"path": pathArena9, "cajon_index": 45}],
-    [11, {"path": extra, "cajon_index": 0}],
-    [12, {"path": entradaNuevo1, "cajon_index":1014}],#3
-    [13, {"path": entradaNuevo2, "cajon_index":1015}],#3
-    [14, {"path": entradaNuevo3, "cajon_index":1016}],#3
-    [15, {"path": entradaNuevo4, "cajon_index":1017}],#3
-    [16, {"path": entradaNuevo5, "cajon_index":1018}],#3
-    [17, {"path": entradaNuevo6, "cajon_index":1019}],#3
-    [18, {"path": entradaNuevo7, "cajon_index":1020}],#3
-    [19, {"path": entradaNuevo8, "cajon_index":1021}],#3
-    [20, {"path": entradaNuevo9, "cajon_index":1022}],#3
-    [21, {"path": entradaNuevo10, "cajon_index":1023}],#3
+    [11, {"path": entradaNuevo1, "cajon_index":1014}],#3
+    [12, {"path": entradaNuevo2, "cajon_index":1015}],#3
+    [13, {"path": entradaNuevo3, "cajon_index":1016}],#3
+    [14, {"path": entradaNuevo4, "cajon_index":1017}],#3
+    [15, {"path": entradaNuevo5, "cajon_index":1018}],#3
+    [16, {"path": entradaNuevo6, "cajon_index":1019}],#3
+    [17, {"path": entradaNuevo7, "cajon_index":1020}],#3
+    [18, {"path": entradaNuevo8, "cajon_index":1021}],#3
+    [19, {"path": entradaNuevo9, "cajon_index":1022}],#3
+    [20, {"path": entradaNuevo10, "cajon_index":1023}],#3
+    [21, {"path": extra, "cajon_index": 0}],
 ]
 sim.create_gen({
     'vehicle_rate': 21,
