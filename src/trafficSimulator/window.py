@@ -18,7 +18,8 @@ class Window:
         """Set default configuration"""
         self.width = 1400
         self.height = 900
-        self.bg_color = (245, 230, 210)
+        # self.bg_color = (245, 230, 210)
+        self.bg_color = (0, 0, 0)
 
         self.fps = 60
         self.zoom = 5
@@ -240,18 +241,20 @@ class Window:
                 (road.length, 2.5),
                 cos=road.angle_cos,
                 sin=road.angle_sin,
+                # color=(0, 0, 0),
                 color=(75, 110, 135),
+
                 centered=False
             )
             # Draw road lines
-            self.rotated_box(
-                road.start,
-                (road.length, 1.5),
-                cos=road.angle_cos,
-                sin=road.angle_sin,
-                color=(50, 42, 86),
-                centered=False
-            )
+            # self.rotated_box(
+            #     road.start,
+            #     (road.length, 1.5),
+            #     cos=road.angle_cos,
+            #     sin=road.angle_sin,
+            #     color=(50, 42, 86),
+            #     centered=False
+            # )
 
             # Draw road arrow
             if road.length > 5: 
@@ -309,6 +312,13 @@ class Window:
         
         self.screen.blit(text_fps, (0, 0))
         self.screen.blit(text_frc, (100, 0))
+    # def draw_enter(self):
+    #     text_fps = self.text_font.render(f'Entrada', False, (255, 255, 255))
+    #     text_frc = self.text_font.render(f'Salida', False, (255, 255, 255))
+        
+    #     self.screen.blit(text_fps, (500, 600))
+    #     self.screen.blit(text_frc, (500, 500))
+
 
 
     def draw(self):
@@ -326,4 +336,5 @@ class Window:
 
         # Draw status info
         self.draw_status()
+        self.draw_enter()
         
