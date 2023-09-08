@@ -1265,13 +1265,15 @@ for i in range(152):
 # -------------------------------------------------------
 #       total de cajones 625 + 191 + 353 + 71 = 1240
 # -------------------------------------------------------
-def crear_lista_entrada(numero):
+def crear_lista_entrada(numero, horizotal):
     entrada_nueva = [0, 1, 153, 157, 161, 165, 169, 173, 177, 180, 182] 
     for i in range(725, 732 ):
         entrada_nueva.append(i)
-    for i in range(821, 848):
+    for i in range(821, 848 - horizotal):
         entrada_nueva.append(i)
     entrada_nueva.append(1000 + numero)  # Agregar el número proporcionado al final
+    for i in range ((848 - horizotal), 848):
+        entrada_nueva.append(i)
     for i in range(733, 736):
         entrada_nueva.append(i)
     entrada_nueva.append(740)
@@ -1279,16 +1281,17 @@ def crear_lista_entrada(numero):
     return entrada_nueva
 
 # Llamar a la función para crear las listas
-entradaNuevo1 = crear_lista_entrada(14)
-entradaNuevo2 = crear_lista_entrada(15)
-entradaNuevo3 = crear_lista_entrada(16)
-entradaNuevo4 = crear_lista_entrada(17)
-entradaNuevo5 = crear_lista_entrada(18)
-entradaNuevo6 = crear_lista_entrada(19)
-entradaNuevo7 = crear_lista_entrada(20)
-entradaNuevo8 = crear_lista_entrada(21)
-entradaNuevo9 = crear_lista_entrada(22)
-entradaNuevo10 = crear_lista_entrada(23)
+for i in range (1, 10):
+    entradaNuevo1 = crear_lista_entrada(14 , i)
+    entradaNuevo2 = crear_lista_entrada(15, i)
+    entradaNuevo3 = crear_lista_entrada(16, i)
+    entradaNuevo4 = crear_lista_entrada(17, i)
+    entradaNuevo5 = crear_lista_entrada(18, i)
+    entradaNuevo6 = crear_lista_entrada(19, i)
+    entradaNuevo7 = crear_lista_entrada(20, i)
+    entradaNuevo8 = crear_lista_entrada(21, i)
+    entradaNuevo9 = crear_lista_entrada(22, i)
+    entradaNuevo10 = crear_lista_entrada(23, i)
 
 
 # Paths
