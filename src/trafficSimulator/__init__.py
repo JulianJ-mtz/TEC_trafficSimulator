@@ -1288,6 +1288,16 @@ for i in range(144,153):
     pathArena1.append(i)
 for i in range(7,10):
     pathArena1.append(i)
+#Path arena 2
+pathArena2 = [0,1,21,22,23,24,25,17,26]
+for i in range(98,114):
+    pathArena2.append(i)
+pathArena1.append(4)
+pathArena1.append(5)
+for i in range(144,153):
+    pathArena2.append(i)
+for i in range(7,10):
+    pathArena2.append(i)
 
 # -------------------------------------------------------
 #       total de cajones 625 + 191 + 353 + 71 = 1240
@@ -1295,8 +1305,9 @@ for i in range(7,10):
 
 # Paths
 path = [
-[1, {"path": pathArena0, "cajon_index": 20}],
-[1, {"path": pathArena1, "cajon_index": 20}],
+#[1, {"path": pathArena0, "cajon_index": 20}],
+#[1, {"path": pathArena1, "cajon_index": 19}],
+[1, {"path": pathArena2, "cajon_index": 18}],
 [1, {"path": extra, "cajon_index": 19}],
 ]
 sim.create_gen({
