@@ -1473,6 +1473,9 @@ path = [
     [18, {"path": entradaNuevo8, "cajon_index":1021}],#3
     [19, {"path": entradaNuevo9, "cajon_index":1022}],#3
     [20, {"path": entradaNuevo10, "cajon_index":1023}],#3
+    [22, {"path": pathJavier1, "cajon_index":371}],
+    [22, {"path": pathJavier2, "cajon_index":724}],
+    [22, {"path": pathJavier3, "cajon_index":477}],
     [21, {"path": extra, "cajon_index": 0}],
 ]
 sim.create_gen({
