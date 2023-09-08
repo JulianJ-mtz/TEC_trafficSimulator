@@ -44,9 +44,6 @@ EstArenaBorregos = [
     SALIDA  # 9
 ]
 
-
-
-
 # ---- ESTACIONAMIENTO ARENA BORREGOS ----
 # Guarda los valores y para grabar donde tienen que ir las intersecciones
 InterseccionesLY = [INTERSECCION_1L[0][1],INTERSECCION_2L[0][1],INTERSECCION_3L[0][1],INTERSECCION_4L[0][1],INTERSECCION_4L[1][1]]
@@ -537,18 +534,109 @@ v15_2 = (-82.8175, -168.5878)
 # HORIZONTALES
 h1_1 = (-28.96, -196.92)
 h1_2 = (-93.25, -191.87)
+res1 = 93.25 - 28.96
+divX = res1 / 10
+res2 = 196.92 - 191.87
+divY = res2 / 10
+HORIZONTAL_SECCIONADA_1 = []
+for inter1 in range(10):
+    if (inter1 == 0 and inter1 <= 10):
+        xi = -28.96
+        yi = -195.92
+        xf = xi - divX
+        yf = yi + divY
+    HORIZONTAL_SECCIONADA_1.append(((xi, yi),(xf, yf)))
+    xi -= divX
+    xf -= divX
+    yi += divY
+    yf += divY 
+    
+NUEVO_HORIZONTAL_1 = tuple(HORIZONTAL_SECCIONADA_1)
+    
 h2_1 = (-40.82, -208.18)
 h2_2 = (-104.71, -203.76)
 h3_1 = (-46.08, -212.96)
-h3_2 = (-114.2530, -208.69)
+h3_2 = (-114.25, -208.69)
+
 h4_1 = (-55.18, -221.65)
 h4_2 = (-113.92, -218.92)
+resX4 = 113.92 - 55.18
+divX4 = resX4 / 10
+resY4 = 221.65 - 218.92
+divY4 = resY4 / 10
+HORIZONTAL_SECCIONADA_4 = []
+for inter4 in range(10):
+    if (inter4 == 0 and inter4 <= 10):
+        xi = -55.18
+        yi = -221.65
+        xf = xi - divX4
+        yf = yi + divY4
+    HORIZONTAL_SECCIONADA_4.append(((xi, yi),(xf, yf)))
+    xi -= divX4
+    xf -= divX4
+    yi += divY4
+    yf += divY4
+NUEVO_HORIZONTAL_4 = tuple(HORIZONTAL_SECCIONADA_4)
+
 h5_1 = (-67.29, -250.20)
 h5_2 = (-136.68, -246.70)
+resX5 = 136.68 - 67.29
+divX5 = resX5 / 25
+resY5 = 250.20 - 246.70
+divY5 = resY5 / 25
+HORIZONTAL_SECCIONADA_5 = []
+for inter5 in range(25):
+    if (inter5 == 0 and inter5 <= 25):
+        xi = -67.29
+        yi = -250.20
+        xf = xi - divX5
+        yf = yi + divY5
+    HORIZONTAL_SECCIONADA_5.append(((xi, yi),(xf, yf)))
+    xi -= divX5
+    xf -= divX5
+    yi += divY5
+    yf += divY5
+NUEVO_HORIZONTAL_5 = tuple(HORIZONTAL_SECCIONADA_5)
+
 h6_1 = (-67.99, -268.79)
 h6_2 = (-152.39, -265.03)
+resX6 = 152.39 - 67.99
+divX6 = resX6 / 28
+resY6 = 268.79 - 265.03
+divY6 = resY6 / 28
+HORIZONTAL_SECCIONADA_6 = []
+for inter6 in range(28):
+    if (inter6 == 0 and inter6 <= 28):
+        xi = -67.99
+        yi = -268.79
+        xf = xi - divX6
+        yf = yi + divY6
+    HORIZONTAL_SECCIONADA_5.append(((xi, yi),(xf, yf)))
+    xi -= divX6
+    xf -= divX6
+    yi += divY6
+    yf += divY6
+NUEVO_HORIZONTAL_6 = tuple(HORIZONTAL_SECCIONADA_5)
+
 h7_1 = (-68.69, -285.74)
 h7_2 = (-151.02, -282.50)
+resX7 = 151.02 - 68.69
+divX7 = resX7 / 28
+resY7 = 285.74 - 282.50
+divY7 = resY7 / 28
+HORIZONTAL_SECCIONADA_7 = []
+for inter6 in range(28):
+    if (inter6 == 0 and inter6 <= 28):
+        xi = -68.69
+        yi = -285.74
+        xf = xi - divX7
+        yf = yi + divY7
+    HORIZONTAL_SECCIONADA_7.append(((xi, yi),(xf, yf)))
+    xi -= divX7
+    xf -= divX7
+    yi += divY7
+    yf += divY7
+NUEVO_HORIZONTAL_7 = tuple(HORIZONTAL_SECCIONADA_7)
 
 # SALIDA
 s1_1 = (-113.92, -218.92)
@@ -563,6 +651,116 @@ e2_1 = (-111.90, -193.64)
 e2_2 = (-104.71, -203.76)
 e3_1 = (-111.90, -193.64)
 e3_2 = (-93.25, -191.87)
+
+# CAJONES
+xi = 0
+yi = 0
+xf = 0 
+yf = 0
+indexCajonNuevos = 0
+cajon_EST_NUEVO = []
+for x in range(194):
+    if (x <= 13):
+        if (x == 0):
+            xi = -84.96
+            yi = -191.84
+            xf = -85.48
+            yf = -201.12
+        cajon_EST_NUEVO.append(((xi, yi),(xf, yf), 1))
+        xi += 2.8
+        xf += 2.8
+        yf -= 0.2
+        yi -= 0.2
+    if (x >= 14 and x <= 31):
+        if(x == 14):
+            xi = -81.50
+            yi = -192.16
+            xf = -81.07
+            yf = -185.07
+        cajon_EST_NUEVO.append(((xi, yi),(xf, yf), 1))
+        xi += 2.8
+        xf += 2.8
+        yf -= 0.2
+        yi -= 0.2
+    if (x >= 32 and x <= 49):
+        if (x == 32):
+            xi = -110.26
+            yi = -218.33
+            xf = -110.72
+            yf = -226.97
+        cajon_EST_NUEVO.append(((xi, yi),(xf, yf), 1))
+        xi += 2.8
+        xf += 2.8
+        yf -= 0.11
+        yi -= 0.11
+    if (x >= 50 and x <= 67):
+        if (x == 50):
+            xi = -104.54
+            yi = -218.83
+            xf = -104.15
+            yf = -212.57
+        cajon_EST_NUEVO.append(((xi, yi),(xf, yf), 1))
+        xi += 2.8
+        xf += 2.8
+        yf -= 0.11
+        yi -= 0.11
+    if (x >= 68 and x <= 91):
+        if (x == 68):
+            xi = -134.83
+            yi = -247.72
+            xf = -135.30
+            yf = -255.35
+        cajon_EST_NUEVO.append(((xi, yi),(xf, yf), 1))
+        xi += 2.8
+        xf += 2.8
+        yf -= 0.11
+        yi -= 0.11
+    if (x >= 92 and x <= 112):
+        if (x == 92):
+            xi = -126.73
+            yi = -248.10
+            xf = -126.44
+            yf = -239.81
+        cajon_EST_NUEVO.append(((xi, yi),(xf, yf), 1))
+        xi += 2.8
+        xf += 2.8
+        yf -= 0.11
+        yi -= 0.11
+    if (x >= 113 and x < 141):
+        if (x == 113):
+            xi = -148.38
+            yi = -265.84
+            xf = -148.83
+            yf = -272.20
+        cajon_EST_NUEVO.append(((xi, yi),(xf, yf), 1))
+        xi += 2.8
+        xf += 2.8
+        yf -= 0.11
+        yi -= 0.11
+    if (x >= 142 and x < 166):
+        if (x == 142):
+            xi = -138.44
+            yi = -266.28
+            xf = -138.02
+            yf = -258.51
+        cajon_EST_NUEVO.append(((xi, yi),(xf, yf), 1))
+        xi += 2.8
+        xf += 2.8
+        yf -= 0.11
+        yi -= 0.11
+    if (x >= 167 and x <= 194):
+        if (x == 167):
+            xi = -147.18
+            yi = -283.33
+            xf = -146.78
+            yf = -276.06
+        cajon_EST_NUEVO.append(((xi, yi),(xf, yf), 1))
+        xi += 2.8
+        xf += 2.8
+        yf -= 0.11
+        yi -= 0.11
+    
+EST_NUEVO_CAJONES = tuple(cajon_EST_NUEVO)
 
 NUEVO_VERTICAL_1 = (v1_1, v1_2)
 NUEVO_VERTICAL_2 = (v2_1, v2_2)
@@ -581,13 +779,8 @@ NUEVO_VERTICAL_13 = (v13_1, v13_2)
 NUEVO_VERTICAL_14 = (v14_1, v14_2)
 NUEVO_VERTICAL_15 = (v15_1, v15_2)
 
-NUEVO_HORIZONTAL_1 = (h1_1, h1_2)
-NUEVO_HORIZONTAL_2 = (h2_1, h2_2)
+NUEVO_HORIZONTAL_2 = (h2_1, h2_2) 
 NUEVO_HORIZONTAL_3 = (h3_1, h3_2)
-NUEVO_HORIZONTAL_4 = (h4_1, h4_2)
-NUEVO_HORIZONTAL_5 = (h5_1, h5_2)
-NUEVO_HORIZONTAL_6 = (h6_1, h6_2)
-NUEVO_HORIZONTAL_7 = (h7_1, h7_2)
 
 NUEVO_SALIDAS_1 = (s1_1, s1_2)
 NUEVO_SALIDAS_2 = (s2_1, s2_2)
@@ -611,38 +804,54 @@ sim.create_roads([
     NUEVO_VERTICAL_13,#54
     NUEVO_VERTICAL_14,#55
     NUEVO_VERTICAL_15,#56
-    NUEVO_HORIZONTAL_1,#57
-    NUEVO_HORIZONTAL_2,#58
-    NUEVO_HORIZONTAL_3,#59
-    NUEVO_HORIZONTAL_4,#60
-    NUEVO_HORIZONTAL_5,#61
-    NUEVO_HORIZONTAL_6,#62
-    NUEVO_HORIZONTAL_7,#63
-    NUEVO_SALIDAS_1,#64
-    NUEVO_SALIDAS_2,#65
-    NUEVO_ENTRADA_1,#66
-    NUEVO_ENTRADA_2,#67
-    NUEVO_ENTRADA_3#68
+    NUEVO_SALIDAS_1,#57
+    NUEVO_SALIDAS_2,#58
+    NUEVO_ENTRADA_1,#59
+    NUEVO_ENTRADA_2,#60
+    NUEVO_ENTRADA_3#61
 ])
 
+# intersec: 20 index 62 a 82
+for i in range(0, len(NUEVO_HORIZONTAL_1)):
+    sim.create_roads([NUEVO_HORIZONTAL_1[i]])
+    
+sim.create_roads([
+    NUEVO_HORIZONTAL_2, # 83
+    NUEVO_HORIZONTAL_3  # 84
+])
 
+# intersec: 21 index 83 a 104
+for i in range(0, len(NUEVO_HORIZONTAL_4)):
+    sim.create_roads([NUEVO_HORIZONTAL_4[i]])
+    
+# intersec: 26 index 105 a 131
+for i in range(0, len(NUEVO_HORIZONTAL_5)):
+    sim.create_roads([NUEVO_HORIZONTAL_5[i]])
 
+# intersec: 29 index 132 a 161
+for i in range(0, len(NUEVO_HORIZONTAL_6)):
+    sim.create_roads([NUEVO_HORIZONTAL_6[i]])
+
+# intersec: 29 index 162 a 190
+for i in range(0, len(NUEVO_HORIZONTAL_7)):
+    sim.create_roads([NUEVO_HORIZONTAL_7[i]])
+    
 ## ---- ESTACIONAMIENTO TERRACERIA ----
 
 g0 = (-49.6102, -249.6164) #0
-g1 = (-35.1760, -249.6164) #1
-g2 = (-56.5573, -299.9513) #2
-g3 = (-62.4260, -313.7672) #3
-g4 = (-70.5566, -329.3894) #4
-g5 = (-76.4545, -344.1823) #5
-g6 = (-83.3353, -358.5668) #6
-g7 = (-89.1963, -373.6187) #7
+g1 = (-33.7784, -247.4305) #1
+g2 = (-17.3714, -248.4225) #2
+g3 = (-47.0759, -314.1266) #3
+g4 = (-54, -329.9062) #4
+g5 = (-60.0554, -344.8489) #5
+g6 = (-67.1610, -359.8162) #6
+g7 = (-73.1061, -374.8023) #7
 g8 = (-195.9880, -368.1862) #8
 g9 = (-188.5682, -353.0461) #9
 g10 = (-178.1299, -339.3147) #10
 g11 = (-166.1706, -323.7149) #11
 g12 = (-153.1128, -307.1783) #12
-g13 = (-65.7410, -296.0271) #13
+g13 = (-54.3620, -296.4803) #13
 g14 = (-150.8308, -293.1035) #14
 g15 = (-167.4109, -288.0571) #15
 g16 = (-191.0185, -287.0861) #16
@@ -656,7 +865,7 @@ g8_9 = (-194.6809, -361.2315) #8-9
 r0_1 = (g0, g1)
 r1_2 = (g1, g2)
 r2_3 = (g2, g3)
-r2_13 = (g2, g13)
+r1_13 = (g1, g13)
 r3_4 = (g3, g4)
 r3_12 = (g3, g12)
 r4_5 = (g4, g5)
@@ -686,7 +895,7 @@ sim.create_roads([
     r0_1, #69
     r1_2, #70
     r2_3, #71
-    r2_13, #72
+    r1_13, #72
     r3_4, #73
     r3_12, #74
     r4_5, #75
@@ -713,18 +922,22 @@ sim.create_roads([
     r19_20 #96
 ])
 
-#Cajones Javier
+# sim.create_roads([
+#Santiago
 
+#Javier
 
 #Julian
-#Santiago
+for i in range (0, len(EST_NUEVO_CAJONES)):
+    sim.create_roads([EST_NUEVO_CAJONES[i]])
 #Gustavo
 
+# ]) 
 
 # Paths
 path = [
 [1, {"path": [0, 1, 2, 3, 4, 5, 9, 10, 11, 12, 13, 14, 15, 16, 17]}],#1
-[1, {"path": [0, 1, 2, 6, 13, 14, 15, 16, 17]}],#2
+[1, {"path": [i for i in range (62, 200)]}],#2
 [1, {"path": [0, 1, 2, 3, 7, 12, 13, 14, 15, 16, 17]}],#3
 [1, {"path": [0, 1, 2, 3, 4, 8, 11, 12, 13, 14, 15, 16, 17]}],#4
 [1, {"path": [0, 1, 2, 3, 4, 5, 9, 10, 11, 12, 13, 14, 15, 16, 17]}],#5
@@ -745,4 +958,3 @@ sim.create_gen({
 win = Window(sim)
 win.zoom = 10
 win.run(steps_per_update=5)
-
