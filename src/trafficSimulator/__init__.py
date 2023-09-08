@@ -205,7 +205,6 @@ for i in range(len(Intersecciones0CX) - 1):
     #Utiliza los puntos del arreglo del inicio para crear caminos partidos por el mismo eje x
     EstArenaBorregos.append(((Intersecciones0CX[i],INTERSECCION_0C[0][1]),(Intersecciones0CX[i+1],INTERSECCION_0C[0][1])))
 
-sim.create_roads(EstArenaBorregos)
 
 # ---- ESTACIONAMIENTO MEDIO ----
 ENTRADA_EST_MEDIO = ((31.8606, -26.9761), (25.7451, -42.7844))
@@ -455,47 +454,8 @@ for x in range(354):
     
 EST_MEDIO_CAJONES=tuple(cajon_EST_MEDIO)
 EST_MEDIO_CAMINO=tuple(estacion_MEDIO_CAMINO_B)
-print(EST_MEDIO_CAMINO[160])
-sim.create_roads([
-    ENTRADA_EST_MEDIO,  # 18
-    EST_MEDIO_B1,  # 19
-    EST_MEDIO_B2, #20
-    EST_MEDIO_L1,  # 21
-    EST_MEDIO_R1,  # 22
-    EST_MEDIO_INTERSECCION1_1,  # 23
-    EST_MEDIO_INTERSECCION1_2,#24
-    EST_MEDIO_L2,  # 25
-    EST_MEDIO_R2,  # 26
-    EST_MEDIO_INTERSECCION2_1,  # 27
-    EST_MEDIO_INTERSECCION2_2,  # 28
-    EST_MEDIO_L3,  # 29
-    EST_MEDIO_R3,  # 30
-    EST_MEDIO_INTERSECCION3_1,  # 31
-    EST_MEDIO_INTERSECCION3_2,  # 32
-    EST_MEDIO_L4,  # 33
-    EST_MEDIO_R4,  # 34
-    EST_MEDIO_INTERSECCION4_1,  # 35
-    EST_MEDIO_INTERSECCION4_2,  # 36
-    EST_MEDIO_L5,  # 37
-    EST_MEDIO_R5,  # 38
-    EST_MEDIO_INTERSECCION5_1,  # 39
-    EST_MEDIO_INTERSECCION5_2,  # 40
-    EST_MEDIO_L6,  # 41
-    EST_MEDIO_R6,  # 42
-    EST_MEDIO_INTERSECCION6_1,  # 43
-    EST_MEDIO_INTERSECCION6_2,  # 44
-    EST_MEDIO_R7,  # 45
-    EST_MEDIO_L7,  # 46
-    EST_MEDIO_R8,  # 47
-    EST_MEDIO_T1,  # 48
-    EST_MEDIO_T2,  # 49
-])
-for i in range(0, len(EST_MEDIO_CAMINO)):
-    sim.create_roads([EST_MEDIO_CAMINO[i]])#(50-61):EST_MEDIO_B_ABAJO/(62-77):EST_MEDIO_B_ARRIBA/(-235):EST_MEDIO_T_ARRIBA
 
 
-for i in range(0, len(EST_MEDIO_CAJONES)):
-    sim.create_roads([EST_MEDIO_CAJONES[i]])#(236-247):EST_MEDIO_B_CAJONES_ABAJO/(248-263):EST_MEDIO_B_CAJONES_ARRIBA
 # ---- ESTACIONAMIENTO NUEVO ----
 # VERTICALES DERECHA
 v1_1 = (-8.7637, -173.0237)
@@ -788,53 +748,8 @@ NUEVO_ENTRADA_1 = (e1_1, e1_2)
 NUEVO_ENTRADA_2 = (e2_1, e2_2)
 NUEVO_ENTRADA_3 = (e3_1, e3_2)
 
-sim.create_roads([
-    NUEVO_VERTICAL_1, #42
-    NUEVO_VERTICAL_2, #43
-    NUEVO_VERTICAL_3, #44
-    NUEVO_VERTICAL_4, #45
-    NUEVO_VERTICAL_5, #46
-    NUEVO_VERTICAL_6, #47
-    NUEVO_VERTICAL_7, #48
-    NUEVO_VERTICAL_8, #49
-    NUEVO_VERTICAL_9, #50
-    NUEVO_VERTICAL_10,#51
-    NUEVO_VERTICAL_11,#52
-    NUEVO_VERTICAL_12,#53
-    NUEVO_VERTICAL_13,#54
-    NUEVO_VERTICAL_14,#55
-    NUEVO_VERTICAL_15,#56
-    NUEVO_SALIDAS_1,#57
-    NUEVO_SALIDAS_2,#58
-    NUEVO_ENTRADA_1,#59
-    NUEVO_ENTRADA_2,#60
-    NUEVO_ENTRADA_3#61
-])
 
-# intersec: 20 index 62 a 82
-for i in range(0, len(NUEVO_HORIZONTAL_1)):
-    sim.create_roads([NUEVO_HORIZONTAL_1[i]])
-    
-sim.create_roads([
-    NUEVO_HORIZONTAL_2, # 83
-    NUEVO_HORIZONTAL_3  # 84
-])
 
-# intersec: 21 index 83 a 104
-for i in range(0, len(NUEVO_HORIZONTAL_4)):
-    sim.create_roads([NUEVO_HORIZONTAL_4[i]])
-    
-# intersec: 26 index 105 a 131
-for i in range(0, len(NUEVO_HORIZONTAL_5)):
-    sim.create_roads([NUEVO_HORIZONTAL_5[i]])
-
-# intersec: 29 index 132 a 161
-for i in range(0, len(NUEVO_HORIZONTAL_6)):
-    sim.create_roads([NUEVO_HORIZONTAL_6[i]])
-
-# intersec: 29 index 162 a 190
-for i in range(0, len(NUEVO_HORIZONTAL_7)):
-    sim.create_roads([NUEVO_HORIZONTAL_7[i]])
     
 ## ---- ESTACIONAMIENTO TERRACERIA ----
 
@@ -891,48 +806,135 @@ r17_18 = (g17, g18)
 r18_19 = (g18, g19)
 r19_20 = (g19, g20)
 
+# Arena borregos index 0 - 152
+sim.create_roads(EstArenaBorregos)
+
+# Estacionamiento medio
 sim.create_roads([
-    r0_1, #69
-    r1_2, #70
-    r2_3, #71
-    r1_13, #72
-    r3_4, #73
-    r3_12, #74
-    r4_5, #75
-    r4_11, #76
-    r5_6, #77
-    r5_10, #78
-    r6_7, #79
-    r6_9, #80
-    r7_8, #81
-    r8_9_1, #82
-    r8_9_2, #83
-    r9_10, #84
-    r10_11, #85
-    r11_12, #86
-    r12_14, #87
-    r13_14, #88
-    r14_15_1, #89
-    r14_15_2, #90
-    r15_16, #91
-    r15_17, #92
-    r16_17, #93
-    r17_18, #94
-    r18_19, #95
-    r19_20 #96
+    ENTRADA_EST_MEDIO,  # 152
+    EST_MEDIO_B1,  # 154
+    EST_MEDIO_B2,  # 155
+    EST_MEDIO_L1,  # 156
+    EST_MEDIO_R1,  # 157
+    EST_MEDIO_INTERSECCION1_1,  # 158
+    EST_MEDIO_INTERSECCION1_2,  # 159
+    EST_MEDIO_L2,  # 160
+    EST_MEDIO_R2,  # 161
+    EST_MEDIO_INTERSECCION2_1,  # 162
+    EST_MEDIO_INTERSECCION2_2,  # 163
+    EST_MEDIO_L3,  # 164
+    EST_MEDIO_R3,  # 165
+    EST_MEDIO_INTERSECCION3_1,  # 166
+    EST_MEDIO_INTERSECCION3_2,  # 167
+    EST_MEDIO_L4,  # 168
+    EST_MEDIO_R4,  # 169
+    EST_MEDIO_INTERSECCION4_1,  # 170
+    EST_MEDIO_INTERSECCION4_2,  # 171
+    EST_MEDIO_L5,  # 172
+    EST_MEDIO_R5,  # 173
+    EST_MEDIO_INTERSECCION5_1,  # 174
+    EST_MEDIO_INTERSECCION5_2,  # 175
+    EST_MEDIO_L6,  # 176
+    EST_MEDIO_R6,  # 177
+    EST_MEDIO_INTERSECCION6_1,  # 178
+    EST_MEDIO_INTERSECCION6_2,  # 179
+    EST_MEDIO_R7,  # 180
+    EST_MEDIO_L7,  # 181
+    EST_MEDIO_R8,  # 182
+    EST_MEDIO_T1,  # 183
+    EST_MEDIO_T2,  # 184
 ])
 
-# sim.create_roads([
-#Santiago
+for i in range(0, len(EST_MEDIO_CAMINO)):
+    sim.create_roads([EST_MEDIO_CAMINO[i]])#(185-196):EST_MEDIO_B_ABAJO/(197-212):EST_MEDIO_B_ARRIBA/(213-370):EST_MEDIO_T_ARRIBA
 
-#Javier
 
-#Julian
+for i in range(0, len(EST_MEDIO_CAJONES)):
+    sim.create_roads([EST_MEDIO_CAJONES[i]])#(371-382):EST_MEDIO_B_CAJONES_ABAJO/(383-398):EST_MEDIO_B_CAJONES_ARRIBA
+
+sim.create_roads([
+    NUEVO_VERTICAL_1,   # 399
+    NUEVO_VERTICAL_2,   # 400
+    NUEVO_VERTICAL_3,   # 401
+    NUEVO_VERTICAL_4,   # 402
+    NUEVO_VERTICAL_5,   # 403
+    NUEVO_VERTICAL_6,   # 404
+    NUEVO_VERTICAL_7,   # 405
+    NUEVO_VERTICAL_8,   # 406
+    NUEVO_VERTICAL_9,   # 407
+    NUEVO_VERTICAL_10,  # 408
+    NUEVO_VERTICAL_11,  # 409
+    NUEVO_VERTICAL_12,  # 410
+    NUEVO_VERTICAL_13,  # 411
+    NUEVO_VERTICAL_14,  # 412
+    NUEVO_VERTICAL_15,  # 413
+    NUEVO_SALIDAS_1,    # 414
+    NUEVO_SALIDAS_2,    # 415
+    NUEVO_ENTRADA_1,    # 416
+    NUEVO_ENTRADA_2,    # 417
+    NUEVO_ENTRADA_3     # 418
+])
+
+# index 419 a 430
+for i in range(0, len(NUEVO_HORIZONTAL_1)):
+    sim.create_roads([NUEVO_HORIZONTAL_1[i]])
+
+sim.create_roads([
+    NUEVO_HORIZONTAL_2,  # 440
+    NUEVO_HORIZONTAL_3  # 441
+])
+
+# index 431 a 442
+for i in range(0, len(NUEVO_HORIZONTAL_4)):
+    sim.create_roads([NUEVO_HORIZONTAL_4[i]])
+
+# index 443 a 469
+for i in range(0, len(NUEVO_HORIZONTAL_5)):
+    sim.create_roads([NUEVO_HORIZONTAL_5[i]])
+
+# index 470 a 499
+for i in range(0, len(NUEVO_HORIZONTAL_6)):
+    sim.create_roads([NUEVO_HORIZONTAL_6[i]])
+
+# index 500 a 529
+for i in range(0, len(NUEVO_HORIZONTAL_7)):
+    sim.create_roads([NUEVO_HORIZONTAL_7[i]])
+
+# index 530 a 725
 for i in range (0, len(EST_NUEVO_CAJONES)):
     sim.create_roads([EST_NUEVO_CAJONES[i]])
-#Gustavo
 
-# ]) 
+sim.create_roads([
+    r0_1,       # 726
+    r1_2,       # 727
+    r2_3,       # 728
+    r1_13,      # 729
+    r3_4,       # 730
+    r3_12,      # 731
+    r4_5,       # 732
+    r4_11,      # 733
+    r5_6,       # 734
+    r5_10,      # 735
+    r6_7,       # 736
+    r6_9,       # 737
+    r7_8,       # 738
+    r8_9_1,     # 739
+    r8_9_2,     # 740
+    r9_10,      # 741
+    r10_11,     # 742
+    r11_12,     # 743
+    r12_14,     # 744
+    r13_14,     # 745
+    r14_15_1,   # 746
+    r14_15_2,   # 747
+    r15_16,     # 748
+    r15_17,     # 749
+    r16_17,     # 750
+    r17_18,     # 751
+    r18_19,     # 752
+    r19_20      # 753
+])
+
 
 # Paths
 path = [
