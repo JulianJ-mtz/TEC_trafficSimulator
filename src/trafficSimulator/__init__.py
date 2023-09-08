@@ -930,20 +930,22 @@ def cajonear(ruta, n, dir, skip):
     while i < n + extra:
         xi = ruta[i][0][0] 
         yi = ruta[i][0][1]
-        xf = ruta[i][1][0]
+        xf = ruta[i][1][0] 
         yf = ruta[i][1][1]
         dx = xf - xi
         dy = yf - yi
         ndx = dy
-        ndy = -dx
+        ndy = dx
         if dir == 0:
-            xn = xf + dx
-            xf += 1.5
-            yn = yf - dy
+            xn = xf + ndx
+            #xf += 1.5
+            yn = yf - ndy
+          
         elif dir == 1:
-            xn = xf - dx
-            xf -= 1.5
-            yn = yf + dy
+            xn = xf - ndx
+            #xf -= 1.5
+            yn = yf + ndy
+            
         #cajones.append(((xf,yf),(xn,yn)))
         if skip <= 0:
              cajones.append(((xf,yf),(xn,yn)))
@@ -951,10 +953,14 @@ def cajonear(ruta, n, dir, skip):
         i += 1
         skip -= 1
          
-
-        
-    print(cajones)
     return cajones
+
+
+c2_3_l = cajonear(p2_3, 18,0,1)
+c2_3_r = cajonear(p2_3, 26, 1, 0)
+
+c3_4 = cajonear(p3_4, 6,1,0)
+
 
 
 c15_16_0 =cajonear(p17_18, 13, 0, 10)
@@ -1129,11 +1135,20 @@ for i in range(0, len(p14_15)):
 for i in range(0, len(p15_16)):
         sim.create_roads([p15_16[i]])
 
+for i in range(0, len(c2_3_l)):
+        sim.create_roads([c2_3_l[i]])
+
+for i in range(0, len(c2_3_r)):
+        sim.create_roads([c2_3_r[i]])        
+
 for i in range(0, len(c15_16_0)):
         sim.create_roads([c15_16_0[i]])
 
 for i in range(0, len(c15_16_1)):
         sim.create_roads([c15_16_1[i]])
+
+for i in range(0, len(c3_4)):
+        sim.create_roads([c3_4[i]])
 
 
 
