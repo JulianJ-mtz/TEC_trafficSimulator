@@ -1294,7 +1294,7 @@ path = [
 # [1, {"path": test}],#2
 # [1, {"path": test}],#2
 # [1, {"path": test}],#2
-[1, {"path": entradaNuevo}],#3
+[1, {"path": entradaNuevo, "cajon_index":1014}],#3
 [1, {"path": [0, 1, 726, 727, 728]}],#3
 
 #[1, {"path": [0, 1, 2, 3, 4, 8, 11, 12, 13, 14, 15, 16, 17]}],#4
