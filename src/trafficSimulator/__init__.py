@@ -741,8 +741,8 @@ NUEVO_VERTICAL_10 = (v10_1, v10_2)
 NUEVO_VERTICAL_11 = (v11_1, v11_2)
 NUEVO_VERTICAL_12 = (v12_1, v12_2)
 NUEVO_VERTICAL_13 = (v13_1, v13_2)
-NUEVO_VERTICAL_14 = (v14_1, v14_2)
-NUEVO_VERTICAL_15 = (v15_1, v15_2)
+NUEVO_VERTICAL_14 = (v14_2, v14_1)
+NUEVO_VERTICAL_15 = (v15_2, v15_1)
 
 NUEVO_HORIZONTAL_2 = (h2_1, h2_2) 
 NUEVO_HORIZONTAL_3 = (h3_1, h3_2)
@@ -776,10 +776,6 @@ neo_paths.append(NUEVO_SALIDAS_2)
 neo_paths.append(NUEVO_ENTRADA_1)
 neo_paths.append(NUEVO_ENTRADA_2)
 neo_paths.append(NUEVO_ENTRADA_3)
-
-
-
-
     
 ## ---- ESTACIONAMIENTO TERRACERIA ----
 
@@ -1226,7 +1222,7 @@ for i in range(0, len(NUEVO_HORIZONTAL_6)):
     sim.create_roads([NUEVO_HORIZONTAL_6[i]])
     # print(i)
 
-# index 821 a 848
+# index 821,  848
 for i in range(0, len(NUEVO_HORIZONTAL_7)):
     sim.create_roads([NUEVO_HORIZONTAL_7[i]])
     # print(i)
@@ -1272,22 +1268,35 @@ for i in range(152):
 #       total de cajones 625 + 191 + 353 + 71 = 1240
 # -------------------------------------------------------
 
+entradaNuevo = []
+entradaNuevo = [0, 1, 153, 157, 161, 165, 169, 173, 177, 180, 182] 
+for i in range (725, 732):
+    entradaNuevo.append(i)
+for i in range (821, 848):
+    entradaNuevo.append(i)
+for i in range (733, 736):
+    entradaNuevo.append(i)
+entradaNuevo.append(740)
+entradaNuevo.append(2168)
+
 # Paths
 path = [
 #[1, {"path": [0, 1, 2, 3, 4, 5, 9, 10, 11, 12, 13, 14, 15, 16, 17]}],#1
-[1, {"path": test}],#2
-[1, {"path": test}],#2
-[1, {"path": test}],#2
-[1, {"path": test}],#2
-[1, {"path": test}],#2
-[1, {"path": test}],#2
-[1, {"path": test}],#2
-[1, {"path": test}],#2
-[1, {"path": test}],#2
-[1, {"path": test}],#2
-[1, {"path": test}],#2
-[1, {"path": test}],#2
-#[1, {"path": [0, 1, 2, 3, 7, 12, 13, 14, 15, 16, 17]}],#3
+# [1, {"path": test}],#2
+# [1, {"path": test}],#2
+# [1, {"path": test}],#2
+# [1, {"path": test}],#2
+# [1, {"path": test}],#2
+# [1, {"path": test}],#2
+# [1, {"path": test}],#2
+# [1, {"path": test}],#2
+# [1, {"path": test}],#2
+# [1, {"path": test}],#2
+# [1, {"path": test}],#2
+# [1, {"path": test}],#2
+[1, {"path": entradaNuevo}],#3
+[1, {"path": [0, 1, 726, 727, 728]}],#3
+
 #[1, {"path": [0, 1, 2, 3, 4, 8, 11, 12, 13, 14, 15, 16, 17]}],#4
 #[1, {"path": [0, 1, 2, 3, 4, 5, 9, 10, 11, 12, 13, 14, 15, 16, 17]}],#5
 #[1, {"path": [0, 1, 18, 21, 24, 27, 30, 33, 36, 38, 40, 41, 39, 35, 32, 29, 26, 23, 20, 19, 52]}],#6
@@ -1299,7 +1308,7 @@ path = [
 #[1, {"path": [0, 1, 18, 21, 24, 27, 30, 33, 36, 37, 35, 32, 31, 29, 26, 23, 20, 19, 47]}],#12
 ]
 sim.create_gen({
-    'vehicle_rate': 10,
+    'vehicle_rate': 50,
     'vehicles': path
 })
 

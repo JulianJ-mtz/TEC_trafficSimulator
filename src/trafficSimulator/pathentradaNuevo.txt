@@ -1,0 +1,107 @@
+
+# Verticales y estrada est nuevo 726 - 745
+sim.create_roads([
+    NUEVO_VERTICAL_1,   # 726
+    NUEVO_VERTICAL_2,   # 727
+    NUEVO_VERTICAL_3,   # 728
+    NUEVO_VERTICAL_4,   # 729
+    NUEVO_VERTICAL_5,   # 730
+    NUEVO_VERTICAL_6,   # 731
+    NUEVO_VERTICAL_7,   # 732
+    NUEVO_VERTICAL_8,   # 733
+    NUEVO_VERTICAL_9,   # 734
+    NUEVO_VERTICAL_10,  # 735
+    NUEVO_VERTICAL_11,  # 736
+    NUEVO_VERTICAL_12,  # 737
+    NUEVO_VERTICAL_13,  # 738
+    NUEVO_VERTICAL_14,  # 739
+    NUEVO_VERTICAL_15,  # 740
+    NUEVO_SALIDAS_1,    # 741
+    NUEVO_SALIDAS_2,    # 742
+    NUEVO_ENTRADA_1,    # 743
+    NUEVO_ENTRADA_2,    # 744
+    NUEVO_ENTRADA_3     # 745
+])
+
+# index 746 a 755
+for i in range(0, len(NUEVO_HORIZONTAL_1)):
+    sim.create_roads([NUEVO_HORIZONTAL_1[i]])
+    # print(i)
+
+sim.create_roads([
+    NUEVO_HORIZONTAL_2,  # 756
+    NUEVO_HORIZONTAL_3  # 757
+])
+
+# index 758 a 767
+for i in range(0, len(NUEVO_HORIZONTAL_4)):
+    sim.create_roads([NUEVO_HORIZONTAL_4[i]])
+    # print(i)
+
+# index 768 a 792
+for i in range(0, len(NUEVO_HORIZONTAL_5)):
+    sim.create_roads([NUEVO_HORIZONTAL_5[i]])
+    # print(i)
+
+# index 793 a 820 
+for i in range(0, len(NUEVO_HORIZONTAL_6)):
+    sim.create_roads([NUEVO_HORIZONTAL_6[i]])
+    # print(i)
+
+# index 821 a 848
+for i in range(0, len(NUEVO_HORIZONTAL_7)):
+    sim.create_roads([NUEVO_HORIZONTAL_7[i]])
+    # print(i)
+
+# CAJONES
+# index 849 a 1040
+for i in range (0, len(EST_NUEVO_CAJONES)):
+    sim.create_roads([EST_NUEVO_CAJONES[i]])
+
+
+
+    0
+    1
+
+    154, 158, 162, 166, 170, 174, 178, 181, 183,
+
+entradaNuevo = []
+for i in range (726, 734)
+    entradaNuevo.append[i]
+
+[1, {"path": [0, 1, entradaNuevo]}],#3
+
+sim.create_roads([
+    ENTRADA_EST_MEDIO,  # 154
+    EST_MEDIO_B1,  # 155
+    EST_MEDIO_B2,  # 156
+    EST_MEDIO_L1,  # 157
+    EST_MEDIO_R1,  # 158
+    EST_MEDIO_INTERSECCION1_1,  # 159
+    EST_MEDIO_INTERSECCION1_2,  # 160
+    EST_MEDIO_L2,  # 161
+    EST_MEDIO_R2,  # 162
+    EST_MEDIO_INTERSECCION2_1,  # 163
+    EST_MEDIO_INTERSECCION2_2,  # 164
+    EST_MEDIO_L3,  # 165
+    EST_MEDIO_R3,  # 166
+    EST_MEDIO_INTERSECCION3_1,  # 167
+    EST_MEDIO_INTERSECCION3_2,  # 168
+    EST_MEDIO_L4,  # 169
+    EST_MEDIO_R4,  # 170
+    EST_MEDIO_INTERSECCION4_1,  # 171
+    EST_MEDIO_INTERSECCION4_2,  # 172
+    EST_MEDIO_L5,  # 173
+    EST_MEDIO_R5,  # 174
+    EST_MEDIO_INTERSECCION5_1,  # 175
+    EST_MEDIO_INTERSECCION5_2,  # 176
+    EST_MEDIO_L6,  # 177
+    EST_MEDIO_R6,  # 178
+    EST_MEDIO_INTERSECCION6_1,  # 179
+    EST_MEDIO_INTERSECCION6_2,  # 180
+    EST_MEDIO_R7,  # 181
+    EST_MEDIO_L7,  # 182
+    EST_MEDIO_R8,  # 183
+    EST_MEDIO_T1,  # 184
+    EST_MEDIO_T2,  # 185
+])
