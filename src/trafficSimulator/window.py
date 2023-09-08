@@ -18,7 +18,8 @@ class Window:
         """Set default configuration"""
         self.width = 1400
         self.height = 900
-        self.bg_color = (250, 250, 250)
+        self.bg_color = (245, 230, 210)
+        # self.bg_color = (0, 0, 0)
 
         self.fps = 60
         self.zoom = 5
@@ -146,7 +147,7 @@ class Window:
         if filled:
             gfxdraw.filled_polygon(self.screen, vertices, color)
 
-    def rotated_box(self, pos, size, angle=None, cos=None, sin=None, centered=True, color=(0, 0, 255), filled=True):
+    def rotated_box(self, pos, size, angle=None, cos=None, sin=None, centered=True, color=(255, 160, 80), filled=True):
         """Draws a rectangle center at *pos* with size *size* rotated anti-clockwise by *angle*."""
         x, y = pos
         l, h = size
@@ -173,7 +174,7 @@ class Window:
     def rotated_rect(self, pos, size, angle=None, cos=None, sin=None, centered=True, color=(0, 0, 255)):
         self.rotated_box(pos, size, angle=angle, cos=cos, sin=sin, centered=centered, color=color, filled=False)
 
-    def arrow(self, pos, size, angle=None, cos=None, sin=None, color=(150, 150, 190)):
+    def arrow(self, pos, size, angle=None, cos=None, sin=None, color=(121, 206, 103)):
         if angle:
             cos, sin = np.cos(angle), np.sin(angle)
         
@@ -237,19 +238,21 @@ class Window:
             # Draw road background
             self.rotated_box(
                 road.start,
-                (road.length, 3.7),
+                (road.length, 2.5),
                 cos=road.angle_cos,
                 sin=road.angle_sin,
-                color=(180, 180, 220),
+                # color=(0, 0, 0),
+                color=(75, 110, 135),
+
                 centered=False
             )
             # Draw road lines
             # self.rotated_box(
             #     road.start,
-            #     (road.length, 0.25),
+            #     (road.length, 1.5),
             #     cos=road.angle_cos,
             #     sin=road.angle_sin,
-            #     color=(0, 0, 0),
+            #     color=(50, 42, 86),
             #     centered=False
             # )
 
@@ -309,6 +312,16 @@ class Window:
         
         self.screen.blit(text_fps, (0, 0))
         self.screen.blit(text_frc, (100, 0))
+    
+    def draw_entrance_exit(self):
+        text_entrance = self.text_font.render('Entrada',False,(0,0,0))
+        text_salida = self.text_font.render('Salida',False,(0,0,0))
+
+        self.screen.blit(text_entrance, self.convert(x=-10,y=+1))
+        self.screen.blit(text_salida,self.convert(x=-22.2373, y = -15.9461))
+        self.screen.blit(text_entrance, self.convert(x=-140.31, y=-177.62))
+        self.screen.blit(text_salida,self.convert(x=-149.4951, y=-187.8469))
+
 
 
     def draw(self):
@@ -326,4 +339,6 @@ class Window:
 
         # Draw status info
         self.draw_status()
+        self.draw_entrance_exit()
+        
         
