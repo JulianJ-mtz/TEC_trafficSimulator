@@ -54,7 +54,7 @@ x2 = x1 - 3.2294
 y2 = 0
 for i in range(11): #CAJONES LATERALES ARENA BOREGOS 10 - 20
     y2 = y1 + 3.9333
-    EstArenaBorregos.append(((x1,y1),(x2,y2)))
+    EstArenaBorregos.append(((x1,y1),(x2,y2),1))
     InterseccionesLY.append(y1)
     y1 -= 4.5262
 #Añade todas las intersecciones que van a otros caminos
@@ -71,7 +71,7 @@ x2 = 0
 y2 = y1 + 3.5840
 for i in range(4): #CAJONES INTERSECCION 4 ABAJO DISCAPACITADOS ARENA BORREGOS 36-39
     x2 = x1 + 3.5255
-    EstArenaBorregos.append(((x1,y1),(x2,y2)))
+    EstArenaBorregos.append(((x1,y1),(x2,y2),1))
     Intersecciones4CX.append(x1)
     x1 -= 6
 
@@ -82,7 +82,7 @@ x2 = 0
 y2 = y1 - 3.5840
 for i in range(6): #CAJONES INTERSECCION 4 ARRIBA ARENA BORREGOS 40-45
     x2 = x1 + 3.5255
-    EstArenaBorregos.append(((x1,y1),(x2,y2)))
+    EstArenaBorregos.append(((x1,y1),(x2,y2),1))
     Intersecciones4CX.append(x1)
     x1 -= 3.5255
 
@@ -104,7 +104,7 @@ x2 = 0
 y2 = y1 + 3.5840
 for i in range(6):
     x2 = x1 - 3.5255
-    EstArenaBorregos.append(((x1,y1),(x2,y2)))
+    EstArenaBorregos.append(((x1,y1),(x2,y2),1))
     Intersecciones3CX.append(x1)
     x1 -= 3.5255
 
@@ -116,7 +116,7 @@ x2 = 0
 y2 = y1 - 3.8068
 for i in range(7):
     x2 = x1 - 3.7830
-    EstArenaBorregos.append(((x1,y1),(x2,y2)))
+    EstArenaBorregos.append(((x1,y1),(x2,y2),1))
     Intersecciones3CX.append(x1)
     x1 -= 4.5019
 
@@ -135,7 +135,7 @@ x2 = 0
 y2 = y1 + 3.8020
 for i in range(7):
     x2 = x1 + 3.0133
-    EstArenaBorregos.append(((x1,y1),(x2,y2)))
+    EstArenaBorregos.append(((x1,y1),(x2,y2),1))
     Intersecciones2CX.append(x1)
     x1 -= 4.1806
 
@@ -146,7 +146,7 @@ x2 = 0
 y2 = y1 - 3.8020
 for i in range(8):
     x2 = x1 + 3.0133
-    EstArenaBorregos.append(((x1,y1),(x2,y2)))
+    EstArenaBorregos.append(((x1,y1),(x2,y2),1))
     Intersecciones2CX.append(x1)
     x1 -= 4.1806
 
@@ -165,7 +165,7 @@ x2 = 0
 y2 = y1 + 3.8020
 for i in range(7):
     x2 = x1 - 3.0133
-    EstArenaBorregos.append(((x1,y1),(x2,y2)))
+    EstArenaBorregos.append(((x1,y1),(x2,y2),1))
     Intersecciones1CX.append(x1)
     x1 -= 4.1806
 
@@ -176,7 +176,7 @@ x2 = 0
 y2 = y1 - 3.8020
 for i in range(7):
     x2 = x1 - 3.0133
-    EstArenaBorregos.append(((x1,y1),(x2,y2)))
+    EstArenaBorregos.append(((x1,y1),(x2,y2),1))
     Intersecciones1CX.append(x1)
     x1 -= 4.1806
 
@@ -195,7 +195,7 @@ x2 = 0
 y2 = y1 - 3.8020
 for i in range(8):
     x2 = x1 - 3.6964
-    EstArenaBorregos.append(((x1,y1),(x2,y2)))
+    EstArenaBorregos.append(((x1,y1),(x2,y2),1))
     Intersecciones0CX.append(x1)
     x1 -= 4
 Intersecciones0CX.append(INTERSECCION_0C[1][0])
