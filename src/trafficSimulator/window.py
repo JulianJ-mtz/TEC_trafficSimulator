@@ -18,7 +18,7 @@ class Window:
         """Set default configuration"""
         self.width = 1400
         self.height = 900
-        self.bg_color = (0, 0, 0)
+        self.bg_color = (245, 230, 210)
 
         self.fps = 60
         self.zoom = 5
@@ -146,7 +146,7 @@ class Window:
         if filled:
             gfxdraw.filled_polygon(self.screen, vertices, color)
 
-    def rotated_box(self, pos, size, angle=None, cos=None, sin=None, centered=True, color=(0, 0, 255), filled=True):
+    def rotated_box(self, pos, size, angle=None, cos=None, sin=None, centered=True, color=(255, 160, 80), filled=True):
         """Draws a rectangle center at *pos* with size *size* rotated anti-clockwise by *angle*."""
         x, y = pos
         l, h = size
@@ -173,7 +173,7 @@ class Window:
     def rotated_rect(self, pos, size, angle=None, cos=None, sin=None, centered=True, color=(0, 0, 255)):
         self.rotated_box(pos, size, angle=angle, cos=cos, sin=sin, centered=centered, color=color, filled=False)
 
-    def arrow(self, pos, size, angle=None, cos=None, sin=None, color=(150, 150, 190)):
+    def arrow(self, pos, size, angle=None, cos=None, sin=None, color=(121, 206, 103)):
         if angle:
             cos, sin = np.cos(angle), np.sin(angle)
         
@@ -240,18 +240,18 @@ class Window:
                 (road.length, 2.5),
                 cos=road.angle_cos,
                 sin=road.angle_sin,
-                color=(180, 180, 220),
+                color=(75, 110, 135),
                 centered=False
             )
             # Draw road lines
-            # self.rotated_box(
-            #     road.start,
-            #     (road.length, 0.25),
-            #     cos=road.angle_cos,
-            #     sin=road.angle_sin,
-            #     color=(0, 0, 0),
-            #     centered=False
-            # )
+            self.rotated_box(
+                road.start,
+                (road.length, 1.5),
+                cos=road.angle_cos,
+                sin=road.angle_sin,
+                color=(50, 42, 86),
+                centered=False
+            )
 
             # Draw road arrow
             if road.length > 5: 
