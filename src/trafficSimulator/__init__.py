@@ -1171,8 +1171,6 @@ for i in range(0, len(EST_MEDIO_CAJONES)):
     sim.create_roads([EST_MEDIO_CAJONES[i]])
     # print(i)
 
-
-
 # Verticales y estrada est nuevo 726 - 745
 sim.create_roads([
     NUEVO_VERTICAL_1,   # 726
@@ -1267,48 +1265,48 @@ for i in range(152):
 # -------------------------------------------------------
 #       total de cajones 625 + 191 + 353 + 71 = 1240
 # -------------------------------------------------------
+def crear_lista_entrada(numero):
+    entrada_nueva = [0, 1, 153, 157, 161, 165, 169, 173, 177, 180, 182] 
+    for i in range(725, 732 ):
+        entrada_nueva.append(i)
+    for i in range(821, 848):
+        entrada_nueva.append(i)
+    entrada_nueva.append(1000 + numero)  # Agregar el número proporcionado al final
+    for i in range(733, 736):
+        entrada_nueva.append(i)
+    entrada_nueva.append(740)
+    entrada_nueva.append(2168)
+    return entrada_nueva
 
-entradaNuevo = []
-entradaNuevo = [0, 1, 153, 157, 161, 165, 169, 173, 177, 180, 182] 
-for i in range (725, 732):
-    entradaNuevo.append(i)
-for i in range (821, 848):
-    entradaNuevo.append(i)
-for i in range (733, 736):
-    entradaNuevo.append(i)
-entradaNuevo.append(740)
-entradaNuevo.append(2168)
+# Llamar a la función para crear las listas
+entradaNuevo1 = crear_lista_entrada(14)
+entradaNuevo2 = crear_lista_entrada(15)
+entradaNuevo3 = crear_lista_entrada(16)
+entradaNuevo4 = crear_lista_entrada(17)
+entradaNuevo5 = crear_lista_entrada(18)
+entradaNuevo6 = crear_lista_entrada(19)
+entradaNuevo7 = crear_lista_entrada(20)
+entradaNuevo8 = crear_lista_entrada(21)
+entradaNuevo9 = crear_lista_entrada(22)
+entradaNuevo10 = crear_lista_entrada(23)
+
 
 # Paths
 path = [
 #[1, {"path": [0, 1, 2, 3, 4, 5, 9, 10, 11, 12, 13, 14, 15, 16, 17]}],#1
-# [1, {"path": test}],#2
-# [1, {"path": test}],#2
-# [1, {"path": test}],#2
-# [1, {"path": test}],#2
-# [1, {"path": test}],#2
-# [1, {"path": test}],#2
-# [1, {"path": test}],#2
-# [1, {"path": test}],#2
-# [1, {"path": test}],#2
-# [1, {"path": test}],#2
-# [1, {"path": test}],#2
-# [1, {"path": test}],#2
-[1, {"path": entradaNuevo, "cajon_index":1014}],#3
-[1, {"path": [0, 1, 726, 727, 728]}],#3
-
-#[1, {"path": [0, 1, 2, 3, 4, 8, 11, 12, 13, 14, 15, 16, 17]}],#4
-#[1, {"path": [0, 1, 2, 3, 4, 5, 9, 10, 11, 12, 13, 14, 15, 16, 17]}],#5
-#[1, {"path": [0, 1, 18, 21, 24, 27, 30, 33, 36, 38, 40, 41, 39, 35, 32, 29, 26, 23, 20, 19, 52]}],#6
-#[1, {"path": [0, 1, 18, 22, 23, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 21, 19, 236]}],#7
-#[1, {"path": [0, 1, 18, 21, 23, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 22, 19, 50, 237]}],#8
-#[1, {"path": [0, 1, 18, 21, 24, 27, 28, 26, 23, 20, 19, 44]}],#9
-#[1, {"path": [0, 1, 18, 21, 24, 27, 30, 31, 29, 26, 23, 20, 19, 45]}],#10
-#[1, {"path": [0, 1, 18, 21, 24, 27, 30, 33, 34, 32, 31, 29, 26, 23, 20, 19, 46]}],#11
-#[1, {"path": [0, 1, 18, 21, 24, 27, 30, 33, 36, 37, 35, 32, 31, 29, 26, 23, 20, 19, 47]}],#12
+    [1, {"path": entradaNuevo1, "cajon_index":1014}],#3
+    [2, {"path": entradaNuevo2, "cajon_index":1015}],#3
+    [3, {"path": entradaNuevo3, "cajon_index":1016}],#3
+    [4, {"path": entradaNuevo4, "cajon_index":1017}],#3
+    [5, {"path": entradaNuevo5, "cajon_index":1018}],#3
+    [6, {"path": entradaNuevo6, "cajon_index":1019}],#3
+    [7, {"path": entradaNuevo7, "cajon_index":1020}],#3
+    [8, {"path": entradaNuevo8, "cajon_index":1021}],#3
+    [9, {"path": entradaNuevo9, "cajon_index":1022}],#3
+    [10, {"path": entradaNuevo10, "cajon_index":1023}],#3
 ]
 sim.create_gen({
-    'vehicle_rate': 50,
+    'vehicle_rate': 10,
     'vehicles': path
 })
 
