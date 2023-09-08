@@ -39,7 +39,6 @@ class Road:
                 self.vehicles[0].update(None, dt)
             # Update other vehicles
             if(self.type==1 and self.vehicles[0].x< self.length-0.1  and self.vehicles[0].estado == 0) or (self.vehicles[0].estado == 2):
-            if(self.type==1 and self.vehicles[0].x< self.length-0.1  and self.vehicles[0].estado == 0) or (self.vehicles[0].estado == 2):
                 self.vehicles[0].update(None, dt)
 
             elif(self.type==1 and self.vehicles[0].estado==0):
