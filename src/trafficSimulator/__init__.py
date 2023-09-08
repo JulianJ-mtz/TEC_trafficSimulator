@@ -44,9 +44,6 @@ EstArenaBorregos = [
     SALIDA  # 9
 ]
 
-
-
-
 # ---- ESTACIONAMIENTO ARENA BORREGOS ----
 # Guarda los valores y para grabar donde tienen que ir las intersecciones
 InterseccionesLY = [INTERSECCION_1L[0][1],INTERSECCION_2L[0][1],INTERSECCION_3L[0][1],INTERSECCION_4L[0][1],INTERSECCION_4L[1][1]]
