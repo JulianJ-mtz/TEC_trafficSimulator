@@ -1297,6 +1297,7 @@ pathJavier1.append(2168)
 pathJavier2.append(2168)
 pathJavier3.append(2168)
 extra = [0] #No le hagan caso a este 
+
 #Path arena 0
 pathArena0 = [0,1,21,20]
 for i in range(22,27):
@@ -1433,7 +1434,7 @@ def crear_lista_entrada(numero, horizotal):
     return entrada_nueva
 
 # Llamar a la función para crear las listas
-for i in range (1, 10):
+for i in range (0, 20):
     entradaNuevo1 = crear_lista_entrada(14 , i)
     entradaNuevo2 = crear_lista_entrada(15, i)
     entradaNuevo3 = crear_lista_entrada(16, i)
@@ -1444,6 +1445,16 @@ for i in range (1, 10):
     entradaNuevo8 = crear_lista_entrada(21, i)
     entradaNuevo9 = crear_lista_entrada(22, i)
     entradaNuevo10 = crear_lista_entrada(23, i)
+    entradaNuevo11 = crear_lista_entrada(24, i)
+    entradaNuevo12 = crear_lista_entrada(25, i)
+    entradaNuevo13 = crear_lista_entrada(26, i)
+    entradaNuevo14 = crear_lista_entrada(27, i)
+    entradaNuevo15 = crear_lista_entrada(28, i)
+    entradaNuevo16 = crear_lista_entrada(29, i)
+    entradaNuevo17 = crear_lista_entrada(30, i)
+    entradaNuevo18 = crear_lista_entrada(31, i)
+    entradaNuevo19 = crear_lista_entrada(32, i)
+    entradaNuevo20 = crear_lista_entrada(33, i)
 
 
 # Paths
@@ -1463,19 +1474,29 @@ path = [
     [8, {"path": pathArena7, "cajon_index": 12}],
     [9, {"path": pathArena8, "cajon_index": 39}],
     [10, {"path": pathArena9, "cajon_index": 45}],
-    [11, {"path": entradaNuevo1, "cajon_index":1014}],#3
-    [12, {"path": entradaNuevo2, "cajon_index":1015}],#3
-    [13, {"path": entradaNuevo3, "cajon_index":1016}],#3
-    [14, {"path": entradaNuevo4, "cajon_index":1017}],#3
-    [15, {"path": entradaNuevo5, "cajon_index":1018}],#3
-    [16, {"path": entradaNuevo6, "cajon_index":1019}],#3
-    [17, {"path": entradaNuevo7, "cajon_index":1020}],#3
-    [18, {"path": entradaNuevo8, "cajon_index":1021}],#3
-    [19, {"path": entradaNuevo9, "cajon_index":1022}],#3
-    [20, {"path": entradaNuevo10, "cajon_index":1023}],#3
-    [22, {"path": pathJavier1, "cajon_index":371}],
-    [22, {"path": pathJavier2, "cajon_index":724}],
-    [22, {"path": pathJavier3, "cajon_index":477}],
+    [12, {"path": entradaNuevo1, "cajon_index":1014}],#3
+    [13, {"path": entradaNuevo2, "cajon_index":1015}],#3
+    [14, {"path": entradaNuevo3, "cajon_index":1016}],#3
+    [15, {"path": entradaNuevo4, "cajon_index":1017}],#3
+    [16, {"path": entradaNuevo5, "cajon_index":1018}],#3
+    [17, {"path": entradaNuevo6, "cajon_index":1019}],#3
+    [18, {"path": entradaNuevo7, "cajon_index":1020}],#3
+    [19, {"path": entradaNuevo8, "cajon_index":1021}],#3
+    [20, {"path": entradaNuevo9, "cajon_index":1022}],#3
+    [21, {"path": entradaNuevo10, "cajon_index":1023}],#3
+    [22, {"path": entradaNuevo11, "cajon_index":1024}],#3
+    [23, {"path": entradaNuevo12, "cajon_index":1025}],#3
+    [24, {"path": entradaNuevo13, "cajon_index":1026}],#3
+    [25, {"path": entradaNuevo14, "cajon_index":1027}],#3
+    [26, {"path": entradaNuevo15, "cajon_index":1028}],#3
+    [28, {"path": entradaNuevo16, "cajon_index":1029}],#3
+    [29, {"path": entradaNuevo17, "cajon_index":1030}],#3
+    [30, {"path": entradaNuevo18, "cajon_index":1031}],#3
+    [31, {"path": entradaNuevo19, "cajon_index":1032}],#3
+    [32, {"path": entradaNuevo20, "cajon_index":1033}],#3
+    [33, {"path": pathJavier1, "cajon_index":371}],
+    [34, {"path": pathJavier2, "cajon_index":724}],
+    [35, {"path": pathJavier3, "cajon_index":477}],
     [21, {"path": extra, "cajon_index": 0}],
 ]
 sim.create_gen({
