@@ -23,12 +23,13 @@ class Vehicle:
         self.path = []
         self.current_road_index = 0
         self.cajon_index=-1
-        self.estado=0
+        
 
         self.x = 0
         self.v = self.v_max
         self.a = 0
         self.stopped = False
+        self.estado=0
 
     def init_properties(self):
         self.sqrt_ab = 2*np.sqrt(self.a_max*self.b_max)
