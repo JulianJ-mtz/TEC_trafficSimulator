@@ -499,8 +499,8 @@ divX = res1 / 10
 res2 = 196.92 - 191.87
 divY = res2 / 10
 HORIZONTAL_SECCIONADA_1 = []
-for inter1 in range(10):
-    if (inter1 == 0 and inter1 <= 10):
+for inter in range(0, 10):
+    if (inter == 0 and inter <= 10):
         xi = -28.96
         yi = -195.92
         xf = xi - divX
@@ -525,8 +525,8 @@ divX4 = resX4 / 10
 resY4 = 221.65 - 218.92
 divY4 = resY4 / 10
 HORIZONTAL_SECCIONADA_4 = []
-for inter4 in range(10):
-    if (inter4 == 0 and inter4 <= 10):
+for inter in range(0, 10):
+    if (inter == 0 and inter <= 10):
         xi = -55.18
         yi = -221.65
         xf = xi - divX4
@@ -545,8 +545,8 @@ divX5 = resX5 / 25
 resY5 = 250.20 - 246.70
 divY5 = resY5 / 25
 HORIZONTAL_SECCIONADA_5 = []
-for inter5 in range(25):
-    if (inter5 == 0 and inter5 <= 25):
+for inter in range(0, 25):
+    if (inter == 0 and inter <= 25):
         xi = -67.29
         yi = -250.20
         xf = xi - divX5
@@ -565,18 +565,18 @@ divX6 = resX6 / 28
 resY6 = 268.79 - 265.03
 divY6 = resY6 / 28
 HORIZONTAL_SECCIONADA_6 = []
-for inter6 in range(28):
-    if (inter6 == 0 and inter6 <= 28):
+for inter in range(0, 28):
+    if (inter == 0 and inter <= 28):
         xi = -67.99
         yi = -268.79
         xf = xi - divX6
         yf = yi + divY6
-    HORIZONTAL_SECCIONADA_5.append(((xi, yi),(xf, yf)))
+    HORIZONTAL_SECCIONADA_6.append(((xi, yi),(xf, yf)))
     xi -= divX6
     xf -= divX6
     yi += divY6
     yf += divY6
-NUEVO_HORIZONTAL_6 = tuple(HORIZONTAL_SECCIONADA_5)
+NUEVO_HORIZONTAL_6 = tuple(HORIZONTAL_SECCIONADA_6)
 
 h7_1 = (-68.69, -285.74)
 h7_2 = (-151.02, -282.50)
@@ -585,8 +585,8 @@ divX7 = resX7 / 28
 resY7 = 285.74 - 282.50
 divY7 = resY7 / 28
 HORIZONTAL_SECCIONADA_7 = []
-for inter6 in range(28):
-    if (inter6 == 0 and inter6 <= 28):
+for inter in range(0, 28):
+    if (inter == 0 and inter <= 28):
         xi = -68.69
         yi = -285.74
         xf = xi - divX7
@@ -806,135 +806,146 @@ r17_18 = (g17, g18)
 r18_19 = (g18, g19)
 r19_20 = (g19, g20)
 
-# Arena borregos index 0 - 152
-sim.create_roads(EstArenaBorregos)
+# Arena borregos index 0 - 153
+for i in range (0, len(EstArenaBorregos)):
+    sim.create_roads([EstArenaBorregos[i]])
+    print(i)
 
-# Estacionamiento medio
+# Estacionamiento medio index 154 - 185
 sim.create_roads([
-    ENTRADA_EST_MEDIO,  # 152
-    EST_MEDIO_B1,  # 154
-    EST_MEDIO_B2,  # 155
-    EST_MEDIO_L1,  # 156
-    EST_MEDIO_R1,  # 157
-    EST_MEDIO_INTERSECCION1_1,  # 158
-    EST_MEDIO_INTERSECCION1_2,  # 159
-    EST_MEDIO_L2,  # 160
-    EST_MEDIO_R2,  # 161
-    EST_MEDIO_INTERSECCION2_1,  # 162
-    EST_MEDIO_INTERSECCION2_2,  # 163
-    EST_MEDIO_L3,  # 164
-    EST_MEDIO_R3,  # 165
-    EST_MEDIO_INTERSECCION3_1,  # 166
-    EST_MEDIO_INTERSECCION3_2,  # 167
-    EST_MEDIO_L4,  # 168
-    EST_MEDIO_R4,  # 169
-    EST_MEDIO_INTERSECCION4_1,  # 170
-    EST_MEDIO_INTERSECCION4_2,  # 171
-    EST_MEDIO_L5,  # 172
-    EST_MEDIO_R5,  # 173
-    EST_MEDIO_INTERSECCION5_1,  # 174
-    EST_MEDIO_INTERSECCION5_2,  # 175
-    EST_MEDIO_L6,  # 176
-    EST_MEDIO_R6,  # 177
-    EST_MEDIO_INTERSECCION6_1,  # 178
-    EST_MEDIO_INTERSECCION6_2,  # 179
-    EST_MEDIO_R7,  # 180
-    EST_MEDIO_L7,  # 181
-    EST_MEDIO_R8,  # 182
-    EST_MEDIO_T1,  # 183
-    EST_MEDIO_T2,  # 184
+    ENTRADA_EST_MEDIO,  # 154
+    EST_MEDIO_B1,  # 155
+    EST_MEDIO_B2,  # 156
+    EST_MEDIO_L1,  # 157
+    EST_MEDIO_R1,  # 158
+    EST_MEDIO_INTERSECCION1_1,  # 159
+    EST_MEDIO_INTERSECCION1_2,  # 160
+    EST_MEDIO_L2,  # 161
+    EST_MEDIO_R2,  # 162
+    EST_MEDIO_INTERSECCION2_1,  # 163
+    EST_MEDIO_INTERSECCION2_2,  # 164
+    EST_MEDIO_L3,  # 165
+    EST_MEDIO_R3,  # 166
+    EST_MEDIO_INTERSECCION3_1,  # 167
+    EST_MEDIO_INTERSECCION3_2,  # 168
+    EST_MEDIO_L4,  # 169
+    EST_MEDIO_R4,  # 170
+    EST_MEDIO_INTERSECCION4_1,  # 171
+    EST_MEDIO_INTERSECCION4_2,  # 172
+    EST_MEDIO_L5,  # 173
+    EST_MEDIO_R5,  # 174
+    EST_MEDIO_INTERSECCION5_1,  # 175
+    EST_MEDIO_INTERSECCION5_2,  # 176
+    EST_MEDIO_L6,  # 177
+    EST_MEDIO_R6,  # 178
+    EST_MEDIO_INTERSECCION6_1,  # 179
+    EST_MEDIO_INTERSECCION6_2,  # 180
+    EST_MEDIO_R7,  # 181
+    EST_MEDIO_L7,  # 182
+    EST_MEDIO_R8,  # 183
+    EST_MEDIO_T1,  # 184
+    EST_MEDIO_T2,  # 185
 ])
 
+# indix desde 186 - 371
 for i in range(0, len(EST_MEDIO_CAMINO)):
-    sim.create_roads([EST_MEDIO_CAMINO[i]])#(185-196):EST_MEDIO_B_ABAJO/(197-212):EST_MEDIO_B_ARRIBA/(213-370):EST_MEDIO_T_ARRIBA
+    sim.create_roads([EST_MEDIO_CAMINO[i]])#(186-197):EST_MEDIO_B_ABAJO/(198-213):EST_MEDIO_B_ARRIBA/(214-371):EST_MEDIO_T_ARRIBA
+    print(i)
 
-
+# index desde 372 - 725
 for i in range(0, len(EST_MEDIO_CAJONES)):
-    sim.create_roads([EST_MEDIO_CAJONES[i]])#(371-382):EST_MEDIO_B_CAJONES_ABAJO/(383-398):EST_MEDIO_B_CAJONES_ARRIBA
+    sim.create_roads([EST_MEDIO_CAJONES[i]])#(372-383):EST_MEDIO_B_CAJONES_ABAJO/(384-399):EST_MEDIO_B_CAJONES_ARRIBA
+    print(i)
 
+# Verticales y estrada est nuevo 726 - 745
 sim.create_roads([
-    NUEVO_VERTICAL_1,   # 399
-    NUEVO_VERTICAL_2,   # 400
-    NUEVO_VERTICAL_3,   # 401
-    NUEVO_VERTICAL_4,   # 402
-    NUEVO_VERTICAL_5,   # 403
-    NUEVO_VERTICAL_6,   # 404
-    NUEVO_VERTICAL_7,   # 405
-    NUEVO_VERTICAL_8,   # 406
-    NUEVO_VERTICAL_9,   # 407
-    NUEVO_VERTICAL_10,  # 408
-    NUEVO_VERTICAL_11,  # 409
-    NUEVO_VERTICAL_12,  # 410
-    NUEVO_VERTICAL_13,  # 411
-    NUEVO_VERTICAL_14,  # 412
-    NUEVO_VERTICAL_15,  # 413
-    NUEVO_SALIDAS_1,    # 414
-    NUEVO_SALIDAS_2,    # 415
-    NUEVO_ENTRADA_1,    # 416
-    NUEVO_ENTRADA_2,    # 417
-    NUEVO_ENTRADA_3     # 418
+    NUEVO_VERTICAL_1,   # 726
+    NUEVO_VERTICAL_2,   # 727
+    NUEVO_VERTICAL_3,   # 728
+    NUEVO_VERTICAL_4,   # 729
+    NUEVO_VERTICAL_5,   # 730
+    NUEVO_VERTICAL_6,   # 731
+    NUEVO_VERTICAL_7,   # 732
+    NUEVO_VERTICAL_8,   # 733
+    NUEVO_VERTICAL_9,   # 734
+    NUEVO_VERTICAL_10,  # 735
+    NUEVO_VERTICAL_11,  # 736
+    NUEVO_VERTICAL_12,  # 737
+    NUEVO_VERTICAL_13,  # 738
+    NUEVO_VERTICAL_14,  # 739
+    NUEVO_VERTICAL_15,  # 740
+    NUEVO_SALIDAS_1,    # 741
+    NUEVO_SALIDAS_2,    # 742
+    NUEVO_ENTRADA_1,    # 743
+    NUEVO_ENTRADA_2,    # 744
+    NUEVO_ENTRADA_3     # 745
 ])
 
-# index 419 a 430
+# index 746 a 755
 for i in range(0, len(NUEVO_HORIZONTAL_1)):
     sim.create_roads([NUEVO_HORIZONTAL_1[i]])
+    print(i)
 
 sim.create_roads([
-    NUEVO_HORIZONTAL_2,  # 440
-    NUEVO_HORIZONTAL_3  # 441
+    NUEVO_HORIZONTAL_2,  # 756
+    NUEVO_HORIZONTAL_3  # 757
 ])
 
-# index 431 a 442
+# index 758 a 767
 for i in range(0, len(NUEVO_HORIZONTAL_4)):
     sim.create_roads([NUEVO_HORIZONTAL_4[i]])
+    print(i)
 
-# index 443 a 469
+# index 768 a 792
 for i in range(0, len(NUEVO_HORIZONTAL_5)):
     sim.create_roads([NUEVO_HORIZONTAL_5[i]])
+    print(i)
 
-# index 470 a 499
+# index 793 a 820 
 for i in range(0, len(NUEVO_HORIZONTAL_6)):
     sim.create_roads([NUEVO_HORIZONTAL_6[i]])
+    print(i)
 
-# index 500 a 529
+# index 821 a 848
 for i in range(0, len(NUEVO_HORIZONTAL_7)):
     sim.create_roads([NUEVO_HORIZONTAL_7[i]])
+    print(i)
 
-# index 530 a 725
+# index 849 a 1040
 for i in range (0, len(EST_NUEVO_CAJONES)):
     sim.create_roads([EST_NUEVO_CAJONES[i]])
+    print(i)
 
 sim.create_roads([
-    r0_1,       # 726
-    r1_2,       # 727
-    r2_3,       # 728
-    r1_13,      # 729
-    r3_4,       # 730
-    r3_12,      # 731
-    r4_5,       # 732
-    r4_11,      # 733
-    r5_6,       # 734
-    r5_10,      # 735
-    r6_7,       # 736
-    r6_9,       # 737
-    r7_8,       # 738
-    r8_9_1,     # 739
-    r8_9_2,     # 740
-    r9_10,      # 741
-    r10_11,     # 742
-    r11_12,     # 743
-    r12_14,     # 744
-    r13_14,     # 745
-    r14_15_1,   # 746
-    r14_15_2,   # 747
-    r15_16,     # 748
-    r15_17,     # 749
-    r16_17,     # 750
-    r17_18,     # 751
-    r18_19,     # 752
-    r19_20      # 753
+    r0_1,       # 1041
+    r1_2,       # 1042
+    r2_3,       # 1043
+    r1_13,      # 1044
+    r3_4,       # 1045
+    r3_12,      # 1046
+    r4_5,       # 1047
+    r4_11,      # 1048
+    r5_6,       # 1049
+    r5_10,      # 1050
+    r6_7,       # 1051
+    r6_9,       # 1052
+    r7_8,       # 1053
+    r8_9_1,     # 1054
+    r8_9_2,     # 1055
+    r9_10,      # 1056
+    r10_11,     # 1057
+    r11_12,     # 1058
+    r12_14,     # 1059
+    r13_14,     # 1060
+    r14_15_1,   # 1061
+    r14_15_2,   # 1062
+    r15_16,     # 1063
+    r15_17,     # 1064
+    r16_17,     # 1065
+    r17_18,     # 1066
+    r18_19,     # 1067
+    r19_20      # 1068
 ])
-
 
 # Paths
 path = [
