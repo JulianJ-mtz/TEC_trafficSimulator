@@ -1085,7 +1085,7 @@ estacionamientos.append(cs2_3)
 # Arena borregos index 0 - 153
 for i in range (0, len(EstArenaBorregos)):
     sim.create_roads([EstArenaBorregos[i]])
-    print(i)
+    # print(i)
 
 # Estacionamiento medio index 154 - 185
 sim.create_roads([
@@ -1126,12 +1126,12 @@ sim.create_roads([
 # indix desde 186 - 371
 for i in range(0, len(EST_MEDIO_CAMINO)):
     sim.create_roads([EST_MEDIO_CAMINO[i]])#(186-197):EST_MEDIO_B_ABAJO/(198-213):EST_MEDIO_B_ARRIBA/(214-371):EST_MEDIO_T_ARRIBA
-    print(i)
+    # print(i)
 
 # index desde 372 - 725
 for i in range(0, len(EST_MEDIO_CAJONES)):
-    sim.create_roads([EST_MEDIO_CAJONES[i]])#(372-383):EST_MEDIO_B_CAJONES_ABAJO/(384-399):EST_MEDIO_B_CAJONES_ARRIBA
-    print(i)
+    sim.create_roads([EST_MEDIO_CAJONES[i]])
+    # print(i)
 
 # Verticales y estrada est nuevo 726 - 745
 sim.create_roads([
@@ -1160,7 +1160,7 @@ sim.create_roads([
 # index 746 a 755
 for i in range(0, len(NUEVO_HORIZONTAL_1)):
     sim.create_roads([NUEVO_HORIZONTAL_1[i]])
-    print(i)
+    # print(i)
 
 sim.create_roads([
     NUEVO_HORIZONTAL_2,  # 756
@@ -1170,58 +1170,58 @@ sim.create_roads([
 # index 758 a 767
 for i in range(0, len(NUEVO_HORIZONTAL_4)):
     sim.create_roads([NUEVO_HORIZONTAL_4[i]])
-    print(i)
+    # print(i)
 
 # index 768 a 792
 for i in range(0, len(NUEVO_HORIZONTAL_5)):
     sim.create_roads([NUEVO_HORIZONTAL_5[i]])
-    print(i)
+    # print(i)
 
 # index 793 a 820 
 for i in range(0, len(NUEVO_HORIZONTAL_6)):
     sim.create_roads([NUEVO_HORIZONTAL_6[i]])
-    print(i)
+    # print(i)
 
 # index 821 a 848
 for i in range(0, len(NUEVO_HORIZONTAL_7)):
     sim.create_roads([NUEVO_HORIZONTAL_7[i]])
-    print(i)
+    # print(i)
 
 # index 849 a 1040
 for i in range (0, len(EST_NUEVO_CAJONES)):
     sim.create_roads([EST_NUEVO_CAJONES[i]])
-    print(i)
+    # print(i)
+
+#------------------------------------------------
+
+#CAMINOS ARRIBA 
+# index 1041 - 1479
+print('CAMINOS')
+for camino in caminos:
+     for i in range(0, len(camino)):
+        sim.create_roads([camino[i]])
+        # print(i)
+
+#---------------------------------------------------
+#CAJONES ARRIBA
+# index 1480 - 2165
+print('CAJONES')
+for spot in estacionamientos:
+     for i in range(0, len(spot)):
+        sim.create_roads([spot[i]])
+        # print(i)
 
 sim.create_roads([
-    r0_1,       # 1041
-    r1_2,       # 1042
-    r2_3,       # 1043
-    r1_13,      # 1044
-    r3_4,       # 1045
-    r3_12,      # 1046
-    r4_5,       # 1047
-    r4_11,      # 1048
-    r5_6,       # 1049
-    r5_10,      # 1050
-    r6_7,       # 1051
-    r6_9,       # 1052
-    r7_8,       # 1053
-    r8_9_1,     # 1054
-    r8_9_2,     # 1055
-    r9_10,      # 1056
-    r10_11,     # 1057
-    r11_12,     # 1058
-    r12_14,     # 1059
-    r13_14,     # 1060
-    r14_15_1,   # 1061
-    r14_15_2,   # 1062
-    r15_16,     # 1063
-    r15_17,     # 1064
-    r16_17,     # 1065
-    r17_18,     # 1066
-    r18_19,     # 1067
-    r19_20      # 1068
+    r12_14,     # 2165
+    r15_17,     # 2166
+    r18_19,     # 2167
+    r19_20      # 2168
 ])
+
+# test = []
+
+# for i in range(152):
+#     test.append(i)
 
 # Paths
 path = [
