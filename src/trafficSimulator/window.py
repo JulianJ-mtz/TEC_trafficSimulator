@@ -309,6 +309,16 @@ class Window:
         
         self.screen.blit(text_fps, (0, 0))
         self.screen.blit(text_frc, (100, 0))
+    
+    def draw_entrance_exit(self):
+        text_entrance = self.text_font.render('Entrada',False,(0,0,0))
+        text_salida = self.text_font.render('Salida',False,(0,0,0))
+
+        self.screen.blit(text_entrance, self.convert(x=-10,y=+1))
+        self.screen.blit(text_salida,self.convert(x=-22.2373, y = -15.9461))
+        self.screen.blit(text_entrance, self.convert(x=-140.31, y=-177.62))
+        self.screen.blit(text_salida,self.convert(x=-149.4951, y=-187.8469))
+
 
 
     def draw(self):
@@ -326,4 +336,6 @@ class Window:
 
         # Draw status info
         self.draw_status()
+        self.draw_entrance_exit()
+        
         
