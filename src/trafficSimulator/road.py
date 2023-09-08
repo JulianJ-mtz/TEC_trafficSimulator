@@ -45,20 +45,20 @@ class Road:
                 self.vehicles[0].stop
                 self.pT=dt
                 self.vehicles[0].estado=1
-            
-            if(self.type==1 and self.vehicles[0].estado==1 and self.pT<(dt*100)):
+            time = 1000
+            if(self.type==1 and self.vehicles[0].estado==1 and self.pT<(dt*time)):
                 self.pT +=dt
                 for i in range(1, n):
                     lead = self.vehicles[i-1]
                     self.vehicles[i].update(lead, dt)
-            if (self.type == 1 and  self.vehicles[0].estado == 1 and self.pT >= (dt*100)):
+            if (self.type == 1 and  self.vehicles[0].estado == 1 and self.pT >= (dt*time)):
                 self.pT=0
                 self.vehicles[0].unstop()
                 self.vehicles[0].slow(self.vehicles[0].v_max)
                 self.vehicles[0].unslow()
                 self.vehicles[0].estado = 2
                 #self.vehicles[0].current_road_index+=1
-                print("Unstop pT "+str( self.pT) +" dt "+str(dt*100))
+                print("Unstop pT "+str( self.pT) +" dt "+str(dt*time))
 
              # Check for traffic signal
             if self.traffic_signal_state:

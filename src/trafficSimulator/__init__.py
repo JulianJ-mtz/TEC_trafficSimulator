@@ -1384,26 +1384,66 @@ for i in range(144,153):
 for i in range(7,10):
     pathArena9.append(i)
 
+def crear_lista_entrada(numero, horizotal):
+    entrada_nueva = [0, 1, 153, 157, 161, 165, 169, 173, 177, 180, 182] 
+    for i in range(725, 732 ):
+        entrada_nueva.append(i)
+    for i in range(821, 848 - horizotal):
+        entrada_nueva.append(i)
+    entrada_nueva.append(1000 + numero)  # Agregar el número proporcionado al final
+    for i in range ((848 - horizotal), 848):
+        entrada_nueva.append(i)
+    for i in range(733, 736):
+        entrada_nueva.append(i)
+    entrada_nueva.append(740)
+    entrada_nueva.append(2168)
+    return entrada_nueva
+
+# Llamar a la función para crear las listas
+for i in range (1, 10):
+    entradaNuevo1 = crear_lista_entrada(14 , i)
+    entradaNuevo2 = crear_lista_entrada(15, i)
+    entradaNuevo3 = crear_lista_entrada(16, i)
+    entradaNuevo4 = crear_lista_entrada(17, i)
+    entradaNuevo5 = crear_lista_entrada(18, i)
+    entradaNuevo6 = crear_lista_entrada(19, i)
+    entradaNuevo7 = crear_lista_entrada(20, i)
+    entradaNuevo8 = crear_lista_entrada(21, i)
+    entradaNuevo9 = crear_lista_entrada(22, i)
+    entradaNuevo10 = crear_lista_entrada(23, i)
+
+
+# Paths
 # -------------------------------------------------------
 #       total de cajones 625 + 191 + 353 + 71 = 1240
 # -------------------------------------------------------
 
 # Paths
 path = [
-[1, {"path": pathArena0, "cajon_index": 20}],
-[1, {"path": pathArena1, "cajon_index": 19}],
-[1, {"path": pathArena2, "cajon_index": 17}],
-[1, {"path": pathArena3, "cajon_index": 97}],
-[1, {"path": pathArena4, "cajon_index": 128}],
-[1, {"path": pathArena5, "cajon_index": 15}],
-[1, {"path": pathArena6, "cajon_index": 13}],
-[1, {"path": pathArena7, "cajon_index": 12}],
-[1, {"path": pathArena8, "cajon_index": 39}],
-[1, {"path": pathArena9, "cajon_index": 45}],
-[1, {"path": extra, "cajon_index": 0}],
+    [1, {"path": pathArena0, "cajon_index": 20}],
+    [2, {"path": pathArena1, "cajon_index": 19}],
+    [3, {"path": pathArena2, "cajon_index": 17}],
+    [4, {"path": pathArena3, "cajon_index": 97}],
+    [5, {"path": pathArena4, "cajon_index": 128}],
+    [6, {"path": pathArena5, "cajon_index": 15}],
+    [7, {"path": pathArena6, "cajon_index": 13}],
+    [8, {"path": pathArena7, "cajon_index": 12}],
+    [9, {"path": pathArena8, "cajon_index": 39}],
+    [10, {"path": pathArena9, "cajon_index": 45}],
+    [11, {"path": extra, "cajon_index": 0}],
+    [12, {"path": entradaNuevo1, "cajon_index":1014}],#3
+    [13, {"path": entradaNuevo2, "cajon_index":1015}],#3
+    [14, {"path": entradaNuevo3, "cajon_index":1016}],#3
+    [15, {"path": entradaNuevo4, "cajon_index":1017}],#3
+    [16, {"path": entradaNuevo5, "cajon_index":1018}],#3
+    [17, {"path": entradaNuevo6, "cajon_index":1019}],#3
+    [18, {"path": entradaNuevo7, "cajon_index":1020}],#3
+    [19, {"path": entradaNuevo8, "cajon_index":1021}],#3
+    [20, {"path": entradaNuevo9, "cajon_index":1022}],#3
+    [21, {"path": entradaNuevo10, "cajon_index":1023}],#3
 ]
 sim.create_gen({
-    'vehicle_rate': 10,
+    'vehicle_rate': 21,
     'vehicles': path
 })
 
