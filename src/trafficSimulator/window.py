@@ -21,7 +21,7 @@ class Window:
         self.bg_color = (245, 230, 210)
         # self.bg_color = (0, 0, 0)
 
-        self.fps = 20
+        self.fps = 60
         self.zoom = 5
         self.offset = (0, 0)
 
