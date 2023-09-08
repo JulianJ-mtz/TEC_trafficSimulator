@@ -238,7 +238,7 @@ EST_MEDIO_R7 = ((7.59559, -155.39970), (9.3492, -153.5104))
 EST_MEDIO_L7 = ((-81.5118, -150.2121),(-82.8175, -168.5878))
 EST_MEDIO_R8 = ((9.3492, -153.5104), (-8.7637, -173.0237))
 EST_MEDIO_T1 = ((-8.7637, -173.0237), (-9.7637, -173.0237))
-EST_MEDIO_T2 = ((-81.47790000000002, -168.95730000000023), (-82.8175, -168.5878))
+EST_MEDIO_T2 = ((-80.4779, -168.9573), (-82.8175, -168.5878))
 
 # ---- CAJONES:ESTACIONAMIENTO MEDIO ----
 coordX1=0
@@ -428,8 +428,8 @@ for x in range(354):
         if(x==306):
             coordY1= -173.0237
             coordY2= -166.8826
-            coordX1= -8.7637
-            coordX2= -8.9101
+            coordX1= -7.7637
+            coordX2= -7.9101
         oldCoordX1=coordX1
         coordX1=coordX1-2.7967
         coordX2=coordX2-2.7967
@@ -454,7 +454,7 @@ for x in range(354):
     
 EST_MEDIO_CAJONES=tuple(cajon_EST_MEDIO)
 EST_MEDIO_CAMINO=tuple(estacion_MEDIO_CAMINO_B)
-
+print(EST_MEDIO_CAMINO[185])
 
 # ---- ESTACIONAMIENTO NUEVO ----
 # VERTICALES DERECHA
@@ -1264,6 +1264,38 @@ sim.create_roads([
 ])
 
 test = []
+pathJavier1=[0,1,153,155,371]
+for i in range(186,196):
+    pathJavier1.append(i)
+pathJavier1.append(154)
+for i in range(0,5):
+    pathJavier1.append(156+(i*4))
+pathJavier1.append(181)
+
+pathJavier2=[0,1,153,157,161,165,169,173,177,180,182,183]
+
+for i in range(345,370):
+    pathJavier2.append(i)
+pathJavier2.append(724)
+pathJavier2.append(183)
+pathJavier3=[0,1,153,157,161,165,166]
+for i in range(236,251):
+    pathJavier3.append(i)
+pathJavier3.append(477)
+for i in range(252,258):
+    pathJavier3.append(i)
+pathJavier3.append(167)
+pathJavier3.append(168)
+pathJavier3.append(172)
+pathJavier3.append(176)
+pathJavier3.append(181)
+for i in range(737,739):
+    pathJavier1.append(i)
+    pathJavier2.append(i)
+    pathJavier3.append(i)
+pathJavier1.append(2168)
+pathJavier2.append(2168)
+pathJavier3.append(2168)
 
 for i in range(152):
     test.append(i)
@@ -1274,9 +1306,9 @@ for i in range(152):
 
 # Paths
 path = [
-#[1, {"path": [0, 1, 2, 3, 4, 5, 9, 10, 11, 12, 13, 14, 15, 16, 17]}],#1
-[1, {"path": [0,1,153,155,371,372,373,374,186,187,188,189,190,191,192,193,194,195,196,197,154,],"cajon_index":371}],
-[1, {"path": [0,1,153,157,161,165,169,173,177,180,182,184]}],#2
+[1, {"path": pathJavier1, "cajon_index":371}],#2
+[1, {"path": pathJavier2}],#2
+[1, {"path": pathJavier3}],#2
 [1, {"path": test}],#2
 [1, {"path": test}],#2
 [1, {"path": test}],#2
@@ -1289,16 +1321,6 @@ path = [
 [1, {"path": test}],#2
 [1, {"path": test}],#2
 [1, {"path": test}],#2
-#[1, {"path": [0, 1, 2, 3, 7, 12, 13, 14, 15, 16, 17]}],#3
-#[1, {"path": [0, 1, 2, 3, 4, 8, 11, 12, 13, 14, 15, 16, 17]}],#4
-#[1, {"path": [0, 1, 2, 3, 4, 5, 9, 10, 11, 12, 13, 14, 15, 16, 17]}],#5
-#[1, {"path": [0, 1, 18, 21, 24, 27, 30, 33, 36, 38, 40, 41, 39, 35, 32, 29, 26, 23, 20, 19, 52]}],#6
-#[1, {"path": [0, 1, 18, 22, 23, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 21, 19, 236]}],#7
-#[1, {"path": [0, 1, 18, 21, 23, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 22, 19, 50, 237]}],#8
-#[1, {"path": [0, 1, 18, 21, 24, 27, 28, 26, 23, 20, 19, 44]}],#9
-#[1, {"path": [0, 1, 18, 21, 24, 27, 30, 31, 29, 26, 23, 20, 19, 45]}],#10
-#[1, {"path": [0, 1, 18, 21, 24, 27, 30, 33, 34, 32, 31, 29, 26, 23, 20, 19, 46]}],#11
-#[1, {"path": [0, 1, 18, 21, 24, 27, 30, 33, 36, 37, 35, 32, 31, 29, 26, 23, 20, 19, 47]}],#12
 ]
 sim.create_gen({
     'vehicle_rate': 10,
