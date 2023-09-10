@@ -46,148 +46,150 @@ EstArenaBorregos = [
 
 # ---- ESTACIONAMIENTO ARENA BORREGOS ----
 # Guarda los valores y para grabar donde tienen que ir las intersecciones
-InterseccionesLY = [INTERSECCION_1L[0][1],INTERSECCION_2L[0][1],INTERSECCION_3L[0][1],INTERSECCION_4L[0][1],INTERSECCION_4L[1][1]]
+InterseccionesLY = [INTERSECCION_1L[0][1], INTERSECCION_2L[0][1], INTERSECCION_3L[0][1], INTERSECCION_4L[0][1],
+                    INTERSECCION_4L[1][1]]
 
-x1 = INTERSECCION_4C[0][0]-1
+x1 = INTERSECCION_4C[0][0] - 1
 y1 = INTERSECCION_4C[0][1] - 5.5434
 x2 = x1 - 3.2294
 y2 = 0
-for i in range(11): #CAJONES LATERALES ARENA BOREGOS 10 - 20
+for i in range(11):  # CAJONES LATERALES ARENA BOREGOS 10 - 20
     y2 = y1 + 3.9333
-    EstArenaBorregos.append(((x1,y1),(x2,y2),1))
+    EstArenaBorregos.append(((x1, y1), (x2, y2), 1))
     InterseccionesLY.append(y1)
     y1 -= 4.5262
-#Añade todas las intersecciones que van a otros caminos
+# Añade todas las intersecciones que van a otros caminos
 InterseccionesLY.sort()
-for i in range(len(InterseccionesLY) - 1): #INTERSECCIONES DE LA ENTRADA AL ESTACIONAMIENTO 21 - 35
-    #Utiliza los puntos del arreglo del inicio para crear caminos partidos por el mismo eje x
-    EstArenaBorregos.append(((INTERSECCION_4C[0][0],InterseccionesLY[i]),(INTERSECCION_4C[0][0],InterseccionesLY[i+1])))
+for i in range(len(InterseccionesLY) - 1):  # INTERSECCIONES DE LA ENTRADA AL ESTACIONAMIENTO 21 - 35
+    # Utiliza los puntos del arreglo del inicio para crear caminos partidos por el mismo eje x
+    EstArenaBorregos.append(
+        ((INTERSECCION_4C[0][0], InterseccionesLY[i]), (INTERSECCION_4C[0][0], InterseccionesLY[i + 1])))
 
-#cajones interseccion 4 discapacitados
-Intersecciones4CX = [INTERSECCION_4C[0][0],INTERSECCION_4C[1][0]]
+# cajones interseccion 4 discapacitados
+Intersecciones4CX = [INTERSECCION_4C[0][0], INTERSECCION_4C[1][0]]
 x1 = INTERSECCION_4C[1][0] - 6.1286 - 2.2776
 y1 = INTERSECCION_4C[1][1] + 1
 x2 = 0
 y2 = y1 + 3.5840
-for i in range(4): #CAJONES INTERSECCION 4 ABAJO DISCAPACITADOS ARENA BORREGOS 36-39
+for i in range(4):  # CAJONES INTERSECCION 4 ABAJO DISCAPACITADOS ARENA BORREGOS 36-39
     x2 = x1 + 3.5255
-    EstArenaBorregos.append(((x1,y1),(x2,y2),1))
+    EstArenaBorregos.append(((x1, y1), (x2, y2), 1))
     Intersecciones4CX.append(x1)
     x1 -= 6
 
-#cajones interseccion 4 arriba
+# cajones interseccion 4 arriba
 x1 = INTERSECCION_4C[1][0] - 6.1286 - 2.2776
 y1 = INTERSECCION_4C[1][1] - 1
 x2 = 0
 y2 = y1 - 3.5840
-for i in range(6): #CAJONES INTERSECCION 4 ARRIBA ARENA BORREGOS 40-45
+for i in range(6):  # CAJONES INTERSECCION 4 ARRIBA ARENA BORREGOS 40-45
     x2 = x1 + 3.5255
-    EstArenaBorregos.append(((x1,y1),(x2,y2),1))
+    EstArenaBorregos.append(((x1, y1), (x2, y2), 1))
     Intersecciones4CX.append(x1)
     x1 -= 3.5255
 
-
-#INTERSECCIONES 4C ARENA BORREGOS 46-55
-Intersecciones4CX = list(set(Intersecciones4CX))#Remueve los duplicados
+# INTERSECCIONES 4C ARENA BORREGOS 46-55
+Intersecciones4CX = list(set(Intersecciones4CX))  # Remueve los duplicados
 Intersecciones4CX.sort()
 for i in range(len(Intersecciones4CX) - 1):
-    #Utiliza los puntos del arreglo del inicio para crear caminos partidos por el mismo eje x
-    EstArenaBorregos.append(((Intersecciones4CX[i],INTERSECCION_4C[0][1]),(Intersecciones4CX[i+1],INTERSECCION_4C[0][1])))
+    # Utiliza los puntos del arreglo del inicio para crear caminos partidos por el mismo eje x
+    EstArenaBorregos.append(
+        ((Intersecciones4CX[i], INTERSECCION_4C[0][1]), (Intersecciones4CX[i + 1], INTERSECCION_4C[0][1])))
 
-
-
-#CAJONES INTERSECCION 3 ABAJO 56-61
-Intersecciones3CX = [INTERSECCION_3C[0][0],INTERSECCION_3C[1][0]]
+# CAJONES INTERSECCION 3 ABAJO 56-61
+Intersecciones3CX = [INTERSECCION_3C[0][0], INTERSECCION_3C[1][0]]
 x1 = INTERSECCION_3C[1][0] - 5.6570
 y1 = INTERSECCION_3C[1][1] + 1
 x2 = 0
 y2 = y1 + 3.5840
 for i in range(6):
     x2 = x1 - 3.5255
-    EstArenaBorregos.append(((x1,y1),(x2,y2),1))
+    EstArenaBorregos.append(((x1, y1), (x2, y2), 1))
     Intersecciones3CX.append(x1)
     x1 -= 3.5255
 
-
-#CAJONES INTERSECCION 3 ARRIBA 62-68
+# CAJONES INTERSECCION 3 ARRIBA 62-68
 x1 = INTERSECCION_3C[1][0] - 6.1297
 y1 = INTERSECCION_3C[1][1] - 1
 x2 = 0
 y2 = y1 - 3.8068
 for i in range(7):
     x2 = x1 - 3.7830
-    EstArenaBorregos.append(((x1,y1),(x2,y2),1))
+    EstArenaBorregos.append(((x1, y1), (x2, y2), 1))
     Intersecciones3CX.append(x1)
     x1 -= 4.5019
 
-#INTERSECCIONES 3C 69 - 82
-Intersecciones3CX = list(set(Intersecciones3CX))#Remueve los duplicados
+# INTERSECCIONES 3C 69 - 82
+Intersecciones3CX = list(set(Intersecciones3CX))  # Remueve los duplicados
 Intersecciones3CX.sort(reverse=True)
 for i in range(len(Intersecciones3CX) - 1):
-    #Utiliza los puntos del arreglo del inicio para crear caminos partidos por el mismo eje x
-    EstArenaBorregos.append(((Intersecciones3CX[i],INTERSECCION_3C[0][1]),(Intersecciones3CX[i+1],INTERSECCION_3C[0][1])))
+    # Utiliza los puntos del arreglo del inicio para crear caminos partidos por el mismo eje x
+    EstArenaBorregos.append(
+        ((Intersecciones3CX[i], INTERSECCION_3C[0][1]), (Intersecciones3CX[i + 1], INTERSECCION_3C[0][1])))
 
-#CAJONES INTERSECCION 2 ABAJO 83 - 89
-Intersecciones2CX = [INTERSECCION_2C[0][0],INTERSECCION_2C[1][0]]
+# CAJONES INTERSECCION 2 ABAJO 83 - 89
+Intersecciones2CX = [INTERSECCION_2C[0][0], INTERSECCION_2C[1][0]]
 x1 = INTERSECCION_2C[1][0] - 8.8239
 y1 = INTERSECCION_2C[1][1] + 1
 x2 = 0
 y2 = y1 + 3.8020
 for i in range(7):
     x2 = x1 + 3.0133
-    EstArenaBorregos.append(((x1,y1),(x2,y2),1))
+    EstArenaBorregos.append(((x1, y1), (x2, y2), 1))
     Intersecciones2CX.append(x1)
     x1 -= 4.1806
 
-#CAJONES INTERSECCION 2 ARRIBA 90 - 97
+# CAJONES INTERSECCION 2 ARRIBA 90 - 97
 x1 = INTERSECCION_2C[1][0] - 6.1297
 y1 = INTERSECCION_2C[1][1] - 1
 x2 = 0
 y2 = y1 - 3.8020
 for i in range(8):
     x2 = x1 + 3.0133
-    EstArenaBorregos.append(((x1,y1),(x2,y2),1))
+    EstArenaBorregos.append(((x1, y1), (x2, y2), 1))
     Intersecciones2CX.append(x1)
     x1 -= 4.1806
 
-#INTERSECCION 2 98 - 113
-Intersecciones2CX = list(set(Intersecciones2CX))#Remueve los duplicados
+# INTERSECCION 2 98 - 113
+Intersecciones2CX = list(set(Intersecciones2CX))  # Remueve los duplicados
 Intersecciones2CX.sort()
 for i in range(len(Intersecciones2CX) - 1):
-    #Utiliza los puntos del arreglo del inicio para crear caminos partidos por el mismo eje x
-    EstArenaBorregos.append(((Intersecciones2CX[i],INTERSECCION_2C[0][1]),(Intersecciones2CX[i+1],INTERSECCION_2C[0][1])))
+    # Utiliza los puntos del arreglo del inicio para crear caminos partidos por el mismo eje x
+    EstArenaBorregos.append(
+        ((Intersecciones2CX[i], INTERSECCION_2C[0][1]), (Intersecciones2CX[i + 1], INTERSECCION_2C[0][1])))
 
-#CAJONES INTERSECCION 1 ABAJO 114-120
-Intersecciones1CX = [INTERSECCION_1C[0][0],INTERSECCION_1C[1][0]]
+# CAJONES INTERSECCION 1 ABAJO 114-120
+Intersecciones1CX = [INTERSECCION_1C[0][0], INTERSECCION_1C[1][0]]
 x1 = INTERSECCION_1C[1][0] - 6.1297
 y1 = INTERSECCION_1C[1][1] + 1
 x2 = 0
 y2 = y1 + 3.8020
 for i in range(7):
     x2 = x1 - 3.0133
-    EstArenaBorregos.append(((x1,y1),(x2,y2),1))
+    EstArenaBorregos.append(((x1, y1), (x2, y2), 1))
     Intersecciones1CX.append(x1)
     x1 -= 4.1806
 
-#CAJONES INTERSECCION 1 ARRIBA 121-127
+# CAJONES INTERSECCION 1 ARRIBA 121-127
 x1 = INTERSECCION_1C[1][0] - 6.1297
 y1 = INTERSECCION_1C[1][1] - 1
 x2 = 0
 y2 = y1 - 3.8020
 for i in range(7):
     x2 = x1 - 3.0133
-    EstArenaBorregos.append(((x1,y1),(x2,y2),1))
+    EstArenaBorregos.append(((x1, y1), (x2, y2), 1))
     Intersecciones1CX.append(x1)
     x1 -= 4.1806
 
-#INTERSECCIONES 1 128 - 135
-Intersecciones1CX = list(set(Intersecciones1CX))#Remueve los duplicados
+# INTERSECCIONES 1 128 - 135
+Intersecciones1CX = list(set(Intersecciones1CX))  # Remueve los duplicados
 Intersecciones1CX.sort(reverse=True)
 for i in range(len(Intersecciones1CX) - 1):
-    #Utiliza los puntos del arreglo del inicio para crear caminos partidos por el mismo eje x
-    EstArenaBorregos.append(((Intersecciones1CX[i],INTERSECCION_1C[0][1]),(Intersecciones1CX[i+1],INTERSECCION_1C[0][1])))
+    # Utiliza los puntos del arreglo del inicio para crear caminos partidos por el mismo eje x
+    EstArenaBorregos.append(
+        ((Intersecciones1CX[i], INTERSECCION_1C[0][1]), (Intersecciones1CX[i + 1], INTERSECCION_1C[0][1])))
 
-#CAJONES INTERSECCION 0 ARRIBA 136 - 143
+# CAJONES INTERSECCION 0 ARRIBA 136 - 143
 Intersecciones0CX = [INTERSECCION_0C[0][0]]
 x1 = INTERSECCION_0C[0][0] - 2.6964
 y1 = INTERSECCION_0C[0][1] - 1
@@ -195,265 +197,263 @@ x2 = 0
 y2 = y1 - 3.8020
 for i in range(8):
     x2 = x1 - 3.6964
-    EstArenaBorregos.append(((x1,y1),(x2,y2),1))
+    EstArenaBorregos.append(((x1, y1), (x2, y2), 1))
     Intersecciones0CX.append(x1)
     x1 -= 4
 Intersecciones0CX.append(INTERSECCION_0C[1][0])
 
-#INTERSECCION 0 144 - 152
+# INTERSECCION 0 144 - 152
 for i in range(len(Intersecciones0CX) - 1):
-    #Utiliza los puntos del arreglo del inicio para crear caminos partidos por el mismo eje x
-    EstArenaBorregos.append(((Intersecciones0CX[i],INTERSECCION_0C[0][1]),(Intersecciones0CX[i+1],INTERSECCION_0C[0][1])))
-
+    # Utiliza los puntos del arreglo del inicio para crear caminos partidos por el mismo eje x
+    EstArenaBorregos.append(
+        ((Intersecciones0CX[i], INTERSECCION_0C[0][1]), (Intersecciones0CX[i + 1], INTERSECCION_0C[0][1])))
 
 # ---- ESTACIONAMIENTO MEDIO ----
 ENTRADA_EST_MEDIO = ((31.8606, -26.9761), (25.7451, -42.7844))
-EST_MEDIO_B1 = ((-12.3963, -39.9349),(-19.9238, -39.1975))
-EST_MEDIO_B2 = ((25.7451, -41.8117),(21.1641, -41.8117))
-EST_MEDIO_L1 = ((-17.9238, -39.1975),(-31.9968, -57.6005))
+EST_MEDIO_B1 = ((-12.3963, -39.9349), (-19.9238, -39.1975))
+EST_MEDIO_B2 = ((25.7451, -41.8117), (21.1641, -41.8117))
+EST_MEDIO_L1 = ((-17.9238, -39.1975), (-31.9968, -57.6005))
 EST_MEDIO_R1 = ((25.7451, -42.7844), (18.7474, -60.7765))
 EST_MEDIO_INTERSECCION1_1 = ((18.7474, -59.7765), (12.7740, -59.6201))
 EST_MEDIO_INTERSECCION1_2 = ((-29.1765, -57.1177), (-31.9968, -56.7765))
-EST_MEDIO_L2 = ((-31.9968, -57.6005),(-46.1621, -76.3309))
+EST_MEDIO_L2 = ((-31.9968, -57.6005), (-46.1621, -76.3309))
 EST_MEDIO_R2 = ((18.7474, -60.7765), (14.8199, -79.5145))
 EST_MEDIO_INTERSECCION2_1 = ((14.8199, -79.5145), (15.5707, -79.5145))
 EST_MEDIO_INTERSECCION2_2 = ((-43.1600, -76.2301), (-46.1621, -76.3309))
-EST_MEDIO_L3 = ((-46.1621, -76.3309),(-59.7169, -94.2937))
+EST_MEDIO_L3 = ((-46.1621, -76.3309), (-59.7169, -94.2937))
 EST_MEDIO_R3 = ((14.8199, -79.5145), (13.4589, -98.2519))
 EST_MEDIO_INTERSECCION3_1 = ((13.4589, -98.2519), (11.7707, -98.2519))
 EST_MEDIO_INTERSECCION3_2 = ((-58.1468, -94.3419), (-59.7169, -94.2937))
-EST_MEDIO_L4 = ((-59.7169, -94.2937),(-73.6444, -112.51092))
+EST_MEDIO_L4 = ((-59.7169, -94.2937), (-73.6444, -112.51092))
 EST_MEDIO_R4 = ((13.4589, -98.2519), (12.0715, -117.39122))
 EST_MEDIO_INTERSECCION4_1 = ((12.0715, -117.39122), (10.5707, -117.39122))
 EST_MEDIO_INTERSECCION4_2 = ((-67.7369, -113.01202), (-73.6444, -112.51092))
-EST_MEDIO_L5 = ((-73.6444, -112.51092),(-80.1746, -131.3942))
+EST_MEDIO_L5 = ((-73.6444, -112.51092), (-80.1746, -131.3942))
 EST_MEDIO_R5 = ((12.0715, -117.39122), (10.6169, -135.9693))
 EST_MEDIO_INTERSECCION5_1 = ((10.6169, -135.9693), (8.8466, -135.9693))
 EST_MEDIO_INTERSECCION5_2 = ((-77.8511, -131.1209), (-80.1746, -131.3942))
-EST_MEDIO_L6 = ((-80.1746, -131.3942),(-81.5118, -150.2121))
+EST_MEDIO_L6 = ((-80.1746, -131.3942), (-81.5118, -150.2121))
 EST_MEDIO_R6 = ((10.6169, -135.9693), (7.59559, -155.39970))
 EST_MEDIO_INTERSECCION6_1 = ((7.59559, -155.39970), (5.3963, -155.3997))
 EST_MEDIO_INTERSECCION6_2 = ((-67.3179, -151.3333), (-81.5118, -150.2121))
 EST_MEDIO_R7 = ((7.59559, -155.39970), (9.3492, -153.5104))
-EST_MEDIO_L7 = ((-81.5118, -150.2121),(-82.8175, -168.5878))
+EST_MEDIO_L7 = ((-81.5118, -150.2121), (-82.8175, -168.5878))
 EST_MEDIO_R8 = ((9.3492, -153.5104), (-8.7637, -173.0237))
 EST_MEDIO_T1 = ((-8.7637, -173.0237), (-9.7637, -173.0237))
 EST_MEDIO_T2 = ((-80.4779, -168.9573), (-82.8175, -168.5878))
 
 # ---- CAJONES:ESTACIONAMIENTO MEDIO ----
-coordX1=0
-coordX2=0
-coordY1=0
-coordY2=0
-cajon_EST_MEDIO=[]
-estacion_MEDIO_CAMINO_B=[]
+coordX1 = 0
+coordX2 = 0
+coordY1 = 0
+coordY2 = 0
+cajon_EST_MEDIO = []
+estacion_MEDIO_CAMINO_B = []
 for x in range(354):
-    if (x<=11):
-        if(x==0):
-            coordX1=21.1641
-            coordX2=21.0177
-            coordY1=-41.8117
-            coordY2=-35.6706
-        cajon_EST_MEDIO.append(((coordX1,coordY1),(coordX2,coordY2),1))
-        oldCoordX1=coordX1
-        coordX1=coordX1-2.7967
-        coordX2=coordX2-2.7967
-        oldCoordY1=coordY1
-        coordY1=coordY1+0.1564
-        coordY2=coordY2+0.1564
-        estacion_MEDIO_CAMINO_B.append(((oldCoordX1,oldCoordY1),(coordX1,coordY1)))#11
-    if( x>=12 and x<=22):
-        if(x==12):
-            coordY1= -33.7938 - 6.1411
-            coordY2= -39.9349 - 6.1411
-            coordX1= -12.3963
-            coordX2= -12.5427
-        coordX1=coordX1+2.7967
-        coordX2=coordX2+2.7967
-        
-        coordY1=coordY1-0.1564
-        coordY2=coordY2-0.1564
-        cajon_EST_MEDIO.append(((coordX1,coordY1),(coordX2,coordY2),1))
-    if( x>=23 and x<=35):
-        if(x==23):
-            coordY1= -59.6201
-            coordY2= -46.076 - 6.1411
-            coordX1= 15.5707
-            coordX2= 15.4243
-        coordX1=coordX1-2.7967
-        coordX2=coordX2-2.7967
-        coordY1=coordY1+0.1564
-        coordY2=coordY2+0.1564
-        cajon_EST_MEDIO.append(((coordX1,coordY1),(coordX2,coordY2),1))
-    if( x>=36 and x<=51 ):
-        if(x==36):
-            coordY1= -59.6201
-            coordY2= -59.6201 - 6.1411 
-            coordX1= 15.5707
-            coordX2= 15.4243
-        oldCoordX1=coordX1
-        coordX1=coordX1-2.7967
-        coordX2=coordX2-2.7967
-        oldCoordY1=coordY1
-        coordY1=coordY1+0.1564
-        coordY2=coordY2+0.1564
-        cajon_EST_MEDIO.append(((coordX1,coordY1),(coordX2,coordY2),1))
-        estacion_MEDIO_CAMINO_B.append(((oldCoordX1,oldCoordY1),(coordX1,coordY1)))#27
-    if( x>=52 and x<=67):
-        if(x==52):
-            coordY1= -79.5145 
-            coordY2= -73.3734
-            coordX1= 15.5707
-            coordX2= 15.4243
-        coordX1=coordX1-2.7967
-        coordX2=coordX2-2.7967
-        coordY1=coordY1+0.1564
-        coordY2=coordY2+0.1564
-        cajon_EST_MEDIO.append(((coordX1,coordY1),(coordX2,coordY2),1))
-    if( x>=68 and x<=88):
-        if(x==68):
-            coordY1= -79.5145 
-            coordY2= -85.6556
-            coordX1= 15.5707
-            coordX2= 15.4243
-        oldCoordX1=coordX1
-        coordX1=coordX1-2.7967
-        coordX2=coordX2-2.7967
-        oldCoordY1=coordY1
-        coordY1=coordY1+0.1564
-        coordY2=coordY2+0.1564
-        cajon_EST_MEDIO.append(((coordX1,coordY1),(coordX2,coordY2),1))
-        estacion_MEDIO_CAMINO_B.append(((oldCoordX1,oldCoordY1),(coordX1,coordY1))) #48
-    if( x>=89 and x<=109):
-        if(x==89):
-            coordY1= -98.2519
-            coordY2= -92.1108
-            coordX1= 11.5707
-            coordX2= 11.4243
-        coordX1=coordX1-2.7967
-        coordX2=coordX2-2.7967
-        coordY1=coordY1+0.1564
-        coordY2=coordY2+0.1564
-        cajon_EST_MEDIO.append(((coordX1,coordY1),(coordX2,coordY2),1))
-    if( x>=110 and x<=134):
-        if(x==110):
-            coordY1= -98.2519
-            coordY2= -104.393
-            coordX1= 11.7707
-            coordX2= 11.6243
-        oldCoordX1=coordX1
-        coordX1=coordX1-2.7967
-        coordX2=coordX2-2.7967
-        oldCoordY1=coordY1
-        coordY1=coordY1+0.1564
-        coordY2=coordY2+0.1564
-        cajon_EST_MEDIO.append(((coordX1,coordY1),(coordX2,coordY2),1))
-        estacion_MEDIO_CAMINO_B.append(((oldCoordX1,oldCoordY1),(coordX1,coordY1)))#73
-    if( x>=135 and x<=159):
-        if(x==135):
-            coordY1= -117.39122
-            coordY2= -111.25012
-            coordX1= 10.5707
-            coordX2= 10.4243
-        coordX1=coordX1-2.7967
-        coordX2=coordX2-2.7967
-        coordY1=coordY1+0.1564
-        coordY2=coordY2+0.1564
-        cajon_EST_MEDIO.append(((coordX1,coordY1),(coordX2,coordY2),1))
-    if( x>=160 and x<=188):
-        if(x==160):
-            coordY1= -117.39122
-            coordY2= -123.53232
-            coordX1= 10.5707
-            coordX2= 10.4243
-        oldCoordX1=coordX1
-        coordX1=coordX1-2.7967
-        coordX2=coordX2-2.7967
-        oldCoordY1=coordY1
-        coordY1=coordY1+0.1564
-        coordY2=coordY2+0.1564
-        cajon_EST_MEDIO.append(((coordX1,coordY1),(coordX2,coordY2),1))
-        estacion_MEDIO_CAMINO_B.append(((oldCoordX1,oldCoordY1),(coordX1,coordY1)))#102
-    if( x>=189 and x<=217):
-        if(x==189):
-            coordY1= -135.9693
-            coordY2= -129.8282
-            coordX1= 8.8466
-            coordX2= 8.7002
-        coordX1=coordX1-2.7967
-        coordX2=coordX2-2.7967
-        coordY1=coordY1+0.1564
-        coordY2=coordY2+0.1564
-        cajon_EST_MEDIO.append(((coordX1,coordY1),(coordX2,coordY2),1))
-    if( x>=218 and x<=248):
-        if(x==218):
-            coordY1= -135.9693
-            coordY2= -142.1104
-            coordX1= 8.8466
-            coordX2= 8.7002
-        oldCoordX1=coordX1
-        coordX1=coordX1-2.7967
-        coordX2=coordX2-2.7967
-        oldCoordY1=coordY1
-        coordY1=coordY1+0.1564
-        coordY2=coordY2+0.1564
-        cajon_EST_MEDIO.append(((coordX1,coordY1),(coordX2,coordY2),1))
-        estacion_MEDIO_CAMINO_B.append(((oldCoordX1,oldCoordY1),(coordX1,coordY1)))#133
-    if( x>=249 and x<=279):
-        if(x==249):
-            coordY1= -155.39970
-            coordY2= -149.2586
-            coordX1= 5.3963
-            coordX2= 5.2499
-        coordX1=coordX1-2.7967
-        coordX2=coordX2-2.7967
-        coordY1=coordY1+0.1564
-        coordY2=coordY2+0.1564
-        cajon_EST_MEDIO.append(((coordX1,coordY1),(coordX2,coordY2),1))
-    if( x>=280 and x<=305):
-        if(x==280):
-            coordY1= -155.39970
-            coordY2= -161.5408
-            coordX1= 5.3963
-            coordX2= 5.2499
-        oldCoordX1=coordX1
-        coordX1=coordX1-2.7967
-        coordX2=coordX2-2.7967
-        oldCoordY1=coordY1
-        coordY1=coordY1+0.1564
-        coordY2=coordY2+0.1564
-        cajon_EST_MEDIO.append(((coordX1,coordY1),(coordX2,coordY2),1))
-        estacion_MEDIO_CAMINO_B.append(((oldCoordX1,oldCoordY1),(coordX1,coordY1)))#159
-    if( x>=306 and x<=331):
-        if(x==306):
-            coordY1= -173.0237
-            coordY2= -166.8826
-            coordX1= -7.7637
-            coordX2= -7.9101
-        oldCoordX1=coordX1
-        coordX1=coordX1-2.7967
-        coordX2=coordX2-2.7967
-        oldCoordY1=coordY1
-        coordY1=coordY1+0.1564
-        coordY2=coordY2+0.1564
-        cajon_EST_MEDIO.append(((coordX1,coordY1),(coordX2,coordY2),1))
-        estacion_MEDIO_CAMINO_B.append(((oldCoordX1,oldCoordY1),(coordX1,coordY1)))#185
-    if( x>=332 and x<=354):
-        if(x==332):
-            coordY1= -173.0237
-            coordY2= -179.1648
-            coordX1= -18.9381
-            coordX2= -19.0845
-        coordX1=coordX1-2.7967
-        coordX2=coordX2-2.7967
-        coordY1=coordY1+0.1564
-        coordY2=coordY2+0.1564
-        cajon_EST_MEDIO.append(((coordX1,coordY1),(coordX2,coordY2),1))
+    if (x <= 11):
+        if (x == 0):
+            coordX1 = 21.1641
+            coordX2 = 21.0177
+            coordY1 = -41.8117
+            coordY2 = -35.6706
+        cajon_EST_MEDIO.append(((coordX1, coordY1), (coordX2, coordY2), 1))
+        oldCoordX1 = coordX1
+        coordX1 = coordX1 - 2.7967
+        coordX2 = coordX2 - 2.7967
+        oldCoordY1 = coordY1
+        coordY1 = coordY1 + 0.1564
+        coordY2 = coordY2 + 0.1564
+        estacion_MEDIO_CAMINO_B.append(((oldCoordX1, oldCoordY1), (coordX1, coordY1)))  # 11
+    if (x >= 12 and x <= 22):
+        if (x == 12):
+            coordY1 = -33.7938 - 6.1411
+            coordY2 = -39.9349 - 6.1411
+            coordX1 = -12.3963
+            coordX2 = -12.5427
+        coordX1 = coordX1 + 2.7967
+        coordX2 = coordX2 + 2.7967
 
+        coordY1 = coordY1 - 0.1564
+        coordY2 = coordY2 - 0.1564
+        cajon_EST_MEDIO.append(((coordX1, coordY1), (coordX2, coordY2), 1))
+    if (x >= 23 and x <= 35):
+        if (x == 23):
+            coordY1 = -59.6201
+            coordY2 = -46.076 - 6.1411
+            coordX1 = 15.5707
+            coordX2 = 15.4243
+        coordX1 = coordX1 - 2.7967
+        coordX2 = coordX2 - 2.7967
+        coordY1 = coordY1 + 0.1564
+        coordY2 = coordY2 + 0.1564
+        cajon_EST_MEDIO.append(((coordX1, coordY1), (coordX2, coordY2), 1))
+    if (x >= 36 and x <= 51):
+        if (x == 36):
+            coordY1 = -59.6201
+            coordY2 = -59.6201 - 6.1411
+            coordX1 = 15.5707
+            coordX2 = 15.4243
+        oldCoordX1 = coordX1
+        coordX1 = coordX1 - 2.7967
+        coordX2 = coordX2 - 2.7967
+        oldCoordY1 = coordY1
+        coordY1 = coordY1 + 0.1564
+        coordY2 = coordY2 + 0.1564
+        cajon_EST_MEDIO.append(((coordX1, coordY1), (coordX2, coordY2), 1))
+        estacion_MEDIO_CAMINO_B.append(((oldCoordX1, oldCoordY1), (coordX1, coordY1)))  # 27
+    if (x >= 52 and x <= 67):
+        if (x == 52):
+            coordY1 = -79.5145
+            coordY2 = -73.3734
+            coordX1 = 15.5707
+            coordX2 = 15.4243
+        coordX1 = coordX1 - 2.7967
+        coordX2 = coordX2 - 2.7967
+        coordY1 = coordY1 + 0.1564
+        coordY2 = coordY2 + 0.1564
+        cajon_EST_MEDIO.append(((coordX1, coordY1), (coordX2, coordY2), 1))
+    if (x >= 68 and x <= 88):
+        if (x == 68):
+            coordY1 = -79.5145
+            coordY2 = -85.6556
+            coordX1 = 15.5707
+            coordX2 = 15.4243
+        oldCoordX1 = coordX1
+        coordX1 = coordX1 - 2.7967
+        coordX2 = coordX2 - 2.7967
+        oldCoordY1 = coordY1
+        coordY1 = coordY1 + 0.1564
+        coordY2 = coordY2 + 0.1564
+        cajon_EST_MEDIO.append(((coordX1, coordY1), (coordX2, coordY2), 1))
+        estacion_MEDIO_CAMINO_B.append(((oldCoordX1, oldCoordY1), (coordX1, coordY1)))  # 48
+    if (x >= 89 and x <= 109):
+        if (x == 89):
+            coordY1 = -98.2519
+            coordY2 = -92.1108
+            coordX1 = 11.5707
+            coordX2 = 11.4243
+        coordX1 = coordX1 - 2.7967
+        coordX2 = coordX2 - 2.7967
+        coordY1 = coordY1 + 0.1564
+        coordY2 = coordY2 + 0.1564
+        cajon_EST_MEDIO.append(((coordX1, coordY1), (coordX2, coordY2), 1))
+    if (x >= 110 and x <= 134):
+        if (x == 110):
+            coordY1 = -98.2519
+            coordY2 = -104.393
+            coordX1 = 11.7707
+            coordX2 = 11.6243
+        oldCoordX1 = coordX1
+        coordX1 = coordX1 - 2.7967
+        coordX2 = coordX2 - 2.7967
+        oldCoordY1 = coordY1
+        coordY1 = coordY1 + 0.1564
+        coordY2 = coordY2 + 0.1564
+        cajon_EST_MEDIO.append(((coordX1, coordY1), (coordX2, coordY2), 1))
+        estacion_MEDIO_CAMINO_B.append(((oldCoordX1, oldCoordY1), (coordX1, coordY1)))  # 73
+    if (x >= 135 and x <= 159):
+        if (x == 135):
+            coordY1 = -117.39122
+            coordY2 = -111.25012
+            coordX1 = 10.5707
+            coordX2 = 10.4243
+        coordX1 = coordX1 - 2.7967
+        coordX2 = coordX2 - 2.7967
+        coordY1 = coordY1 + 0.1564
+        coordY2 = coordY2 + 0.1564
+        cajon_EST_MEDIO.append(((coordX1, coordY1), (coordX2, coordY2), 1))
+    if (x >= 160 and x <= 188):
+        if (x == 160):
+            coordY1 = -117.39122
+            coordY2 = -123.53232
+            coordX1 = 10.5707
+            coordX2 = 10.4243
+        oldCoordX1 = coordX1
+        coordX1 = coordX1 - 2.7967
+        coordX2 = coordX2 - 2.7967
+        oldCoordY1 = coordY1
+        coordY1 = coordY1 + 0.1564
+        coordY2 = coordY2 + 0.1564
+        cajon_EST_MEDIO.append(((coordX1, coordY1), (coordX2, coordY2), 1))
+        estacion_MEDIO_CAMINO_B.append(((oldCoordX1, oldCoordY1), (coordX1, coordY1)))  # 102
+    if (x >= 189 and x <= 217):
+        if (x == 189):
+            coordY1 = -135.9693
+            coordY2 = -129.8282
+            coordX1 = 8.8466
+            coordX2 = 8.7002
+        coordX1 = coordX1 - 2.7967
+        coordX2 = coordX2 - 2.7967
+        coordY1 = coordY1 + 0.1564
+        coordY2 = coordY2 + 0.1564
+        cajon_EST_MEDIO.append(((coordX1, coordY1), (coordX2, coordY2), 1))
+    if (x >= 218 and x <= 248):
+        if (x == 218):
+            coordY1 = -135.9693
+            coordY2 = -142.1104
+            coordX1 = 8.8466
+            coordX2 = 8.7002
+        oldCoordX1 = coordX1
+        coordX1 = coordX1 - 2.7967
+        coordX2 = coordX2 - 2.7967
+        oldCoordY1 = coordY1
+        coordY1 = coordY1 + 0.1564
+        coordY2 = coordY2 + 0.1564
+        cajon_EST_MEDIO.append(((coordX1, coordY1), (coordX2, coordY2), 1))
+        estacion_MEDIO_CAMINO_B.append(((oldCoordX1, oldCoordY1), (coordX1, coordY1)))  # 133
+    if (x >= 249 and x <= 279):
+        if (x == 249):
+            coordY1 = -155.39970
+            coordY2 = -149.2586
+            coordX1 = 5.3963
+            coordX2 = 5.2499
+        coordX1 = coordX1 - 2.7967
+        coordX2 = coordX2 - 2.7967
+        coordY1 = coordY1 + 0.1564
+        coordY2 = coordY2 + 0.1564
+        cajon_EST_MEDIO.append(((coordX1, coordY1), (coordX2, coordY2), 1))
+    if (x >= 280 and x <= 305):
+        if (x == 280):
+            coordY1 = -155.39970
+            coordY2 = -161.5408
+            coordX1 = 5.3963
+            coordX2 = 5.2499
+        oldCoordX1 = coordX1
+        coordX1 = coordX1 - 2.7967
+        coordX2 = coordX2 - 2.7967
+        oldCoordY1 = coordY1
+        coordY1 = coordY1 + 0.1564
+        coordY2 = coordY2 + 0.1564
+        cajon_EST_MEDIO.append(((coordX1, coordY1), (coordX2, coordY2), 1))
+        estacion_MEDIO_CAMINO_B.append(((oldCoordX1, oldCoordY1), (coordX1, coordY1)))  # 159
+    if (x >= 306 and x <= 331):
+        if (x == 306):
+            coordY1 = -173.0237
+            coordY2 = -166.8826
+            coordX1 = -7.7637
+            coordX2 = -7.9101
+        oldCoordX1 = coordX1
+        coordX1 = coordX1 - 2.7967
+        coordX2 = coordX2 - 2.7967
+        oldCoordY1 = coordY1
+        coordY1 = coordY1 + 0.1564
+        coordY2 = coordY2 + 0.1564
+        cajon_EST_MEDIO.append(((coordX1, coordY1), (coordX2, coordY2), 1))
+        estacion_MEDIO_CAMINO_B.append(((oldCoordX1, oldCoordY1), (coordX1, coordY1)))  # 185
+    if (x >= 332 and x <= 354):
+        if (x == 332):
+            coordY1 = -173.0237
+            coordY2 = -179.1648
+            coordX1 = -18.9381
+            coordX2 = -19.0845
+        coordX1 = coordX1 - 2.7967
+        coordX2 = coordX2 - 2.7967
+        coordY1 = coordY1 + 0.1564
+        coordY2 = coordY2 + 0.1564
+        cajon_EST_MEDIO.append(((coordX1, coordY1), (coordX2, coordY2), 1))
 
-    
-EST_MEDIO_CAJONES=tuple(cajon_EST_MEDIO)
-EST_MEDIO_CAMINO=tuple(estacion_MEDIO_CAMINO_B)
+EST_MEDIO_CAJONES = tuple(cajon_EST_MEDIO)
+EST_MEDIO_CAMINO = tuple(estacion_MEDIO_CAMINO_B)
 print(EST_MEDIO_CAMINO[185])
 
 # ---- ESTACIONAMIENTO NUEVO ----
@@ -505,14 +505,14 @@ for inter in range(0, 10):
         yi = -195.92
         xf = xi - divX
         yf = yi + divY
-    HORIZONTAL_SECCIONADA_1.append(((xi, yi),(xf, yf)))
+    HORIZONTAL_SECCIONADA_1.append(((xi, yi), (xf, yf)))
     xi -= divX
     xf -= divX
     yi += divY
-    yf += divY 
-    
+    yf += divY
+
 NUEVO_HORIZONTAL_1 = tuple(HORIZONTAL_SECCIONADA_1)
-    
+
 h2_1 = (-40.82, -208.18)
 h2_2 = (-104.71, -203.76)
 h3_1 = (-46.08, -212.96)
@@ -531,7 +531,7 @@ for inter in range(0, 10):
         yi = -221.65
         xf = xi - divX4
         yf = yi + divY4
-    HORIZONTAL_SECCIONADA_4.append(((xi, yi),(xf, yf)))
+    HORIZONTAL_SECCIONADA_4.append(((xi, yi), (xf, yf)))
     xi -= divX4
     xf -= divX4
     yi += divY4
@@ -551,7 +551,7 @@ for inter in range(0, 25):
         yi = -250.20
         xf = xi - divX5
         yf = yi + divY5
-    HORIZONTAL_SECCIONADA_5.append(((xi, yi),(xf, yf)))
+    HORIZONTAL_SECCIONADA_5.append(((xi, yi), (xf, yf)))
     xi -= divX5
     xf -= divX5
     yi += divY5
@@ -571,7 +571,7 @@ for inter in range(0, 28):
         yi = -268.79
         xf = xi - divX6
         yf = yi + divY6
-    HORIZONTAL_SECCIONADA_6.append(((xi, yi),(xf, yf)))
+    HORIZONTAL_SECCIONADA_6.append(((xi, yi), (xf, yf)))
     xi -= divX6
     xf -= divX6
     yi += divY6
@@ -591,7 +591,7 @@ for inter in range(0, 28):
         yi = -285.74
         xf = xi - divX7
         yf = yi + divY7
-    HORIZONTAL_SECCIONADA_7.append(((xi, yi),(xf, yf)))
+    HORIZONTAL_SECCIONADA_7.append(((xi, yi), (xf, yf)))
     xi -= divX7
     xf -= divX7
     yi += divY7
@@ -615,7 +615,7 @@ e3_2 = (-93.25, -191.87)
 # CAJONES
 xi = 0
 yi = 0
-xf = 0 
+xf = 0
 yf = 0
 indexCajonNuevos = 0
 cajon_EST_NUEVO = []
@@ -626,18 +626,18 @@ for x in range(194):
             yi = -191.84
             xf = -85.48
             yf = -201.12
-        cajon_EST_NUEVO.append(((xi, yi),(xf, yf), 1))
+        cajon_EST_NUEVO.append(((xi, yi), (xf, yf), 1))
         xi += 2.8
         xf += 2.8
         yf -= 0.2
         yi -= 0.2
     if (x >= 14 and x <= 31):
-        if(x == 14):
+        if (x == 14):
             xi = -81.50
             yi = -192.16
             xf = -81.07
             yf = -185.07
-        cajon_EST_NUEVO.append(((xi, yi),(xf, yf), 1))
+        cajon_EST_NUEVO.append(((xi, yi), (xf, yf), 1))
         xi += 2.8
         xf += 2.8
         yf -= 0.2
@@ -648,7 +648,7 @@ for x in range(194):
             yi = -218.33
             xf = -110.72
             yf = -226.97
-        cajon_EST_NUEVO.append(((xi, yi),(xf, yf), 1))
+        cajon_EST_NUEVO.append(((xi, yi), (xf, yf), 1))
         xi += 2.8
         xf += 2.8
         yf -= 0.11
@@ -659,7 +659,7 @@ for x in range(194):
             yi = -218.83
             xf = -104.15
             yf = -212.57
-        cajon_EST_NUEVO.append(((xi, yi),(xf, yf), 1))
+        cajon_EST_NUEVO.append(((xi, yi), (xf, yf), 1))
         xi += 2.8
         xf += 2.8
         yf -= 0.11
@@ -670,7 +670,7 @@ for x in range(194):
             yi = -247.72
             xf = -135.30
             yf = -255.35
-        cajon_EST_NUEVO.append(((xi, yi),(xf, yf), 1))
+        cajon_EST_NUEVO.append(((xi, yi), (xf, yf), 1))
         xi += 2.8
         xf += 2.8
         yf -= 0.11
@@ -681,7 +681,7 @@ for x in range(194):
             yi = -248.10
             xf = -126.44
             yf = -239.81
-        cajon_EST_NUEVO.append(((xi, yi),(xf, yf), 1))
+        cajon_EST_NUEVO.append(((xi, yi), (xf, yf), 1))
         xi += 2.8
         xf += 2.8
         yf -= 0.11
@@ -692,7 +692,7 @@ for x in range(194):
             yi = -265.84
             xf = -148.83
             yf = -272.20
-        cajon_EST_NUEVO.append(((xi, yi),(xf, yf), 1))
+        cajon_EST_NUEVO.append(((xi, yi), (xf, yf), 1))
         xi += 2.8
         xf += 2.8
         yf -= 0.11
@@ -703,7 +703,7 @@ for x in range(194):
             yi = -266.28
             xf = -138.02
             yf = -258.51
-        cajon_EST_NUEVO.append(((xi, yi),(xf, yf), 1))
+        cajon_EST_NUEVO.append(((xi, yi), (xf, yf), 1))
         xi += 2.8
         xf += 2.8
         yf -= 0.11
@@ -714,16 +714,16 @@ for x in range(194):
             yi = -283.33
             xf = -146.78
             yf = -276.06
-        cajon_EST_NUEVO.append(((xi, yi),(xf, yf), 1))
+        cajon_EST_NUEVO.append(((xi, yi), (xf, yf), 1))
         xi += 2.8
         xf += 2.8
         yf -= 0.11
         yi -= 0.11
 
-#194 paths
+# 194 paths
 EST_NUEVO_CAJONES = tuple(cajon_EST_NUEVO)
 
-#Nuevo paths
+# Nuevo paths
 
 neo_paths = []
 
@@ -744,7 +744,7 @@ NUEVO_VERTICAL_13 = (v13_2, v13_1)
 NUEVO_VERTICAL_14 = (v14_2, v14_1)
 NUEVO_VERTICAL_15 = (v15_2, v15_1)
 
-NUEVO_HORIZONTAL_2 = (h2_1, h2_2) 
+NUEVO_HORIZONTAL_2 = (h2_1, h2_2)
 NUEVO_HORIZONTAL_3 = (h3_1, h3_2)
 
 NUEVO_SALIDAS_1 = (s1_1, s1_2)
@@ -753,7 +753,7 @@ NUEVO_ENTRADA_1 = (e1_1, e1_2)
 NUEVO_ENTRADA_2 = (e2_1, e2_2)
 NUEVO_ENTRADA_3 = (e3_1, e3_2)
 
-#22 roads
+# 22 roads
 neo_paths.append(NUEVO_VERTICAL_1)
 neo_paths.append(NUEVO_VERTICAL_2)
 neo_paths.append(NUEVO_VERTICAL_3)
@@ -777,35 +777,31 @@ neo_paths.append(NUEVO_ENTRADA_1)
 neo_paths.append(NUEVO_ENTRADA_2)
 neo_paths.append(NUEVO_ENTRADA_3)
 
-
-
-
-    
 ## ---- ESTACIONAMIENTO TERRACERIA ----
 
-g0 = (-49.6102, -249.6164) #0
-g1 = (-33.7784, -247.4305) #1
-g2 = (-17.3714, -248.4225) #2
-g3 = (-47.0759, -314.1266) #3
-g4 = (-54, -329.9062) #4
-g5 = (-60.0554, -344.8489) #5
-g6 = (-67.1610, -359.8162) #6
-g7 = (-73.1061, -374.8023) #7
-g8 = (-195.9880, -368.1862) #8
-g9 = (-188.5682, -353.0461) #9
-g10 = (-178.1299, -339.3147) #10
-g11 = (-166.1706, -323.7149) #11
-g12 = (-153.1128, -307.1783) #12
-g13 = (-54.3620, -296.4803) #13
-g14 = (-150.8308, -293.1035) #14
-g15 = (-167.4109, -288.0571) #15
-g16 = (-191.0185, -287.0861) #16
-g17 = (-172.8859, -262.5026) #17
-g18 = (-128.9339, -209.0373) #18
-g19 = (-114.2530, -209.0373) #19
-g20 = (-139.4951, -188.8469) #20
-g14_15 = (-156.8524, -288.5490) # 14-15
-g8_9 = (-194.6809, -361.2315) #8-9
+g0 = (-49.6102, -249.6164)  # 0
+g1 = (-33.7784, -247.4305)  # 1
+g2 = (-17.3714, -248.4225)  # 2
+g3 = (-47.0759, -314.1266)  # 3
+g4 = (-54, -329.9062)  # 4
+g5 = (-60.0554, -344.8489)  # 5
+g6 = (-67.1610, -359.8162)  # 6
+g7 = (-73.1061, -374.8023)  # 7
+g8 = (-195.9880, -368.1862)  # 8
+g9 = (-188.5682, -353.0461)  # 9
+g10 = (-178.1299, -339.3147)  # 10
+g11 = (-166.1706, -323.7149)  # 11
+g12 = (-153.1128, -307.1783)  # 12
+g13 = (-54.3620, -296.4803)  # 13
+g14 = (-150.8308, -293.1035)  # 14
+g15 = (-167.4109, -288.0571)  # 15
+g16 = (-191.0185, -287.0861)  # 16
+g17 = (-172.8859, -262.5026)  # 17
+g18 = (-128.9339, -209.0373)  # 18
+g19 = (-114.2530, -209.0373)  # 19
+g20 = (-139.4951, -188.8469)  # 20
+g14_15 = (-156.8524, -288.5490)  # 14-15
+g8_9 = (-194.6809, -361.2315)  # 8-9
 
 r0_1 = (g0, g1)
 r1_2 = (g1, g2)
@@ -836,10 +832,11 @@ r17_18 = (g17, g18)
 r18_19 = (g18, g19)
 r19_20 = (g19, g20)
 
-#dir 0 up
-#dir 1 down
-#dir 2 left
-#dir 3 right
+
+# dir 0 up
+# dir 1 down
+# dir 2 left
+# dir 3 right
 
 def extension(inicio, final, divider, dir):
     xi = inicio[0]
@@ -847,285 +844,285 @@ def extension(inicio, final, divider, dir):
     xf = final[0]
     yf = final[1]
     division = []
-    stepx = (xf-xi)/divider
-    stepy = (yf-yi)/divider
+    stepx = (xf - xi) / divider
+    stepy = (yf - yi) / divider
     for i in range(divider):
         xp = xi
         yp = yi
-        #up
+        # up
         if dir == 0:
             xi += stepx
             yi += stepy
-        #down
+        # down
         elif dir == 1:
             xi += stepx
             yi -= stepy
-        #left
+        # left
         elif dir == 2:
             xi += stepx
             yi += stepy
-        #right
+        # right
         else:
             xi += stepx
             yi += stepy
-        division.append(((xp, yp),(xi, yi))) 
+        division.append(((xp, yp), (xi, yi)))
     return division
 
-caminos =[]
 
-#VERTICALES
+caminos = []
 
-#2-3 26r 18l
-p2_3 = extension(g2,g3,26,0)
+# VERTICALES
+
+# 2-3 26r 18l
+p2_3 = extension(g2, g3, 26, 0)
 caminos.append(p2_3)
 
-#3-4 6r
-p3_4 = extension(g3,g4,6,0)
+# 3-4 6r
+p3_4 = extension(g3, g4, 6, 0)
 caminos.append(p3_4)
 
-#4-5 6r
-p4_5 = extension(g4,g5,6,0)
+# 4-5 6r
+p4_5 = extension(g4, g5, 6, 0)
 caminos.append(p4_5)
 
-#5-6 6r
-p5_6 = extension(g5,g6,6,0)
+# 5-6 6r
+p5_6 = extension(g5, g6, 6, 0)
 caminos.append(p5_6)
 
-#6-7 5r
-p6_7 = extension(g6,g7,5,0)
+# 6-7 5r
+p6_7 = extension(g6, g7, 5, 0)
 caminos.append(p6_7)
 
-#1-13 17r 16l
-p1_13 = extension(g1,g13,17,0)
+# 1-13 17r 16l
+p1_13 = extension(g1, g13, 17, 0)
 caminos.append(p1_13)
 
-#8-9 7l
-p8_9 = extension(g8,g9,7,0)
+# 8-9 7l
+p8_9 = extension(g8, g9, 7, 0)
 caminos.append(p8_9)
 
-#9-10 5l
-p9_10 = extension(g9,g10,5,0)
+# 9-10 5l
+p9_10 = extension(g9, g10, 5, 0)
 caminos.append(p9_10)
 
-#10-11 7l
-p10_11 = extension(g10,g11,7,0)
+# 10-11 7l
+p10_11 = extension(g10, g11, 7, 0)
 caminos.append(p10_11)
 
-#11-12 8l
-p11_12 = extension(g11,g12,8,0)
+# 11-12 8l
+p11_12 = extension(g11, g12, 8, 0)
 caminos.append(p11_12)
 
-#15-17 3r ??
+# 15-17 3r ??
 
-#16-17 12l
-p16_17 = extension(g16,g17,12,0)
+# 16-17 12l
+p16_17 = extension(g16, g17, 12, 0)
 caminos.append(p16_17)
 
-#17-18 25l 13r
-p17_18 = extension(g17,g18,25,0)
+# 17-18 25l 13r
+p17_18 = extension(g17, g18, 25, 0)
 caminos.append(p17_18)
 
-#HORIZONTALES 
+# HORIZONTALES
 
-#0-1 5d
-p0_1 = extension(g0,g1,5,0)
+# 0-1 5d
+p0_1 = extension(g0, g1, 5, 0)
 caminos.append(p0_1)
 
-#1-2 5d
-p1_2 = extension(g1,g2,5,0)
+# 1-2 5d
+p1_2 = extension(g1, g2, 5, 0)
 caminos.append(p1_2)
 
-#13-14 36u 12d(para)
-p13_14 = extension(g13,g14,36,0)
+# 13-14 36u 12d(para)
+p13_14 = extension(g13, g14, 36, 0)
 caminos.append(p13_14)
 
-#3-12 36d 35u
-p3_12 = extension(g3,g12,36,0)
+# 3-12 36d 35u
+p3_12 = extension(g3, g12, 36, 0)
 caminos.append(p3_12)
 
-#4-11 36d 36u
-p4_11 = extension(g4,g11,36,0)
+# 4-11 36d 36u
+p4_11 = extension(g4, g11, 36, 0)
 caminos.append(p4_11)
 
-#5-10 38d 38u
-p5_10 = extension(g5,g10,38,0)
+# 5-10 38d 38u
+p5_10 = extension(g5, g10, 38, 0)
 caminos.append(p5_10)
 
-#6-9 39d 41u
-p6_9 = extension(g6,g9,41,0)
+# 6-9 39d 41u
+p6_9 = extension(g6, g9, 41, 0)
 caminos.append(p6_9)
 
-#7-8 42d 41u
-p7_8 = extension(g7,g8,42,0)
+# 7-8 42d 41u
+p7_8 = extension(g7, g8, 42, 0)
 caminos.append(p7_8)
 
-#14-15 4u
-p14_15 = extension(g14,g15,4,0)
+# 14-15 4u
+p14_15 = extension(g14, g15, 4, 0)
 caminos.append(p14_15)
 
-#15-16 8u
-p15_16 = extension(g15,g16,8,0)
+# 15-16 8u
+p15_16 = extension(g15, g16, 8, 0)
 caminos.append(p15_16)
 
+# ----------------------
+# ESTACIONAMIENTOS
+estacionamientos = []
 
-#----------------------
-#ESTACIONAMIENTOS
-estacionamientos =[]
 
 def cajonear(ruta, n, dir, skip):
     i = 0
     extra = skip
     cajones = []
     while i < n + extra:
-        xi = ruta[i][0][0] 
+        xi = ruta[i][0][0]
         yi = ruta[i][0][1]
-        xf = ruta[i][1][0] 
+        xf = ruta[i][1][0]
         yf = ruta[i][1][1]
         dx = xf - xi
         dy = yf - yi
-        ndx = dy*2
-        ndy = dx*2
-        nidx = dy/3
-        nidy = dx/3
+        ndx = dy * 2
+        ndy = dx * 2
+        nidx = dy / 3
+        nidy = dx / 3
         if dir == 0:
             xn = xf + ndx
             xni = xf + nidx
-            #xf += 1.5
+            # xf += 1.5
             yn = yf - ndy
             yni = yf - nidy
-          
+
         elif dir == 1:
             xn = xf - ndx
             xni = xf - nidx
-            #xf -= 1.5
+            # xf -= 1.5
             yn = yf + ndy
             yni = yf + nidy
-        #cajones.append(((xf,yf),(xn,yn)))
+        # cajones.append(((xf,yf),(xn,yn)))
         if skip <= 0:
-             cajones.append(((xni,yni),(xn,yn)))
+            cajones.append(((xni, yni), (xn, yn)))
 
         i += 1
         skip -= 1
-         
+
     return cajones
 
 
-c2_3_l = cajonear(p2_3, 18,0,1)
+c2_3_l = cajonear(p2_3, 18, 0, 1)
 c2_3_r = cajonear(p2_3, 26, 1, 0)
 estacionamientos.append(c2_3_l)
 estacionamientos.append(c2_3_r)
 
-c3_4 = cajonear(p3_4, 6,1,0)
+c3_4 = cajonear(p3_4, 6, 1, 0)
 estacionamientos.append(c3_4)
 
-c4_5 = cajonear(p4_5, 6,1,0)
+c4_5 = cajonear(p4_5, 6, 1, 0)
 estacionamientos.append(c4_5)
 
-c5_6 = cajonear(p5_6, 6,1,0)
+c5_6 = cajonear(p5_6, 6, 1, 0)
 estacionamientos.append(c5_6)
 
-c6_7 = cajonear(p6_7, 5,1,0)
+c6_7 = cajonear(p6_7, 5, 1, 0)
 estacionamientos.append(c6_7)
 
-c1_13_r = cajonear(p1_13, 17,1,0)
-c1_13_l = cajonear(p1_13, 16,0,0)
+c1_13_r = cajonear(p1_13, 17, 1, 0)
+c1_13_l = cajonear(p1_13, 16, 0, 0)
 estacionamientos.append(c1_13_r)
 estacionamientos.append(c1_13_l)
 
-c8_9 = cajonear(p8_9, 7,1,0)
+c8_9 = cajonear(p8_9, 7, 1, 0)
 estacionamientos.append(c8_9)
 
-c9_10 = cajonear(p9_10, 5,1,0)
+c9_10 = cajonear(p9_10, 5, 1, 0)
 estacionamientos.append(c9_10)
 
-c10_11 = cajonear(p10_11, 7,1,0)
+c10_11 = cajonear(p10_11, 7, 1, 0)
 estacionamientos.append(c10_11)
 
-c11_12 = cajonear(p11_12, 8,1,0)
+c11_12 = cajonear(p11_12, 8, 1, 0)
 estacionamientos.append(c11_12)
 
-c16_17 = cajonear(p16_17, 12,1,0)
+c16_17 = cajonear(p16_17, 12, 1, 0)
 estacionamientos.append(c16_17)
 
-c17_18_r =cajonear(p17_18, 13, 0, 10)
-c17_18_l =cajonear(p17_18, 25, 1,0)
+c17_18_r = cajonear(p17_18, 13, 0, 10)
+c17_18_l = cajonear(p17_18, 25, 1, 0)
 estacionamientos.append(c17_18_r)
 estacionamientos.append(c17_18_l)
 
-#hori
+# hori
 
-c0_1 = cajonear(p0_1, 5,1,0)
+c0_1 = cajonear(p0_1, 5, 1, 0)
 estacionamientos.append(c0_1)
 
-c1_2 = cajonear(p1_2, 5,1,0)
+c1_2 = cajonear(p1_2, 5, 1, 0)
 estacionamientos.append(c1_2)
 
-c13_14_d = cajonear(p13_14, 12,0,0)
-c13_14_u = cajonear(p13_14, 36,1,0)
+c13_14_d = cajonear(p13_14, 12, 0, 0)
+c13_14_u = cajonear(p13_14, 36, 1, 0)
 estacionamientos.append(c13_14_d)
 estacionamientos.append(c13_14_u)
 
-c3_12_d = cajonear(p3_12, 36,0,0)
-c3_12_u = cajonear(p3_12, 35,1,0)
+c3_12_d = cajonear(p3_12, 36, 0, 0)
+c3_12_u = cajonear(p3_12, 35, 1, 0)
 estacionamientos.append(c3_12_d)
 estacionamientos.append(c3_12_u)
 
-c4_11_d = cajonear(p4_11, 36,0,0)
-c4_11_u = cajonear(p4_11, 36,1,0)
+c4_11_d = cajonear(p4_11, 36, 0, 0)
+c4_11_u = cajonear(p4_11, 36, 1, 0)
 estacionamientos.append(c4_11_d)
 estacionamientos.append(c4_11_u)
 
-c5_10_d = cajonear(p5_10, 38,0,0)
-c5_10_u = cajonear(p5_10, 38,1,0)
+c5_10_d = cajonear(p5_10, 38, 0, 0)
+c5_10_u = cajonear(p5_10, 38, 1, 0)
 estacionamientos.append(c5_10_d)
 estacionamientos.append(c5_10_u)
 
-c6_9_d = cajonear(p6_9, 39,0,0)
-c6_9_u = cajonear(p6_9, 41,1,0)
+c6_9_d = cajonear(p6_9, 39, 0, 0)
+c6_9_u = cajonear(p6_9, 41, 1, 0)
 estacionamientos.append(c6_9_d)
 estacionamientos.append(c6_9_u)
 
-c7_8_d = cajonear(p7_8, 42,0,0)
-c7_8_u = cajonear(p7_8, 41,1,0)
+c7_8_d = cajonear(p7_8, 42, 0, 0)
+c7_8_u = cajonear(p7_8, 41, 1, 0)
 estacionamientos.append(c7_8_d)
 estacionamientos.append(c7_8_u)
 
-c14_15 = cajonear(p14_15, 4,1,0)
+c14_15 = cajonear(p14_15, 4, 1, 0)
 estacionamientos.append(c14_15)
 
-c15_16 = cajonear(p15_16, 8,1,0)
+c15_16 = cajonear(p15_16, 8, 1, 0)
 estacionamientos.append(c15_16)
 
-#------------------------------------------------------
-#ESTACIONAMIENTOS SUBIDA
+# ------------------------------------------------------
+# ESTACIONAMIENTOS SUBIDA
 
-#Caminos
+# Caminos
 
 inter = (31.8606, -26.9761)
 s1 = (36.7870, -38.9865)
 s2 = (110.0329, -54.3665)
 s3 = (208.3744, -48.1776)
-inicio_s = extension(inter,s1,1,0)
+inicio_s = extension(inter, s1, 1, 0)
 caminos.append(inicio_s)
-ps1_2 = extension(s1,s2,28,0)
-ps2_3 = extension(s2,s3,29,0)
+ps1_2 = extension(s1, s2, 28, 0)
+ps2_3 = extension(s2, s3, 29, 0)
 caminos.append(ps1_2)
 caminos.append(ps2_3)
 
-#Estacionamientos 
+# Estacionamientos
 
-cs1_2 = cajonear(ps1_2, 28,1,0)
+cs1_2 = cajonear(ps1_2, 28, 1, 0)
 
-cs2_3 = cajonear(ps2_3, 29,1,0)
+cs2_3 = cajonear(ps2_3, 29, 1, 0)
 
 estacionamientos.append(cs1_2)
 estacionamientos.append(cs2_3)
 
-
-#----------------------------------------------------
+# ----------------------------------------------------
 
 # Arena borregos index 0 - 153
-for i in range (0, len(EstArenaBorregos)):
+for i in range(0, len(EstArenaBorregos)):
     sim.create_roads([EstArenaBorregos[i]])
     # print(i)
 
@@ -1167,7 +1164,8 @@ sim.create_roads([
 
 # indix desde 186 - 371
 for i in range(0, len(EST_MEDIO_CAMINO)):
-    sim.create_roads([EST_MEDIO_CAMINO[i]])#(186-197):EST_MEDIO_B_ABAJO/(198-213):EST_MEDIO_B_ARRIBA/(214-371):EST_MEDIO_T_ARRIBA
+    sim.create_roads(
+        [EST_MEDIO_CAMINO[i]])  # (186-197):EST_MEDIO_B_ABAJO/(198-213):EST_MEDIO_B_ARRIBA/(214-371):EST_MEDIO_T_ARRIBA
     # print(i)
 
 # index desde 372 - 725
@@ -1175,30 +1173,28 @@ for i in range(0, len(EST_MEDIO_CAJONES)):
     sim.create_roads([EST_MEDIO_CAJONES[i]])
     # print(i)
 
-
-
 # Verticales y estrada est nuevo 726 - 745
 sim.create_roads([
-    NUEVO_VERTICAL_1,   # 726
-    NUEVO_VERTICAL_2,   # 727
-    NUEVO_VERTICAL_3,   # 728
-    NUEVO_VERTICAL_4,   # 729
-    NUEVO_VERTICAL_5,   # 730
-    NUEVO_VERTICAL_6,   # 731
-    NUEVO_VERTICAL_7,   # 732
-    NUEVO_VERTICAL_8,   # 733
-    NUEVO_VERTICAL_9,   # 734
+    NUEVO_VERTICAL_1,  # 726
+    NUEVO_VERTICAL_2,  # 727
+    NUEVO_VERTICAL_3,  # 728
+    NUEVO_VERTICAL_4,  # 729
+    NUEVO_VERTICAL_5,  # 730
+    NUEVO_VERTICAL_6,  # 731
+    NUEVO_VERTICAL_7,  # 732
+    NUEVO_VERTICAL_8,  # 733
+    NUEVO_VERTICAL_9,  # 734
     NUEVO_VERTICAL_10,  # 735
     NUEVO_VERTICAL_11,  # 736
     NUEVO_VERTICAL_12,  # 737
     NUEVO_VERTICAL_13,  # 738
     NUEVO_VERTICAL_14,  # 739
     NUEVO_VERTICAL_15,  # 740
-    NUEVO_SALIDAS_1,    # 741
-    NUEVO_SALIDAS_2,    # 742
-    NUEVO_ENTRADA_1,    # 743
-    NUEVO_ENTRADA_2,    # 744
-    NUEVO_ENTRADA_3     # 745
+    NUEVO_SALIDAS_1,  # 741
+    NUEVO_SALIDAS_2,  # 742
+    NUEVO_ENTRADA_1,  # 743
+    NUEVO_ENTRADA_2,  # 744
+    NUEVO_ENTRADA_3  # 745
 ])
 
 # index 746 a 755
@@ -1233,199 +1229,198 @@ for i in range(0, len(NUEVO_HORIZONTAL_7)):
 
 # CAJONES
 # index 849 a 1040
-for i in range (0, len(EST_NUEVO_CAJONES)):
+for i in range(0, len(EST_NUEVO_CAJONES)):
     sim.create_roads([EST_NUEVO_CAJONES[i]])
 
-
-#------------------------------------------------
-#CAMINOS ARRIBA 
+# ------------------------------------------------
+# CAMINOS ARRIBA
 # index 1041 - 1479
 print('CAMINOS')
-#CAMINOS ARRIBA
+# CAMINOS ARRIBA
 for camino in caminos:
-     for i in range(0, len(camino)):
+    for i in range(0, len(camino)):
         sim.create_roads([camino[i]])
 
-#---------------------------------------------------
-#CAJONES ARRIBA
+# ---------------------------------------------------
+# CAJONES ARRIBA
 # index 1480 - 2165
 print('CAJONES')
 for spot in estacionamientos:
-     for i in range(0, len(spot)):
+    for i in range(0, len(spot)):
         sim.create_roads([spot[i]])
         # print(i)
 
-
 sim.create_roads([
-    r12_14,     # 2166
-    r15_17,     # 2167
-    r18_19,     # 2168
-    r19_20      # 2169
+    r12_14,  # 2166
+    r15_17,  # 2167
+    r18_19,  # 2168
+    r19_20  # 2169
 ])
 
 test = []
-pathJavier1=[0,1,153,155,371]
-for i in range(186,196):
+pathJavier1 = [0, 1, 153, 155, 371]
+for i in range(186, 196):
     pathJavier1.append(i)
 pathJavier1.append(154)
-for i in range(0,5):
-    pathJavier1.append(156+(i*4))
+for i in range(0, 5):
+    pathJavier1.append(156 + (i * 4))
 pathJavier1.append(181)
 
-pathJavier2=[0,1,153,157,161,165,169,173,177,180,182,183]
+pathJavier2 = [0, 1, 153, 157, 161, 165, 169, 173, 177, 180, 182, 183]
 
-for i in range(345,370):
+for i in range(345, 370):
     pathJavier2.append(i)
 pathJavier2.append(724)
 pathJavier2.append(183)
-pathJavier3=[0,1,153,157,161,165,166]
-for i in range(236,251):
+pathJavier3 = [0, 1, 153, 157, 161, 165, 166]
+for i in range(236, 251):
     pathJavier3.append(i)
 pathJavier3.append(477)
-for i in range(252,258):
+for i in range(252, 258):
     pathJavier3.append(i)
 pathJavier3.append(167)
 pathJavier3.append(168)
 pathJavier3.append(172)
 pathJavier3.append(176)
 pathJavier3.append(181)
-for i in range(737,739):
+for i in range(737, 739):
     pathJavier1.append(i)
     pathJavier2.append(i)
     pathJavier3.append(i)
 pathJavier1.append(2168)
 pathJavier2.append(2168)
 pathJavier3.append(2168)
-extra = [0] #No le hagan caso a este 
+extra = [0]  # No le hagan caso a este
 
-#Path arena 0
-pathArena0 = [0,1,21,20]
-for i in range(22,27):
+# Path arena 0
+pathArena0 = [0, 1, 21, 20]
+for i in range(22, 27):
     pathArena0.append(i)
-for i in range(98,114):
+for i in range(98, 114):
     pathArena0.append(i)
 pathArena0.append(4)
 pathArena0.append(5)
-for i in range(144,153):
+for i in range(144, 153):
     pathArena0.append(i)
-for i in range(7,10):
+for i in range(7, 10):
     pathArena0.append(i)
-#Path arena 1
-pathArena1 = [0,1,21,22,23,19]
-for i in range(24,27):
+# Path arena 1
+pathArena1 = [0, 1, 21, 22, 23, 19]
+for i in range(24, 27):
     pathArena1.append(i)
-for i in range(98,114):
+for i in range(98, 114):
     pathArena1.append(i)
 pathArena1.append(4)
 pathArena1.append(5)
-for i in range(144,153):
+for i in range(144, 153):
     pathArena1.append(i)
-for i in range(7,10):
+for i in range(7, 10):
     pathArena1.append(i)
-#Path arena 2
-pathArena2 = [0,1,21,22,23,24,25,17,26]
-for i in range(98,114):
+# Path arena 2
+pathArena2 = [0, 1, 21, 22, 23, 24, 25, 17, 26]
+for i in range(98, 114):
     pathArena2.append(i)
 pathArena1.append(4)
 pathArena1.append(5)
-for i in range(144,153):
+for i in range(144, 153):
     pathArena2.append(i)
-for i in range(7,10):
+for i in range(7, 10):
     pathArena2.append(i)
-#Path arena 3
-pathArena3 = [0,1,21,22,23,24,25,26,98,97]
-for i in range(99,114):
+# Path arena 3
+pathArena3 = [0, 1, 21, 22, 23, 24, 25, 26, 98, 97]
+for i in range(99, 114):
     pathArena3.append(i)
 pathArena3.append(4)
 pathArena3.append(5)
-for i in range(144,153):
+for i in range(144, 153):
     pathArena3.append(i)
-for i in range(7,10):
+for i in range(7, 10):
     pathArena3.append(i)
-#path arena 4
-pathArena4 = [0,1,21,22,23,24,25,26]
-for i in range(98,114):
+# path arena 4
+pathArena4 = [0, 1, 21, 22, 23, 24, 25, 26]
+for i in range(98, 114):
     pathArena4.append(i)
 pathArena4.append(4)
 pathArena4.append(128)
 pathArena4.append(121)
-for i in range(129,136):
+for i in range(129, 136):
     pathArena4.append(i)
-for i in range(23,27):
+for i in range(23, 27):
     pathArena4.append(i)
-for i in range(98,114):
+for i in range(98, 114):
     pathArena4.append(i)
 pathArena4.append(4)
 pathArena4.append(5)
-for i in range(144,153):
+for i in range(144, 153):
     pathArena4.append(i)
-for i in range(7,10):
+for i in range(7, 10):
     pathArena4.append(i)
-#Path arena 5
-pathArena5 = [0,1,21,22,23,24,25,26,27,28,15]
-for i in range(29,36):
+# Path arena 5
+pathArena5 = [0, 1, 21, 22, 23, 24, 25, 26, 27, 28, 15]
+for i in range(29, 36):
     pathArena5.append(i)
-for i in range(46,56):
+for i in range(46, 56):
     pathArena5.append(i)
-for i in range(2,6):
+for i in range(2, 6):
     pathArena5.append(i)
-for i in range(144,153):
+for i in range(144, 153):
     pathArena5.append(i)
-for i in range(7,10):
+for i in range(7, 10):
     pathArena5.append(i)
-#Path arena 6
-pathArena6 = [0,1,21,22,23,24,25,26,27,28,29,30,13]
-for i in range(31,36):
+# Path arena 6
+pathArena6 = [0, 1, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 13]
+for i in range(31, 36):
     pathArena6.append(i)
-for i in range(46,56):
+for i in range(46, 56):
     pathArena6.append(i)
-for i in range(2,6):
+for i in range(2, 6):
     pathArena6.append(i)
-for i in range(144,153):
+for i in range(144, 153):
     pathArena6.append(i)
-for i in range(7,10):
+for i in range(7, 10):
     pathArena6.append(i)
-#path arena 7
-pathArena7 = [0,1,21,22,23,24,25,26,27,28,29,30,31,32,12]
-for i in range(33,36):
+# path arena 7
+pathArena7 = [0, 1, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 12]
+for i in range(33, 36):
     pathArena7.append(i)
-for i in range(46,56):
+for i in range(46, 56):
     pathArena7.append(i)
-for i in range(2,6):
+for i in range(2, 6):
     pathArena7.append(i)
-for i in range(144,153):
+for i in range(144, 153):
     pathArena7.append(i)
-for i in range(7,10):
+for i in range(7, 10):
     pathArena7.append(i)
-#Path arena 8
-pathArena8 = [0,1,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,46,39]
-for i in range(47,56):
+# Path arena 8
+pathArena8 = [0, 1, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 46, 39]
+for i in range(47, 56):
     pathArena8.append(i)
-for i in range(2,6):
+for i in range(2, 6):
     pathArena8.append(i)
-for i in range(144,153):
+for i in range(144, 153):
     pathArena8.append(i)
-for i in range(7,10):
+for i in range(7, 10):
     pathArena8.append(i)
-#Path arena 9
-pathArena9 = [0,1,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,46,47,45]
-for i in range(48,56):
+# Path arena 9
+pathArena9 = [0, 1, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 46, 47, 45]
+for i in range(48, 56):
     pathArena9.append(i)
-for i in range(2,6):
+for i in range(2, 6):
     pathArena9.append(i)
-for i in range(144,153):
+for i in range(144, 153):
     pathArena9.append(i)
-for i in range(7,10):
+for i in range(7, 10):
     pathArena9.append(i)
 
+
 def crear_lista_entrada(numero, horizotal):
-    entrada_nueva = [0, 1, 153, 157, 161, 165, 169, 173, 177, 180, 182] 
-    for i in range(725, 732 ):
+    entrada_nueva = [0, 1, 153, 157, 161, 165, 169, 173, 177, 180, 182]
+    for i in range(725, 732):
         entrada_nueva.append(i)
     for i in range(821, 848 - horizotal):
         entrada_nueva.append(i)
     entrada_nueva.append(1000 + numero)  # Agregar el número proporcionado al final
-    for i in range ((848 - horizotal), 848):
+    for i in range((848 - horizotal), 848):
         entrada_nueva.append(i)
     for i in range(733, 736):
         entrada_nueva.append(i)
@@ -1433,9 +1428,10 @@ def crear_lista_entrada(numero, horizotal):
     entrada_nueva.append(2168)
     return entrada_nueva
 
+
 # Llamar a la función para crear las listas
-for i in range (0, 20):
-    entradaNuevo1 = crear_lista_entrada(14 , i)
+for i in range(0, 20):
+    entradaNuevo1 = crear_lista_entrada(14, i)
     entradaNuevo2 = crear_lista_entrada(15, i)
     entradaNuevo3 = crear_lista_entrada(16, i)
     entradaNuevo4 = crear_lista_entrada(17, i)
@@ -1456,8 +1452,6 @@ for i in range (0, 20):
     entradaNuevo19 = crear_lista_entrada(32, i)
     entradaNuevo20 = crear_lista_entrada(33, i)
 
-
-# Paths
 # -------------------------------------------------------
 #       total de cajones 625 + 191 + 353 + 71 = 1240
 # -------------------------------------------------------
@@ -1474,29 +1468,29 @@ path = [
     [8, {"path": pathArena7, "cajon_index": 12}],
     [9, {"path": pathArena8, "cajon_index": 39}],
     [10, {"path": pathArena9, "cajon_index": 45}],
-    [12, {"path": entradaNuevo1, "cajon_index":1014}],#3
-    [13, {"path": entradaNuevo2, "cajon_index":1015}],#3
-    [14, {"path": entradaNuevo3, "cajon_index":1016}],#3
-    [15, {"path": entradaNuevo4, "cajon_index":1017}],#3
-    [16, {"path": entradaNuevo5, "cajon_index":1018}],#3
-    [17, {"path": entradaNuevo6, "cajon_index":1019}],#3
-    [18, {"path": entradaNuevo7, "cajon_index":1020}],#3
-    [19, {"path": entradaNuevo8, "cajon_index":1021}],#3
-    [20, {"path": entradaNuevo9, "cajon_index":1022}],#3
-    [21, {"path": entradaNuevo10, "cajon_index":1023}],#3
-    [22, {"path": entradaNuevo11, "cajon_index":1024}],#3
-    [23, {"path": entradaNuevo12, "cajon_index":1025}],#3
-    [24, {"path": entradaNuevo13, "cajon_index":1026}],#3
-    [25, {"path": entradaNuevo14, "cajon_index":1027}],#3
-    [26, {"path": entradaNuevo15, "cajon_index":1028}],#3
-    [28, {"path": entradaNuevo16, "cajon_index":1029}],#3
-    [29, {"path": entradaNuevo17, "cajon_index":1030}],#3
-    [30, {"path": entradaNuevo18, "cajon_index":1031}],#3
-    [31, {"path": entradaNuevo19, "cajon_index":1032}],#3
-    [32, {"path": entradaNuevo20, "cajon_index":1033}],#3
-    [33, {"path": pathJavier1, "cajon_index":371}],
-    [34, {"path": pathJavier2, "cajon_index":724}],
-    [35, {"path": pathJavier3, "cajon_index":477}],
+    [12, {"path": entradaNuevo1, "cajon_index": 1014}],  # 3
+    [13, {"path": entradaNuevo2, "cajon_index": 1015}],  # 3
+    [14, {"path": entradaNuevo3, "cajon_index": 1016}],  # 3
+    [15, {"path": entradaNuevo4, "cajon_index": 1017}],  # 3
+    [16, {"path": entradaNuevo5, "cajon_index": 1018}],  # 3
+    [17, {"path": entradaNuevo6, "cajon_index": 1019}],  # 3
+    [18, {"path": entradaNuevo7, "cajon_index": 1020}],  # 3
+    [19, {"path": entradaNuevo8, "cajon_index": 1021}],  # 3
+    [20, {"path": entradaNuevo9, "cajon_index": 1022}],  # 3
+    [21, {"path": entradaNuevo10, "cajon_index": 1023}],  # 3
+    [22, {"path": entradaNuevo11, "cajon_index": 1024}],  # 3
+    [23, {"path": entradaNuevo12, "cajon_index": 1025}],  # 3
+    [24, {"path": entradaNuevo13, "cajon_index": 1026}],  # 3
+    [25, {"path": entradaNuevo14, "cajon_index": 1027}],  # 3
+    [26, {"path": entradaNuevo15, "cajon_index": 1028}],  # 3
+    [28, {"path": entradaNuevo16, "cajon_index": 1029}],  # 3
+    [29, {"path": entradaNuevo17, "cajon_index": 1030}],  # 3
+    [30, {"path": entradaNuevo18, "cajon_index": 1031}],  # 3
+    [31, {"path": entradaNuevo19, "cajon_index": 1032}],  # 3
+    [32, {"path": entradaNuevo20, "cajon_index": 1033}],  # 3
+    [33, {"path": pathJavier1, "cajon_index": 371}],
+    [34, {"path": pathJavier2, "cajon_index": 724}],
+    [35, {"path": pathJavier3, "cajon_index": 477}],
     [21, {"path": extra, "cajon_index": 0}],
 ]
 sim.create_gen({
