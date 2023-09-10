@@ -1,3 +1,9 @@
+# SIMULACION TC2008
+# Javier Eduardo Hurtado Rodriguez A01254039
+# Jose Julian Martinez Romero A01254258
+# Gustavo Betancourt Mazomenos A01252832
+# Santiago Ramírez Enríquez A01254173
+
 from curve import *
 from vehicle import *
 from road import *
