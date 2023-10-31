@@ -159,250 +159,288 @@ caminos.append(p1_12)
 p2_3 = [((p2),(p3))] #3
 caminos.append(p2_3)
 
-p3_4 = extension(p3,p4,1,0)
+p3_4 = extension(p3,p4,4,0) #4-7
 caminos.append(p3_4)
 
-p4_5 = extension(p4,p5,1,0)
+p4_5 = extension(p4,p5,4,0) #8-11
 caminos.append(p4_5)
 
-p5_6 = extension(p5,p6,1,0)
+p5_6 = extension(p5,p6,3,0) #12-14
 caminos.append(p5_6)
 
-p6_7 = extension(p6,p7,1,0)
+p6_7 = extension(p6,p7,6,0) #15-20
 caminos.append(p6_7)
 
-p7_8 = extension(p7,p8,1,0)
+p7_8 = extension(p7,p8,1,0) #21
 caminos.append(p7_8)
 
-p8_9 = extension(p8,p9,1,0)
+p8_9 = extension(p8,p9,1,0) #22
 caminos.append(p8_9)
 
-p9_10 = extension(p9,p10,1,0)
+p9_10 = extension(p9,p10,1,0) #23
 caminos.append(p9_10)
 
-p10_11 = extension(p10,p11,1,0)
+p10_11 = extension(p10,p11,1,0) #24
 caminos.append(p10_11)
 
-p11_2 = extension(p11,p2,1,0)
+p11_2 = extension(p11,p2,8,0) #25-32 
 caminos.append(p11_2)
 
-p8_5 = extension(p8,p5,1,0)
+p8_5 = extension(p8,p5,7,0) #33-39
 caminos.append(p8_5)
 
-p4_9 = extension(p4,p9,1,0)
+p4_9 = extension(p4,p9,8,0) #40-47
 caminos.append(p4_9)
 
-p10_3 = extension(p10,p3,1,0)
+p10_3 = extension(p10,p3,7,0) #48-54
 caminos.append(p10_3)
 
 
 #Medio
 
-p12_13 = extension(p12,p13,1,0)
+p12_13 = extension(p12,p13,1,0) #55
 caminos.append(p12_13)
 
-p13_14 = extension(p13,p14,1,0)
+p13_14 = extension(p13,p14,1,0) #56
 caminos.append(p13_14)
 
-p14_15 = extension(p14,p15,1,0)
+p14_15 = extension(p14,p15,1,0) #57
 caminos.append(p14_15)
 
-p15_16 = extension(p15,p16,1,0)
+p15_16 = extension(p15,p16,1,0) #58
 caminos.append(p15_16)
 
-p16_17 = extension(p16,p17,1,0)
+p16_17 = extension(p16,p17,1,0) #59
 caminos.append(p16_17)
 
-p17_18 = extension(p17,p18,1,0)
+p17_18 = extension(p17,p18,1,0) #60
 caminos.append(p17_18)
 
-p18_19 = extension(p18,p19,1,0)
+p18_19 = extension(p18,p19,1,0) #61
 caminos.append(p18_19)
 
-p19_20 = extension(p19,p20,1,0)
+p19_20 = extension(p19,p20,25,0) #62-86
 caminos.append(p19_20)
 
-p20_21 = extension(p20,p21,1,0)
+p20_21 = extension(p20,p21,1,0) #87
 caminos.append(p20_21)
 
-p21_22 = extension(p21,p22,1,0)
+p21_22 = extension(p21,p22,1,0) #88
 caminos.append(p21_22)
 
-p22_23 = extension(p22,p23,1,0)
+p22_23 = extension(p22,p23,1,0) #89
 caminos.append(p22_23)
 
-p23_24 = extension(p23,p24,1,0)
+p23_24 = extension(p23,p24,1,0) #90
 caminos.append(p23_24)
 
-p24_25 = extension(p24,p25,1,0)
+p24_25 = extension(p24,p25,1,0) #91
 caminos.append(p24_25)
 
-p25_26 = extension(p25,p26,1,0)
+p25_26 = extension(p25,p26,1,0) #92
 caminos.append(p25_26)
 
-p26_27 = extension(p26,p27,1,0)
+p26_27 = extension(p26,p27,1,0) #93
 caminos.append(p26_27)
 
-p27_12 = extension(p27,p12,1,0)
+p27_12 = extension(p27,p12,12,0) #94-105
 caminos.append(p27_12)
 
-p13_26 = extension(p13,p26,1,0)
+p13_26 = extension(p13,p26,16,0) #106-121
 caminos.append(p13_26)
 
-p25_14 = extension(p25,p14,1,0)
+p25_14 = extension(p25,p14,21,0) #122-142
 caminos.append(p25_14)
 
-p15_24 = extension(p15,p24,1,0)
+p15_24 = extension(p15,p24,25,0) #143-167
 caminos.append(p15_24)
 
-p23_16 = extension(p23,p16,1,0)
+p23_16 = extension(p23,p16,29,0) #168-196
 caminos.append(p23_16)
 
-p17_22 = extension(p17,p22,1,0)
+p17_22 = extension(p17,p22,31,0) #197-227
 caminos.append(p17_22)
 
-p21_18 = extension(p21,p18,1,0)
+p21_18 = extension(p21,p18,30,0) #228-257
 caminos.append(p21_18)
 
 #Nuevo
 
-p19_28 = extension(p19,p28,1,0)
+p19_28 = extension(p19,p28,1,0) #258
 caminos.append(p19_28)
 
-p20_61 = extension(p20,p61,1,0)
+p20_61 = extension(p20,p61,1,0) #259
 caminos.append(p20_61)
 
-p28_61 = extension(p28,p61,1,0)
+p28_61 = extension(p28,p61,18,0) #260-277 
 caminos.append(p28_61)
 
-p61_60 = extension(p61,p60,1,0)
+p61_60 = extension(p61,p60,1,0) #278
 caminos.append(p61_60)
 
-p28_29 = extension(p28,p29,1,0)
+p28_29 = extension(p28,p29,1,0) #279
 caminos.append(p28_29)
 
-p29_30 = extension(p29,p30,1,0)
+p29_30 = extension(p29,p30,1,0) #280
 caminos.append(p29_30)
 
-p29_60 = extension(p29,p60,1,0)
+p29_60 = extension(p29,p60,1,0) #281
 caminos.append(p29_60)
 
-p30_37 = extension(p30,p37,1,0)
+p30_37 = extension(p30,p37,18,0) #282-299
 caminos.append(p30_37)
 
-p30_31 = extension(p30,p31,1,0)
+p30_31 = extension(p30,p31,1,0) #300
 caminos.append(p30_31)
 
-p31_32 = extension(p31,p32,1,0)
+p31_32 = extension(p31,p32,1,0) #301
 caminos.append(p31_32)
 
-p32_33 = extension(p32,p33,1,0)
+p32_33 = extension(p32,p33,1,0) #302
 caminos.append(p32_33)
 
-p33_34 = extension(p33,p34,1,0)
+p33_34 = extension(p33,p34,27,0) #303-329
 caminos.append(p33_34)
 
-p34_35 = extension(p34,p35,1,0)
+p34_35 = extension(p34,p35,1,0) #330
 caminos.append(p34_35)
 
-p35_36 = extension(p35,p36,1,0)
+p35_36 = extension(p35,p36,13,0) #331-343
 caminos.append(p35_36)
 
-p32_35 = extension(p32,p35,1,0)
+p32_35 = extension(p32,p35,28,0) #344-371
 caminos.append(p32_35)
 
-p31_36 = extension(p31,p36,1,0)
+p31_36 = extension(p31,p36,24,0) #372-395
 caminos.append(p31_36)
 
-p36_37 = extension(p36,p37,1,0)
+p36_37 = extension(p36,p37,1,0) #396
 caminos.append(p36_37)
 
-p37_60 = extension(p37,p60,1,0)
+p37_60 = extension(p37,p60,1,0) #397
 caminos.append(p37_60)
 
 #Terraceria
 
-p31_38 = extension(p31,p38,1,0)
+p31_38 = extension(p31,p38,5,0) #398-402
 caminos.append(p31_38)
 
-p38_39 = extension(p38,p39,1,0)
+p38_39 = extension(p38,p39,18,0) #403-420
 caminos.append(p38_39)
 
-p39_40 = extension(p39,p40,1,0)
+p39_40 = extension(p39,p40,4,0) #421-424
 caminos.append(p39_40)
 
-p40_41 = extension(p40,p41,1,0)
+p40_41 = extension(p40,p41,3,0) #425-427
 caminos.append(p40_41)
 
-p41_42 = extension(p41,p42,1,0)
+p41_42 = extension(p41,p42,3,0) #428-430
 caminos.append(p41_42)
 
-p42_43 = extension(p42,p43,1,0)
+p42_43 = extension(p42,p43,3,0) #431-433
 caminos.append(p42_43)
 
-p43_44 = extension(p43,p44,1,0)
+p43_44 = extension(p43,p44,3,0) #434-436
 caminos.append(p43_44)
 
-p44_45 = extension(p44,p45,1,0)
+p44_45 = extension(p44,p45,4,0) #437-440
 caminos.append(p44_45)
 
-p45_46 = extension(p45,p46,1,0)
+p45_46 = extension(p45,p46,3,0) #441-443
 caminos.append(p45_46)
 
-p46_47 = extension(p46,p47,1,0)
+p46_47 = extension(p46,p47,1,0) #444
 caminos.append(p46_47)
 
-p47_48 = extension(p47,p48,1,0)
+p47_48 = extension(p47,p48,33,0) #445-477
 caminos.append(p47_48)
 
-
+ 
 
  
-p48_49 = extension(p48,p49,1,0)
+p48_49 = extension(p48,p49,1,0) #478
 caminos.append(p48_49)
 
-p49_46 = extension(p49,p46,1,0)
+p49_46 = extension(p49,p46,35,0) #479-513
 caminos.append(p49_46)
 
-p45_50 = extension(p45,p50,1,0)
+p45_50 = extension(p45,p50,35,0) #514-548
 caminos.append(p45_50)
 
-p51_44 = extension(p51,p44,1,0)
+p51_44 = extension(p51,p44,35,0) #549-583
 caminos.append(p51_44)
 
-p43_52 = extension(p43,p52,1,0)
+p43_52 = extension(p43,p52,35,0) #584-618
 caminos.append(p43_52)
 
-p53_42 = extension(p53,p42,1,0)
+p53_42 = extension(p53,p42,31,0) #619-649
 caminos.append(p53_42)
 
-p41_54 = extension(p41,p54,1,0)
+p41_54 = extension(p41,p54,31,0) #650-680
 caminos.append(p41_54)
 
-p55_40 = extension(p55,p40,1,0)
+p55_40 = extension(p55,p40,30,0) #681-710
 caminos.append(p55_40)
 
-p39_56 = extension(p39,p56,1,0)
+p39_56 = extension(p39,p56,34,0) #711-744
 caminos.append(p39_56)
 
-p56_57 = extension(p56,p57,1,0)
+p56_57 = extension(p56,p57,8,0) #745-752
 caminos.append(p56_57)
 
-p56_58 = extension(p56,p58,1,0)
+p56_58 = extension(p56,p58,1,0) #753
 caminos.append(p56_58)
 
-p57_58 = extension(p57,p58,1,0)
+p57_58 = extension(p57,p58,11,0) #754-764
 caminos.append(p57_58)
 
-p58_59 = extension(p58,p59,1,0)
+p58_59 = extension(p58,p59,23,0) #765-787
 caminos.append(p58_59)
 
-p59_60 = extension(p59,p60,1,0)
+p59_60 = extension(p59,p60,1,0) #788
 caminos.append(p59_60)
+
+#path izquierdo
+
+p50_51 = extension(p50,p51,1,0) #789
+caminos.append(p50_51)
+
+p52_53 = extension(p52,p53,1,0) #790
+caminos.append(p52_53)
+
+p54_55 = extension(p54,p55,1,0) #791
+caminos.append(p54_55)
+
+#Salida arriba
+
+p47_46 = extension(p47,p46,1,0) #792
+caminos.append(p47_46)
+
+p46_45 = extension(p46,p45,1,0) #793
+caminos.append(p46_45)
+
+p45_44 = extension(p45,p44,1,0) #794
+caminos.append(p45_44)
+
+p44_43 = extension(p44,p43,1,0) #795
+caminos.append(p44_43)
+
+p43_42 = extension(p43,p42,1,0) #796
+caminos.append(p43_42)
+
+p42_41 = extension(p42,p41,1,0) #797
+caminos.append(p42_41)
+
+p41_40 = extension(p41,p40,1,0) #798
+caminos.append(p41_40) 
+
+p40_39 = extension(p40,p39,1,0) #799
+caminos.append(p40_39)
+
 
 #Final
 
-p60_00 = extension(p60,p00,26,0)
+p60_00 = extension(p60,p00,1,0) #800
 caminos.append(p60_00)
 
 
@@ -455,8 +493,8 @@ def cajonear(ruta, n, dir, skip):
 
 
 #------------------------------------------------
-#CAMINOS ARRIBA 
-# index 1041 - 1479
+#CAMINOS 0-800 
+# index 0-800
 print('CAMINOS')
 #CAMINOS ARRIBA
 for camino in caminos:
@@ -465,7 +503,7 @@ for camino in caminos:
 
 #---------------------------------------------------
 #CAJONES ARRIBA
-# index 1480 - 2165
+# index 801 - 0000
 print('CAJONES')
 for spot in estacionamientos:
      for i in range(0, len(spot)):
@@ -666,18 +704,23 @@ for i in range (0, 19):
     entradaNuevo19 = crear_lista_entrada(32, i)
     entradaNuevo20 = crear_lista_entrada(33, i)
 
+
 # Paths
 path = [
-    [1, {"path": [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15], "cajon_index": 20}],
-    [1, {"path": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], "cajon_index": 20}],
-    [1, {"path": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], "cajon_index": 20}],
-    [1, {"path": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], "cajon_index": 20}],
-    [1, {"path": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], "cajon_index": 20}],
-    [1, {"path": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], "cajon_index": 20}],
-    [1, {"path": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], "cajon_index": 20}],
-    [1, {"path": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], "cajon_index": 20}],
-    [1, {"path": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], "cajon_index": 20}],
-    [1, {"path": [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0], "cajon_index": 20}],
+    
+    [1, {"path": [i for i in range(398,800)], "cajon_index": 20}],
+    [1, {"path": [i for i in range(398,800)], "cajon_index": 20}],
+    [1, {"path": [i for i in range(398,800)], "cajon_index": 20}],
+    [1, {"path": [i for i in range(398,800)], "cajon_index": 20}],
+    [1, {"path": [i for i in range(398,800)], "cajon_index": 20}],
+    [1, {"path": [i for i in range(398,800)], "cajon_index": 20}],
+    [1, {"path": [i for i in range(398,800)], "cajon_index": 20}],
+    [1, {"path": [i for i in range(398,800)], "cajon_index": 20}],
+    [1, {"path": [i for i in range(398,800)], "cajon_index": 20}],
+    [1, {"path": [i for i in range(398,800)], "cajon_index": 20}],
+    [1, {"path": [i for i in range(398,800)], "cajon_index": 20}],
+
+    
     
 ]
 sim.create_gen({
