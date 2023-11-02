@@ -488,7 +488,10 @@ def cajonear(ruta, n, dir, skip):
     return cajones
 
 
-
+#c2_3_l = cajonear(p2_3, 18,0,1)
+#c2_3_r = cajonear(p2_3, 26, 1, 0)
+#estacionamientos.append(c2_3_l)
+#estacionamientos.append(c2_3_r)
 
 
 
@@ -704,11 +707,238 @@ for i in range (0, 19):
     entradaNuevo19 = crear_lista_entrada(32, i)
     entradaNuevo20 = crear_lista_entrada(33, i)
 
+#Listas
+
+#abajo
+
+l0_1 = [0]
+l1_2 = [1]
+l1_12 = [2]
+l2_3 = [3]
+l3_4 = [i for i in range(4,7)]
+l4_5 = [i for i in range(8,11)]
+l5_6 = [i for i in range(12,14)]
+l6_7 = [i for i in range(15,20)]
+l7_8 = [21]
+l8_9 = [22]
+l9_10 = [23]
+l10_11 = [24]
+l11_2 = [i for i in range(25,32)]
+
+l8_5 = [i for i in range(33,39)]
+
+l4_9 = [i for i in range(40,47)]
+
+l10_3 = [i for i in range(48,54)]
+
+#medio
+
+l12_13 = [55]
+
+l13_14 = [56]
+
+l14_15 = [57]
+
+l15_16 = [58]
+
+l16_17 = [59]
+
+l17_18 = [60]
+
+l18_19 = [61]
+
+l19_20 = [i for i in range(62,86)]
+
+l20_21 = [87]
+
+l21_22 = [88]
+
+l22_23 = [89]
+
+l23_24 = [90]
+
+l24_25 = [91]
+
+l25_26 = [92]
+
+l26_27 = [93]
+
+l27_12 = [i for i in range(94,105)]
+
+l13_26 = [i for i in range(106,121)]
+
+l25_14 = [i for i in range(122,142)]
+
+l15_24 = [i for i in range(143,167)]
+
+l23_16 = [i for i in range(168,196)]
+
+l17_22 = [i for i in range(197,227)]
+
+l21_18 = [i for i in range(228,257)]
+
+#Nuevo
+
+l19_28 = [258]
+
+l20_61 = [259]
+
+l28_61 = [i for i in range(260,277)]
+
+l61_60 = [278]
+
+l28_29 = [279]
+
+l29_30 = [280]
+
+l29_60 = [281]
+
+l30_37 = [i for i in range(282,299)]
+
+l30_31 = [300]
+
+l31_32 = [301]
+
+l32_33 = [302]
+
+l33_34 = [i for i in range(303,329)]
+
+l34_35 = [330]
+
+l35_36 = [i for i in range(331,343)]
+
+l32_35 = [i for i in range(344,371)]
+
+l31_36 = [i for i in range(372,395)]
+
+l36_37 = [396]
+
+l37_60 = [397]
+
+#Terraceria
+
+l31_38 = [i for i in range(398,402)]
+
+l38_39 = [i for i in range(403,420)]
+
+l39_40 = [i for i in range(421,424)]
+
+l40_41 = [i for i in range(425,427)]
+
+l41_42 = [i for i in range(428,430)]
+
+l42_43 = [i for i in range(431,433)]
+
+l43_44 = [i for i in range(434,436)]
+
+l44_45 = [i for i in range(437,440)]
+
+l45_46 = [i for i in range(441,443)]
+
+l46_47 = [444]
+
+l47_48 = [i for i in range(445,477)]
+
+l48_49 = [478]
+
+l49_46 = [i for i in range(479,513)]
+
+l45_50 = [i for i in range(514,548)]
+
+l51_44 = [i for i in range(549,583)]
+
+l43_52 = [i for i in range(584,618)]
+
+l53_42 = [i for i in range(619,649)]
+
+l41_54 = [i for i in range(650,680)]
+
+l55_40 = [i for i in range(681,710)]
+
+l39_56 = [i for i in range(711,744)]
+
+l56_57 = [i for i in range(745,752)]
+
+l56_58 = [753]
+
+l57_58 = [i for i in range(754,764)]
+
+l58_59 = [i for i in range(765,787)]
+
+l59_60 = [788]
+
+l50_51 = [789]
+
+l52_53 = [790]
+
+l54_55 = [791]
+
+l47_46 = [792]
+
+l46_45 = [793]
+
+l45_44 = [794]
+
+l44_43 = [795]
+
+l43_42 = [796]
+
+l42_41 = [797]
+
+l41_40 = [798]
+
+l40_39 = [799]
+
+l60_00 = [800]
+
+
+#paths
+
+# abajo
+
+l1 = l0_1 + l1_2 + l2_3 + l3_4 + l4_5 + l5_6 + l6_7 + l7_8 + l8_9 + l9_10 + l10_11 + l11_2
+
+l2 = l0_1 + l1_2 + l2_3 + l3_4 + l4_5 + l5_6 + l6_7 + l7_8 + l8_5
+
+l3 = l0_1 + l1_2 + l2_3 + l3_4 + l4_9 + l9_10 + l10_11 + l11_2
+
+l4 = l0_1 + l1_2 + l2_3 + l3_4 + l4_5 + l5_6 + l6_7 + l7_8 + l8_9 + l9_10 + l10_3
+
+# medio
+
+l5 = l0_1 + l1_12 + l12_13 + l13_26 + l26_27 + l27_12 + l12_13 + l13_14 + l14_15 + l15_16 + l16_17 + l17_18 + l18_19 + l19_28 + l28_29 + l29_60 + l60_00
+
+l6 = l0_1 + l1_12 + l12_13 + l13_14 + l14_15 + l15_24 + l24_25 + l25_14 + l14_15 + l15_16 + l16_17 + l17_18 + l18_19 + l19_28 + l28_29 + l29_60 + l60_00
+
+l7 = l0_1 + l1_12 + l12_13 + l13_14 + l14_15 + l15_16 + l16_17 + l17_22 + l22_23 + l23_16 + l16_17 + l17_18 + l18_19 + l19_28 + l28_29 + l29_60 + l60_00
+
+l8 = l0_1 + l1_12 + l12_13 + l13_14 + l14_15 + l15_16 + l16_17 + l17_18 + l18_19 + l19_20 + l20_21 + l21_18 + l18_19 + l19_28 + l28_29 + l29_60 + l60_00
+
 
 # Paths
 path = [
     
-    [1, {"path": [i for i in range(398,800)], "cajon_index": 20}],
+    
+    [1, {"path": l2, "cajon_index": 20}],
+    [1, {"path": l2, "cajon_index": 20}],
+    [1, {"path": l2, "cajon_index": 20}],
+    [1, {"path": l3, "cajon_index": 20}],
+    [1, {"path": l3, "cajon_index": 20}],
+    [1, {"path": l4, "cajon_index": 20}],
+    [1, {"path": l4, "cajon_index": 20}],
+    [1, {"path": l4, "cajon_index": 20}],
+    [1, {"path": l5, "cajon_index": 20}],
+    [1, {"path": l5, "cajon_index": 20}],
+    [1, {"path": l5, "cajon_index": 20}],
+    [1, {"path": l6, "cajon_index": 20}],
+    [1, {"path": l6, "cajon_index": 20}],
+    [1, {"path": l6, "cajon_index": 20}],
+    [1, {"path": l7, "cajon_index": 20}],
+    [1, {"path": l7, "cajon_index": 20}],
+    [1, {"path": l8, "cajon_index": 20}],
+    [1, {"path": l8, "cajon_index": 20}],
+    [1, {"path": l8, "cajon_index": 20}],
+    [1, {"path": l8, "cajon_index": 20}],
     [1, {"path": [i for i in range(398,800)], "cajon_index": 20}],
     [1, {"path": [i for i in range(398,800)], "cajon_index": 20}],
     [1, {"path": [i for i in range(398,800)], "cajon_index": 20}],
