@@ -450,6 +450,9 @@ caminos.append(p60_00)
 #ESTACIONAMIENTOS
 estacionamientos =[]
 
+#0 right 
+#1 left
+
 def cajonear(ruta, n, dir, skip):
     i = 0
     extra = skip
@@ -480,7 +483,7 @@ def cajonear(ruta, n, dir, skip):
             yni = yf + nidy
         #cajones.append(((xf,yf),(xn,yn)))
         if skip <= 0:
-             cajones.append(((xni,yni),(xn,yn)))
+             cajones.append(((xni,yni),(xn,yn),1))
 
         i += 1
         skip -= 1
@@ -492,6 +495,47 @@ def cajonear(ruta, n, dir, skip):
 #c2_3_r = cajonear(p2_3, 26, 1, 0)
 #estacionamientos.append(c2_3_l)
 #estacionamientos.append(c2_3_r)
+
+# Estacionamientos
+
+# Abajo
+
+c3_4 = cajonear(p3_4, 4, 1, 0) #801-804
+estacionamientos.append(c3_4)
+
+
+c4_5 = cajonear(p4_5, 4, 1, 0) #805-808
+estacionamientos.append(c4_5)
+
+
+c5_6 = cajonear(p5_6, 3, 1, 0) #809-811
+estacionamientos.append(c5_6)
+
+
+c6_7_l = cajonear(p6_7, 6, 0, 0) #812-817
+c6_7_r = cajonear(p6_7, 4, 1, 0) #818-821
+estacionamientos.append(c6_7_l)
+estacionamientos.append(c6_7_r)
+
+c11_2 = cajonear(p11_2, 8, 1, 0) #801-804
+estacionamientos.append(c11_2)
+
+c8_5_l = cajonear(p8_5, 7, 0, 0) #801-804
+c8_5_r = cajonear(p8_5, 5, 1, 0) #801-804
+estacionamientos.append(c8_5_l)
+estacionamientos.append(c8_5_r)
+
+c4_9_l = cajonear(p4_9, 8, 0, 0) #801-804
+c4_9_r = cajonear(p4_9, 7, 1, 0) #801-804
+estacionamientos.append(c4_9_l)
+estacionamientos.append(c4_9_r)
+
+c10_3_l = cajonear(p10_3, 7, 0, 0) #801-804
+c10_3_r = cajonear(p10_3, 7, 1, 0) #801-804
+estacionamientos.append(c10_3_l)
+estacionamientos.append(c10_3_r)
+
+
 
 
 
@@ -914,41 +958,69 @@ l7 = l0_1 + l1_12 + l12_13 + l13_14 + l14_15 + l15_16 + l16_17 + l17_22 + l22_23
 
 l8 = l0_1 + l1_12 + l12_13 + l13_14 + l14_15 + l15_16 + l16_17 + l17_18 + l18_19 + l19_20 + l20_21 + l21_18 + l18_19 + l19_28 + l28_29 + l29_60 + l60_00
 
+# nuevo
+
+up = l0_1 + l1_12 + l12_13 + l13_14 + l14_15 + l15_16 + l16_17 + l17_18 + l18_19 + l19_28
+
+l9 = up + l28_61 + l61_60 + l60_00
+
+l10 = up + l28_29 + l29_30 + l30_37 + l37_60 + l60_00
+
+up_neo = up + l28_29 + l29_30 + l30_31
+
+l11 = up_neo + l31_36 + l36_37 + l37_60 + l60_00
+
+l12 = up_neo + l31_32 + l32_35 + l35_36 + l36_37 + l37_60 + l60_00
+
+l13 = up_neo + l31_32 + l32_33 + l33_34 + l34_35 + l35_36 + l36_37 + l37_60 + l60_00
+
+# terraceria
+
+up_end = l39_56 + l56_58 + l58_59 + l59_60 + l60_00 
+
+l14 = up_neo + l31_38 + l38_39 + up_end
+
+l15 = up_neo + l31_38 + l38_39 + l39_56 + l56_57 + l57_58 + l58_59 + l59_60 + l60_00
+
+l16 = up_neo + l31_38 + l38_39 + l39_40 + l40_41 + l41_54 + l54_55 + l55_40 + l40_39 + up_end
+
+l17 = up_neo + l31_38 + l38_39 + l39_40 + l40_41 + l41_42 + l42_43 + l43_52 + l52_53 + l53_42 + l42_41 + l41_40 + l40_39 + up_end
+
+l18 = up_neo + l31_38 + l38_39 + l39_40 + l40_41 + l41_42 + l42_43 + l43_44 + l44_45 + l45_50 + l50_51 + l51_44 + l44_43 + l43_42 + l42_41 + l41_40 + l40_39 + up_end
+
+l19 = up_neo + l31_38 + l38_39 + l39_40 + l40_41 + l41_42 + l42_43 + l43_44 + l44_45 + l45_46 + l46_47 + l47_48 + l48_49 + l49_46 + l46_45 + l45_44 + l44_43 + l43_42 + l42_41 + l41_40 + l40_39 + up_end
 
 # Paths
 path = [
     
-    
-    [1, {"path": l2, "cajon_index": 20}],
-    [1, {"path": l2, "cajon_index": 20}],
-    [1, {"path": l2, "cajon_index": 20}],
-    [1, {"path": l3, "cajon_index": 20}],
-    [1, {"path": l3, "cajon_index": 20}],
-    [1, {"path": l4, "cajon_index": 20}],
-    [1, {"path": l4, "cajon_index": 20}],
-    [1, {"path": l4, "cajon_index": 20}],
-    [1, {"path": l5, "cajon_index": 20}],
-    [1, {"path": l5, "cajon_index": 20}],
-    [1, {"path": l5, "cajon_index": 20}],
-    [1, {"path": l6, "cajon_index": 20}],
-    [1, {"path": l6, "cajon_index": 20}],
-    [1, {"path": l6, "cajon_index": 20}],
-    [1, {"path": l7, "cajon_index": 20}],
-    [1, {"path": l7, "cajon_index": 20}],
-    [1, {"path": l8, "cajon_index": 20}],
-    [1, {"path": l8, "cajon_index": 20}],
-    [1, {"path": l8, "cajon_index": 20}],
-    [1, {"path": l8, "cajon_index": 20}],
-    [1, {"path": [i for i in range(398,800)], "cajon_index": 20}],
-    [1, {"path": [i for i in range(398,800)], "cajon_index": 20}],
-    [1, {"path": [i for i in range(398,800)], "cajon_index": 20}],
-    [1, {"path": [i for i in range(398,800)], "cajon_index": 20}],
-    [1, {"path": [i for i in range(398,800)], "cajon_index": 20}],
-    [1, {"path": [i for i in range(398,800)], "cajon_index": 20}],
-    [1, {"path": [i for i in range(398,800)], "cajon_index": 20}],
-    [1, {"path": [i for i in range(398,800)], "cajon_index": 20}],
-    [1, {"path": [i for i in range(398,800)], "cajon_index": 20}],
-    [1, {"path": [i for i in range(398,800)], "cajon_index": 20}],
+    [1, {"path": l11, "cajon_index": 10}],
+    [1, {"path": l11, "cajon_index": 10}],
+    [1, {"path": l11, "cajon_index": 10}],
+    [1, {"path": l11, "cajon_index": 10}],
+    [1, {"path": l12, "cajon_index": 10}],
+    [1, {"path": l12, "cajon_index": 10}],
+    [1, {"path": l12, "cajon_index": 10}],
+    [1, {"path": l12, "cajon_index": 10}],
+    [1, {"path": l13, "cajon_index": 10}],
+    [1, {"path": l13, "cajon_index": 10}],
+    [1, {"path": l13, "cajon_index": 10}],
+    [1, {"path": l13, "cajon_index": 10}],
+    [1, {"path": l14, "cajon_index": 10}],
+    [1, {"path": l14, "cajon_index": 10}],
+    [1, {"path": l15, "cajon_index": 10}],
+    [1, {"path": l15, "cajon_index": 10}],
+
+    [1, {"path": l16, "cajon_index": 10}],
+    [1, {"path": l16, "cajon_index": 10}],
+
+    [1, {"path": l17, "cajon_index": 10}],
+    [1, {"path": l17, "cajon_index": 10}],
+
+    [1, {"path": l18, "cajon_index": 10}],
+    [1, {"path": l18, "cajon_index": 10}],
+
+    [1, {"path": l19, "cajon_index": 10}],
+    [1, {"path": l19, "cajon_index": 10}],
 
     
     
